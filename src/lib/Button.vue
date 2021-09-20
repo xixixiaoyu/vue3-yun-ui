@@ -288,38 +288,32 @@ $grey: grey;
 
 /* circle-loading */
 .circle-loading {
+  position: relative;
   display: inline-block;
   margin-right: 4px;
   width: 14px;
   height: 14px;
   border-radius: 50%;
   border-top: 2px solid #ff6b6b;
-  animation: circle-rotate 1s linear infinite;
-}
-@keyframes circle-rotate {
-  from {
-    transform: rotate(0deg);
+  animation: gulu-spin 1s linear infinite;
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: -2px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
   }
-  to {
-    transform: rotate(360deg);
+  &::before {
+    border-top: 2px solid #1dd1a1;
+    transform: rotate(120deg);
+  }
+  &::after {
+    border-top: 2px solid #54a0ff;
+    transform: rotate(240deg);
   }
 }
-.circle-loading::before,
-.circle-loading::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: -2px;
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-}
-.circle-loading::before {
-  border-top: 2px solid #1dd1a1;
-  transform: rotate(120deg);
-}
-.circle-loading::after {
-  border-top: 2px solid #54a0ff;
-  transform: rotate(240deg);
-}
+
 </style>
