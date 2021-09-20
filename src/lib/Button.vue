@@ -1,5 +1,6 @@
 <template>
   <button class="gulu-button" :class="classes" :disabled="disabled">
+    <span v-if="loading" class="gulu-loadingIndicator"></span>
     <slot />
   </button>
 </template>
@@ -20,6 +21,10 @@ export default {
       default: "normal",
     },
     disabled: {
+      type: Boolean,
+      default: false,
+    },
+    loading: {
       type: Boolean,
       default: false,
     },
