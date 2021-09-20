@@ -54,6 +54,16 @@
     <Button loading>加载中</Button>
     <Button>加载完毕</Button>
   </div>
+  <h1>示例6</h1>
+  <div>
+    <Button sword-loading>加载中</Button>
+    <Button sword-loaded>加载完毕</Button>
+  </div>
+  <h1>示例6</h1>
+  <div>
+    <Button circle-loading>加载中</Button>
+    <Button>加载完毕</Button>
+  </div>
 </template>
 <script lang="ts">
 import Button from "../lib/Button.vue";
