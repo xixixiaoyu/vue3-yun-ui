@@ -25,6 +25,7 @@
     </div>
   </div>
 </template>
+
 <script lang="ts">
 import Topnav from "../components/TopNav.vue";
 import { inject, Ref } from "vue";
@@ -36,6 +37,7 @@ export default {
   },
 };
 </script>
+
 <style lang="scss" scoped>
 .layout {
   display: flex;
@@ -61,7 +63,7 @@ export default {
   > main {
     flex-grow: 1;
     padding: 16px;
-    background: lightgreen;
+    background: white;
   }
 }
 aside {

@@ -17,6 +17,7 @@ export default {
   components: { Topnav },
 };
 </script>
+
 <style lang="scss" scoped>
 .banner {
   padding: 100px 0;
