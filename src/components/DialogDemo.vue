@@ -7,7 +7,14 @@
     :closeOnClickOverlay="false"
     :ok="fn1"
     :cancel="fn2"
-  ></Dialog>
+  >
+    <!-- <template v-slot:title>
+      <strong>加粗的标题</strong>
+    </template>
+    <template v-slot:content>
+      我的内容
+    </template> -->
+  </Dialog>
 </template>
 
 <script lang="ts">
