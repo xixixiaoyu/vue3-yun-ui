@@ -20,6 +20,6 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
 @import 'prismjs/themes/prism.css';
 </style  
