@@ -19,3 +19,7 @@ export default {
   },
 };
 </script>
+
+<style>
+@import 'prismjs/themes/prism.css';
+</style  
