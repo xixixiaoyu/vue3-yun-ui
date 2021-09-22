@@ -15,11 +15,15 @@
       我的内容
     </template> -->
   </Dialog>
+
+  <h1>示例2</h1>
+  <Button @click="showDialog">show</Button>
 </template>
 
 <script lang="ts">
-import { ref } from "vue";
+import { ref, h } from "vue";
 import Dialog from "../lib/Dialog.vue";
+import { openDialog } from "../lib/openDialog";
 export default {
   components: {
     Dialog,
@@ -36,11 +40,25 @@ export default {
     const fn2 = () => {
       console.log(2);
     };
+
+    const showDialog = () => {
+      openDialog({
+        title: h("strong", {}, "标题"),
+        content: "你好",
+        ok() {
+          console.log("ok");
+        },
+        cancel() {
+          console.log("cancel");
+        },
+      });
+    };
     return {
       x,
       toggle,
       fn1,
       fn2,
+      showDialog
     };
   },
 };

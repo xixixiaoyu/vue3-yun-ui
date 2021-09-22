@@ -59,7 +59,7 @@ export default {
       }
     };
     const cancel = () => {
-      emit("cancel");
+      props.cancel?.();
       close();
     };
 
