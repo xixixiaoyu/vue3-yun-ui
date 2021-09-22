@@ -1,6 +1,6 @@
 <template>
   <div class="layout">
-    <Topnav class="nav" />
+    <Topnav class="nav" toggleMenuButtonVisible />
     <div class="content">
       <aside v-if="menuVisible">
         <h2>组件列表</h2>
@@ -62,13 +62,13 @@ export default {
   }
   > main {
     flex-grow: 1;
-    padding: 16px;
+    padding: 30px;
     background: white;
   }
 }
 aside {
   background: lightblue;
-  width: 150px;
+  width: 160px;
   padding: 16px;
   position: fixed;
   top: 0;
