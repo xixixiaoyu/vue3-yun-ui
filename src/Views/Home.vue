@@ -9,6 +9,17 @@
         <router-link to="/doc">开始</router-link>
       </p>
     </div>
+    <div class="features">
+      <svg class="icon">
+        <use xlink:href="#icon-vue"></use>
+      </svg>
+      <svg class="icon">
+        <use xlink:href="#icon-ts"></use>
+      </svg>
+      <svg class="icon">
+        <use xlink:href="#icon-gj"></use>
+      </svg>
+    </div>
   </div>
 </template>
 <script lang="ts">
@@ -28,7 +39,16 @@ $color: #007974;
     rgb(204, 247, 244) 0%,
     rgb(157, 206, 203) 100%
   );
+  clip-path: ellipse(80% 60% at 50% 40%);
 }
+
+.features {
+  > svg {
+    width: 64px;
+    height: 64px;
+  }
+}
+
 .banner {
   color: $color;
   padding: 100px 0;
