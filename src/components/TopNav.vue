@@ -9,7 +9,7 @@
 
     <ul class="menu">
       <li>
-        <router-link to="/doc">文档</router-link>
+        <router-link to="/doc/switch">文档</router-link>
       </li>
     </ul>
     <svg v-if="toggleMenuButtonVisible" class="toggleAside" @click="toggleMenu">
@@ -36,6 +36,7 @@ export default {
   },
 };
 </script>
+
 <style lang="scss" scoped>
 $color: #007974;
 
@@ -43,7 +44,7 @@ $color: #007974;
   color: $color;
   display: flex;
 
-  padding: 16px;
+  padding: 2px;
   position: fixed;
   top: 0;
   left: 0;
@@ -51,6 +52,8 @@ $color: #007974;
   z-index: 20;
   justify-content: center;
   align-items: center;
+  background-color: #fff;
+  border-bottom: 1px solid rgb(226, 219, 219);
   @keyframes movex {
     0% {
       transform: translateX(0);
@@ -83,7 +86,7 @@ $color: #007974;
     }
     > svg {
       position: relative;
-      top: 7px;
+      top: 8px;
       width: 32px;
       height: 32px;
       margin-right: 8px;

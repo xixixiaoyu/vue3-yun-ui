@@ -23,12 +23,6 @@
       <div class="gulu-tabs-nav-indicator" ref="indicator"></div>
     </div>
     <div class="gulu-tabs-content">
-      <!-- <component
-        class="gulu-tabs-content-item"
-        v-for="(c, index) in defaults"
-        :is="c"
-        :key="index"
-      /> -->
       <component
         class="gulu-tabs-content-item"
         :is="current"
@@ -65,7 +59,8 @@ export default {
 
     const defaults = context.slots.default();
     defaults.forEach((tag) => {
-      if (tag.type !== Tab) {
+       // @ts-ignore
+      if (tag.type.name !== Tab.name) {
         throw new Error("Tabs 子标签必须是 Tab");
       }
     });

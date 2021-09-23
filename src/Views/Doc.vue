@@ -1,8 +1,8 @@
 <template>
   <div class="layout">
     <Topnav class="nav" toggleMenuButtonVisible />
-    <div class="content">
-      <aside v-if="menuVisible">
+    <div class="content" :class="{'open':menuVisible}">
+      <aside  :class="{'open':menuVisible }">
         <h2>文档</h2>
         <ol>
           <li>
@@ -55,45 +55,51 @@ export default {
   display: flex;
   flex-direction: column;
   height: 100vh;
-  >.nav {
+  > .nav {
     flex-shrink: 0;
   }
-  >.content {
+  > .content {
     flex-grow: 1;
     padding-top: 60px;
     padding-left: 156px;
+   
     @media (max-width: 500px) {
+      
       padding-left: 0;
     }
   }
 }
 .content {
   display: flex;
-  >aside {
+  > aside {
     flex-shrink: 0;
   }
-  >main {
+  > main {
     flex-grow: 1;
-    padding: 16px;
+    padding: 36px;
     background: white;
   }
 }
 aside {
-  background: lightblue;
+  transform: translateX(-160px);
+  overflow: auto;
+  background: rgb(179, 224, 241);
   width: 160px;
   padding: 16px 0;
   position: fixed;
-  top: 0;
+  top: 53px;
   left: 0;
   padding-top: 70px;
   height: 100%;
-  >h2 {
+  z-index: 30;
+  transition: 250ms;
+  > h2 {
     margin-bottom: 4px;
     padding: 0 16px;
   }
-  >ol {
-    >li {
-      >a {
+  > ol {
+    > li {
+      > a {
         display: block;
         padding: 4px 16px;
         text-decoration: none;
@@ -106,5 +112,9 @@ aside {
 }
 main {
   overflow: auto;
+}
+
+aside.open {
+  transform: translateX(0);
 }
 </style>

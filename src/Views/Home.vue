@@ -4,10 +4,9 @@
       <Topnav />
       <div class="banner">
         <h2 class="title"><span>Y</span>un-UI</h2>
-        <h2 class="desc">一套基于 Vue 2.5 的UI 组件库</h2>
         <h3>简约 轻巧 好用</h3>
         <p class="actions">
-          <a href="https://github.com">GitHub</a>
+          <a href="https://github.com/xixixiaoyu/vue3-yun-ui">GitHub</a>
           <router-link to="/doc">开始</router-link>
         </p>
       </div>
@@ -19,7 +18,7 @@
             <use xlink:href="#icon-vue"></use>
           </svg>
           <h3>基于 Vue 3</h3>
-          <p>完全使用了 Vue 3 Composition API</p>
+          <p>完全使用 Vue 3 Composition API</p>
         </li>
         <li>
           <svg>
@@ -98,6 +97,7 @@ $color: #039994;
       > h3 {
         grid-area: title;
         font-size: 28px;
+       
       }
       > p {
         grid-area: text;
@@ -120,12 +120,11 @@ $color: #039994;
     margin-right: 2px;
     text-decoration: underline;
   }
-  > .desc {
-    display: inline;
-    color: #36b1bf;
-    font-size: 20px;
-    font-weight: 600;
+
+  > h3 {
+    margin: 7px 0;
   }
+
   > .actions {
     padding: 8px 0;
     a {
