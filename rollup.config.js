@@ -6,20 +6,15 @@ import { terser } from "rollup-plugin-terser"
 
 export default {
   input: 'src/lib/index.ts',
-  output: [{
+  output: {
     globals: {
       vue: 'Vue'
     },
-    name: 'Gulu',
-    file: 'dist/lib/gulu.js',
+    name: 'Yun',
+    file: 'dist/lib/yun.js',
     format: 'umd',
     plugins: [terser()]
-  }, {
-    name: 'Gulu',
-    file: 'dist/lib/gulu.esm.js',
-    format: 'es',
-    plugins: [terser()]
-  }],
+  },
   plugins: [
     scss({ include: /\.scss$/, sass: dartSass }),
     esbuild({

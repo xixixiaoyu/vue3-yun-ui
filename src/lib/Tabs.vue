@@ -47,19 +47,24 @@ export default {
     const indicator = ref<HTMLDivElement>(null);
     const container = ref<HTMLDivElement>(null);
     onMounted(() => {
-      watchEffect(() => {
-        const { width } = selectedItem.value.getBoundingClientRect();
-        indicator.value.style.width = width + "px";
-        const { left: left1 } = container.value.getBoundingClientRect();
-        const { left: left2 } = selectedItem.value.getBoundingClientRect();
-        const left = left2 - left1;
-        indicator.value.style.left = left + "px";
-      });
+      watchEffect(
+        () => {
+          const { width } = selectedItem.value.getBoundingClientRect();
+          indicator.value.style.width = width + "px";
+          const { left: left1 } = container.value.getBoundingClientRect();
+          const { left: left2 } = selectedItem.value.getBoundingClientRect();
+          const left = left2 - left1;
+          indicator.value.style.left = left + "px";
+        },
+        {
+          flush: "post",
+        }
+      );
     });
 
     const defaults = context.slots.default();
     defaults.forEach((tag) => {
-       // @ts-ignore
+      // @ts-ignore
       if (tag.type.name !== Tab.name) {
         throw new Error("Tabs 子标签必须是 Tab");
       }
@@ -80,7 +85,7 @@ export default {
       return tag.props.title;
     });
 
-    const select = (title: string) => {
+    const select = (title) => {
       context.emit("update:selected", title);
     };
     return {
