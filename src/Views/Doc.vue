@@ -80,7 +80,7 @@ export default {
 }
 aside {
   background: lightblue;
-  width: 150px;
+  width: 160px;
   padding: 16px 0;
   position: fixed;
   top: 0;

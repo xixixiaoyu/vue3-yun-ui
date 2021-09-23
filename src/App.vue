@@ -22,4 +22,4 @@ export default {
 
 <style lang="scss">
 @import 'prismjs/themes/prism.css';
-</style  
+</style>  

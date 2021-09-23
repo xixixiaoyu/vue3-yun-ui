@@ -22,8 +22,8 @@
 
 <script lang="ts">
 import { ref, h } from "vue";
-import Dialog from "../lib/Dialog.vue";
-import { openDialog } from "../lib/openDialog";
+import Dialog from "../../lib/Dialog.vue";
+import { openDialog } from "../../lib/openDialog";
 export default {
   components: {
     Dialog,
