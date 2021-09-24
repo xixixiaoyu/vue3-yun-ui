@@ -217,8 +217,8 @@ $grey: grey;
 .orbit-spinner {
   display: inline-block;
   margin-right: 4px;
-  height: 14px;
-  width: 14px;
+  height: 12px;
+  width: 12px;
   border-radius: 50%;
   perspective: 800px;
   .orbit {

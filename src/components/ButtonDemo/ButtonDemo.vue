@@ -1,13 +1,42 @@
 <template>
   <div>Button 示例</div>
-  <Demo :component="Button1Demo" title="基本用法" description="开关按钮的基本用法"/>
-  <Demo :component="Button2Demo" title="按钮尺寸" description="提供三种不同尺寸的按钮"/>
-  <Demo :component="Button3Demo" title="按钮类型" description="提供三种不同类型的按钮"/>
-  <Demo :component="Button4Demo" title="不可用状态" description="添加 disabled 属性即可让按钮处于不可用状态，同时按钮样式也会改变"/>
-  <Demo :component="Button5Demo" title="加载中状态" description="添加 loading 属性即可让按钮处于加载状态"/>
-  <Demo :component="Button6Demo" title="加载中状态" description="添加 sword-loading 属性即可让按钮处于加载状态，添加 sword-loaded 属性加载完毕"/>
-  <Demo :component="Button7Demo" title="加载中状态" description="添加 circle-loading 属性即可让按钮处于加载状态"/>
-  
+  <Demo
+    :component="Button1Demo"
+    title="基本用法"
+    description="开关按钮的基本用法"
+  />
+  <Demo
+    :component="Button2Demo"
+    title="按钮尺寸"
+    description="提供三种不同尺寸的按钮"
+  />
+  <Demo
+    :component="Button3Demo"
+    title="按钮类型"
+    description="提供三种不同类型的按钮"
+  />
+  <Demo
+    :component="Button4Demo"
+    title="不可用状态"
+    description="添加 disabled 属性即可让按钮处于不可用状态，同时按钮样式也会改变"
+  />
+  <Demo
+    :component="Button5Demo"
+    title="加载中状态"
+    description="添加 loading 属性即可让按钮处于加载状态"
+  />
+  <Demo
+    :component="Button6Demo"
+    title="加载中状态"
+    description="添加 sword-loading 属性即可让按钮处于加载状态，添加 sword-loaded 属性加载完毕"
+  />
+  <Demo
+    :component="Button7Demo"
+    title="加载中状态"
+    description="添加 circle-loading 属性即可让按钮处于加载状态"
+  />
+
+  <Attr :columns="columns" :data="data" />
 </template>
 <script lang="ts">
 import Demo from "../Demo.vue";
@@ -18,9 +47,34 @@ import Button4Demo from "./Button4.demo.vue";
 import Button5Demo from "./Button5.demo.vue";
 import Button6Demo from "./Button6.demo.vue";
 import Button7Demo from "./Button7.demo.vue";
+import { columns } from "../../lib/data";
+import Attr from "../Attr.vue";
 export default {
-  components: { Demo },
+  components: { Demo, Attr },
   setup() {
+    const data = [
+      {
+        params: "size",
+        desc: "尺寸",
+        type: "string",
+        select: "normal / small / mini",
+        default: "normal",
+      },
+      {
+        params: "theme",
+        desc: "按钮类型",
+        type: "string",
+        select: "primary / success / warning / info / danger / text",
+        default: "primary",
+      },
+      {
+        params: "loading",
+        desc: "加载中",
+        type: "boolean",
+        select: "false / true",
+        default: "false",
+      },
+    ];
     return {
       Button1Demo,
       Button2Demo,
@@ -28,7 +82,9 @@ export default {
       Button4Demo,
       Button5Demo,
       Button6Demo,
-      Button7Demo
+      Button7Demo,
+      columns,
+      data,
     };
   },
 };
