@@ -83,7 +83,7 @@ export default {
 aside {
   transform: translateX(-160px);
   overflow: auto;
-  background: rgb(179, 224, 241);
+  background: rgb(198, 229, 240);
   width: 160px;
   padding: 16px 0;
   position: fixed;
@@ -105,7 +105,7 @@ aside {
         text-decoration: none;
       }
       .router-link-active {
-        background: white;
+        background: rgb(186, 252, 173);
       }
     }
   }

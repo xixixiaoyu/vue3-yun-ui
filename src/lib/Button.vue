@@ -185,6 +185,63 @@ $grey: grey;
       }
     }
   }
+
+  &.gulu-theme-warning {
+    background: #f3dd8d;
+    color: #4a4444;
+    &:hover,
+    &:focus {
+      border-color: #ebd27a;
+      color: #524f4f;
+      background-color: #f7e4a4;
+    }
+  }
+
+  &.gulu-theme-primary {
+    background: #8abae2;
+    color: #eeeeee;
+    &:hover,
+    &:focus {
+      color: #eeeeee;
+      background-color: #72a5cf;
+    }
+  }
+  &.gulu-theme-info {
+    background: #52616b;
+    border: 1px solid #393e46;
+    color: #eeeeee;
+    &:hover,
+    &:focus {
+      color: #eeeeee;
+      border-color: #222831;
+      background-color: #6c777d;
+    }
+  }
+
+  &.gulu-theme-success {
+    background: #4ecca3;
+    border: 1px solid #393e46;
+    color: #eeeeee;
+    &:hover,
+    &:focus {
+      color: #eeeeee;
+      border-color: #222831;
+      background-color: #6be3bc;
+    }
+  }
+
+  &.gulu-theme-danger {
+    background: #d72323;
+    border: 1px solid #d72323;
+    color: #eeeeee;
+    &:hover,
+    &:focus {
+      color: #eeeeee;
+      border-color: #dd5656;
+      background-color: #dd5656;
+    }
+  }
+
   &.gulu-theme-link,
   &.gulu-theme-text {
     &[disabled] {
@@ -192,6 +249,7 @@ $grey: grey;
       color: $grey;
     }
   }
+
   > .gulu-loadingIndicator {
     width: 14px;
     height: 14px;
@@ -315,5 +373,4 @@ $grey: grey;
     transform: rotate(240deg);
   }
 }
-
 </style>
