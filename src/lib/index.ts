@@ -4,4 +4,8 @@ export { default as Tabs } from './Tabs.vue';
 export { default as Tab } from './Tab.vue';
 export { default as Dialog } from './Dialog.vue';
 export { default as Step } from './Step.vue';
+export { default as From } from './Form/Form.vue';
+export { default as FormItem } from './Form/FormItem.vue';
+export { default as Input } from './Form/Input.vue';
+export { default as button } from './Form/Button.vue';
 export { openDialog as openDialog } from './openDialog';

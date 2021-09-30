@@ -32,6 +32,12 @@
           <li>
             <router-link to="/doc/step">Step 组件</router-link>
           </li>
+          <li>
+            <router-link to="/doc/form">Form 组件</router-link>
+          </li>
+          <li>
+            <router-link to="/doc/form">upLoad 组件</router-link>
+          </li>
         </ol>
       </aside>
       <main>
