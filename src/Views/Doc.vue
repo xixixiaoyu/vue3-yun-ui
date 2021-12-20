@@ -1,8 +1,8 @@
 <template>
   <div class="layout">
     <Topnav class="nav" toggleMenuButtonVisible />
-    <div class="content" :class="{'open':menuVisible}">
-      <aside  :class="{'open':menuVisible }">
+    <div class="content" :class="{ open: menuVisible }">
+      <aside :class="{ open: menuVisible }">
         <h2>文档</h2>
         <ol>
           <li>
@@ -71,9 +71,8 @@ export default {
     flex-grow: 1;
     padding-top: 60px;
     padding-left: 156px;
-   
+
     @media (max-width: 500px) {
-      
       padding-left: 0;
     }
   }
@@ -114,7 +113,7 @@ aside {
         text-decoration: none;
       }
       .router-link-active {
-        background: rgb(186, 252, 173);
+        background: #e8ded8;
       }
     }
   }
