@@ -6,7 +6,7 @@
         <h2 class="title"><span>Y</span>un-UI</h2>
         <h3>简约 轻巧 好用</h3>
         <p class="actions">
-          <a href="https://github.com/xixixiaoyu/vue3-yun-ui">GitHub</a>
+          <a href="https://github.com/xixixiaoyu/vue3-yun-ui" target="_blank">GitHub</a>
           <router-link to="/doc">开始</router-link>
         </p>
       </div>
@@ -68,6 +68,17 @@ $color: #039994;
     background: transparent;
     border-bottom: none;
     box-shadow: none;
+  }
+  a {
+    margin: 0 8px;
+    background: $green;
+    color: white;
+    display: inline-block;
+    padding: 8px 24px;
+    border-radius: $border-radius;
+    &:hover {
+      text-decoration: none;
+    }
   }
 }
 
@@ -146,17 +157,6 @@ $color: #039994;
         grid-area: text;
       }
     }
-  }
-}
-a {
-  margin: 0 8px;
-  background: $green;
-  color: white;
-  display: inline-block;
-  padding: 8px 24px;
-  border-radius: $border-radius;
-  &:hover {
-    text-decoration: none;
   }
 }
 </style>
