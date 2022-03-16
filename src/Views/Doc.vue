@@ -38,6 +38,9 @@
           <li>
             <router-link to="/doc/layout">Layout 组件</router-link>
           </li>
+          <li>
+            <router-link to="/doc/card">Card 组件</router-link>
+          </li>
         </ol>
       </aside>
       <main>

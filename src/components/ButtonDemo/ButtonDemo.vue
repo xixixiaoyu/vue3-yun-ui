@@ -10,17 +10,7 @@
   <Demo
     :component="Button5Demo"
     title="加载中状态"
-    description="添加 loading 属性即可让按钮处于加载状态"
-  />
-  <Demo
-    :component="Button6Demo"
-    title="加载中状态"
-    description="添加 sword-loading 属性即可让按钮处于加载状态，添加 sword-loaded 属性加载完毕"
-  />
-  <Demo
-    :component="Button7Demo"
-    title="加载中状态"
-    description="添加 circle-loading 属性即可让按钮处于加载状态"
+    description="添加 loading、sword-loading、circle-loading 属性即可让按钮处于加载状态，添加可选的 sword-loaded 属性加载完毕"
   />
 
   <Attr :columns="columns" :data="data" />
@@ -32,8 +22,6 @@ import Button2Demo from "./Button2.demo.vue";
 import Button3Demo from "./Button3.demo.vue";
 import Button4Demo from "./Button4.demo.vue";
 import Button5Demo from "./Button5.demo.vue";
-import Button6Demo from "./Button6.demo.vue";
-import Button7Demo from "./Button7.demo.vue";
 import { columns } from "../../lib/data";
 import Attr from "../Attr.vue";
 export default {
@@ -96,8 +84,6 @@ export default {
       Button3Demo,
       Button4Demo,
       Button5Demo,
-      Button6Demo,
-      Button7Demo,
       columns,
       data,
     };

@@ -18,7 +18,7 @@ export default {
     },
     description: {
       type: String,
-      default: "组件功能描述",
+      default: "",
     },
     component: {
       type: Object,
@@ -31,7 +31,6 @@ export default {
 .demo-container {
   //padding: 40px;
   h2 {
-    font-weight: 400;
     color: #1f2f3d;
     font-size: 22px;
     margin: 55px 0 20px;

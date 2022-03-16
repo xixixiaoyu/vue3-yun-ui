@@ -17,15 +17,15 @@
           <svg>
             <use xlink:href="#icon-vue"></use>
           </svg>
-          <h3>基于 Vue 3</h3>
+          <h3>基于 Vue3</h3>
           <p>使用最新 Vue3 Composition API</p>
         </li>
         <li>
           <svg>
             <use xlink:href="#icon-vite"></use>
           </svg>
-          <h3>基于 Vite</h3>
-          <p>官网基于 Vite 构建</p>
+          <h3>基于 Vite2</h3>
+          <p>官网基于 Vite2.x 构建</p>
         </li>
         <li>
           <svg>
@@ -57,7 +57,7 @@ $green: #02bcb0;
 $border-radius: 4px;
 $color: #039994;
 .topnavAndBanner {
-  background: linear-gradient(145deg, rgba(227, 255, 253, 1) 0%, rgba(183, 233, 230, 1) 100%);
+  background: linear-gradient(145deg, rgb(168, 228, 251), rgb(194, 224, 236));
   clip-path: ellipse(80% 60% at 50% 40%);
 }
 .features {

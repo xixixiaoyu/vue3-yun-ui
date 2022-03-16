@@ -4,7 +4,7 @@
 
 <template>
   <div>
-    <Step :count="count" :active="active" width="80%"></Step>
+    <Step :count="count" :active="active" width="90%"></Step>
     <Button @click="next">点击下一步</Button>
   </div>
 </template>

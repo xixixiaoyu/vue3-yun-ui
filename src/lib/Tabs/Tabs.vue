@@ -25,7 +25,7 @@
 </template>
 
 <script>
-import { computed, ref, watchEffect, onMounted } from "vue";
+import { computed, ref, watchEffect } from "vue";
 import Tab from "./Tab.vue";
 export default {
   props: {
@@ -37,21 +37,17 @@ export default {
     const selectedItem = ref(null);
     const indicator = ref(null);
     const container = ref(null);
-    onMounted(() => {
-      watchEffect(
-        () => {
-          const { width } = selectedItem.value.getBoundingClientRect();
-          indicator.value.style.width = width + "px";
-          const { left: left1 } = container.value.getBoundingClientRect();
-          const { left: left2 } = selectedItem.value.getBoundingClientRect();
-          const left = left2 - left1;
-          indicator.value.style.left = left + "px";
-        },
-        {
-          flush: "post",
-        }
-      );
-    });
+    watchEffect(
+      () => {
+        const { width } = selectedItem.value.getBoundingClientRect();
+        indicator.value.style.width = width + "px";
+        const { left: left1 } = container.value.getBoundingClientRect();
+        const { left: left2 } = selectedItem.value.getBoundingClientRect();
+        const left = left2 - left1;
+        indicator.value.style.left = left + "px";
+      },
+      { flush: "post" }
+    );
 
     const defaults = context.slots.default();
 
@@ -113,7 +109,7 @@ $border-color: #d9d9d9;
       background: $blue;
       left: 0;
       bottom: -1px;
-      width: 100px;
+      width: 0;
       transition: all 250ms;
     }
   }
@@ -125,6 +121,6 @@ $border-color: #d9d9d9;
 .gulu-tabs-nav-item.yun-tab-disabled {
   user-select: none;
   color: #999;
-  cursor: not-allowed;
+  pointer-events: none;
 }
 </style>
