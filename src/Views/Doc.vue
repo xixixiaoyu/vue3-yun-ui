@@ -6,13 +6,13 @@
         <h2>文档</h2>
         <ol>
           <li>
-            <router-link to="/doc/intro">介绍</router-link>
+            <router-link to="/doc/get-started">介绍</router-link>
           </li>
           <li>
             <router-link to="/doc/install">安装</router-link>
           </li>
           <li>
-            <router-link to="/doc/get-started">开始使用</router-link>
+            <router-link to="/doc/intro">开始使用</router-link>
           </li>
         </ol>
         <h2>组件列表</h2>
@@ -91,33 +91,41 @@ export default {
 aside {
   transform: translateX(-160px);
   overflow: auto;
-  background: rgb(198, 229, 240);
+  background: #fff;
   width: 160px;
   padding: 16px 0;
   position: fixed;
   top: 53px;
   left: 0;
-  padding-top: 70px;
+  // padding-top: 70px;
   height: 100%;
   z-index: 30;
   transition: 250ms;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
   > h2 {
-    margin-bottom: 4px;
+    margin-bottom: 6px;
     padding: 0 16px;
+    font-weight: bold;
   }
   > ol {
     > li {
+      text-align: left;
+      margin: 4px 0;
       > a {
         display: block;
         padding: 4px 16px;
         text-decoration: none;
       }
       .router-link-active {
-        background: #e8ded8;
+        background: #fff;
+        color: #36b1bf;
+        text-decoration: underline;
+        font-weight: 600;
       }
     }
   }
 }
+
 main {
   overflow: auto;
 }

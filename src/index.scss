@@ -1,3 +1,8 @@
+#app {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #2c3e50;
+}
 * {
   margin: 0;
   padding: 0;
@@ -15,30 +20,30 @@ a {
     cursor: pointer;
   }
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-weight: normal;
-}
 
 body {
-  font-size: 16px;
+  color: #130844;
   line-height: 1.5;
-  color: #1d2c40;
-  // 为什么这样写 font-family
-  // 答案见 https://github.com/zenozeng/fonts.css/
-  font-family: -apple-system, "Noto Sans", "Helvetica Neue", Helvetica,
-    "Nimbus Sans L", Arial, "Liberation Sans", "PingFang SC", "Hiragino Sans GB",
-    "Noto Sans CJK SC", "Source Han Sans SC", "Source Han Sans CN",
-    "Microsoft YaHei", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti",
+  font-size: 16px;
+  min-width: 300px;
+  overflow-x: hidden;
+  font-family: -apple-system, "Noto Sans", "Helvetica Neue", Helvetica, "Nimbus Sans L", Arial,
+    "Liberation Sans", "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC", "Source Han Sans SC",
+    "Source Han Sans CN", "Microsoft YaHei", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti",
     SimHei, "WenQuanYi Zen Hei Sharp", sans-serif;
 }
+
 .icon {
-  width: 1em; height: 1em;
+  width: 1em;
+  height: 1em;
   vertical-align: -0.15em;
   fill: currentColor;
   overflow: hidden;
+}
+
+body,
+html {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }

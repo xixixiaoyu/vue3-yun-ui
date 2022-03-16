@@ -21,5 +21,5 @@ export default {
 </script>
 
 <style lang="scss">
-@import 'prismjs/themes/prism.css';
-</style>  
+@import "prismjs/themes/prism.css";
+</style>

@@ -12,21 +12,20 @@
 import { Step, Button } from "../../lib/index";
 import { ref } from "vue";
 export default {
-  components: {Step, Button},
+  components: { Step, Button },
   setup() {
     const count = ref(4);
     const active = ref(0);
     const next = () => {
-      active.value ++;
-    }
+      active.value++;
+    };
     return {
       count,
       active,
-      next
-    }
-  }
-}
+      next,
+    };
+  },
+};
 </script>
 
-<style lang="scss">
-</style>
+<style lang="scss"></style>

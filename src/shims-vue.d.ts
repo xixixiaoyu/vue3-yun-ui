@@ -1,10 +1,15 @@
-declare module '*.vue' {
-  import { ComponentOptions } from 'vue'
-  const componentOptions: ComponentOptions
-  export default componentOptions
+declare module "*.vue" {
+  import { ComponentOptions } from "vue";
+  const componentOptions: ComponentOptions;
+  export default componentOptions;
 }
 
-declare module '*.md' {
-  const str: string
-  export default str
+declare module "*.md" {
+  const str: string;
+  export default str;
+}
+
+declare module "*.json" {
+  const json: string;
+  export default json;
 }
