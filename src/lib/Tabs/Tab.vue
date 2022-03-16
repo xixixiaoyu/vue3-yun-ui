@@ -2,8 +2,8 @@
   <div><slot /></div>
 </template>
 
-<script lang="ts">
+<script>
 export default {
-  name: 'YunTab'
-}
+  name: "YunTab",
+};
 </script>

@@ -14,30 +14,31 @@
 
 <script>
 export default {
-  name: 'LgSteps',
+  name: "LgSteps",
   props: {
     count: {
       type: Number,
-      default: 3
+      default: 3,
     },
     active: {
       type: Number,
-      default: 0
+      default: 0,
     },
     activeColor: {
       type: String,
-      default: 'red'
+      default: "green",
     },
     defaultColor: {
       type: String,
-      default: 'green'
-    }
-  }
-}
+      default: "skyblue",
+    },
+  },
+};
 </script>
 
 <style>
 .lg-steps {
+  padding: 20px 0;
   position: relative;
   display: flex;
   justify-content: space-between;

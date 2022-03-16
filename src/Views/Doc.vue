@@ -4,7 +4,7 @@
     <div class="content" :class="{ open: menuVisible }">
       <aside :class="{ open: menuVisible }">
         <h2>文档</h2>
-        <ol>
+        <ol class="intro">
           <li>
             <router-link to="/doc/get-started">介绍</router-link>
           </li>
@@ -32,12 +32,6 @@
           <li>
             <router-link to="/doc/step">Step 组件</router-link>
           </li>
-          <li>
-            <router-link to="/doc/form">Form 组件</router-link>
-          </li>
-          <li>
-            <router-link to="/doc/form">upLoad 组件</router-link>
-          </li>
         </ol>
       </aside>
       <main>
@@ -47,13 +41,13 @@
   </div>
 </template>
 
-<script lang="ts">
+<script>
 import Topnav from "../components/TopNav.vue";
-import { inject, Ref } from "vue";
+import { inject } from "vue";
 export default {
   components: { Topnav },
   setup() {
-    const menuVisible = inject<Ref<boolean>>("menuVisible"); // get
+    const menuVisible = inject("menuVisible"); // get
     return { menuVisible };
   },
 };
@@ -103,14 +97,15 @@ aside {
   transition: 250ms;
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
   > h2 {
-    margin-bottom: 6px;
-    padding: 0 16px;
+    margin-bottom: 8px;
+    padding: 0 20px;
     font-weight: bold;
   }
   > ol {
     > li {
       text-align: left;
-      margin: 4px 0;
+      text-indent: 6px;
+      margin: 6px 0;
       > a {
         display: block;
         padding: 4px 16px;
@@ -132,5 +127,9 @@ main {
 
 aside.open {
   transform: translateX(0);
+}
+
+.intro {
+  line-height: 1.6;
 }
 </style>

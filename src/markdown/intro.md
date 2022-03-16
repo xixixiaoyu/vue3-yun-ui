@@ -1,10 +1,12 @@
 # 开始使用
+
 请先[安装](#/doc/install)本组件库。
 
 然后在你的代码中写入下面的代码
 
 ```
-import {Button, Tabs, Tab, Switch, Dialog, openDialog} from "z-vue3-ui"
+import { CoButton, CoTabs, CoSwitch, CoDialog, openDialog } from "coast-ui-vue3";
+import "coast-ui-vue3/package/coast-ui.css";
 ```
 
 就可以使用我提供的组件了。
@@ -16,13 +18,13 @@ import {Button, Tabs, Tab, Switch, Dialog, openDialog} from "z-vue3-ui"
 ```
 <template>
   <div>
-    <Button>按钮</Button>
+    <co-button>按钮</co-button>
   </div>
 </template>
 <script>
-import {Button, Tabs, Tab, Switch, Dialog, openDialog} from "z-vue3-ui"
+import {CoButton, CoTabs, CoSwitch, CoDialog} from "coast-ui-vue3"
 export default {
-  components: {Button}
+  components: { CoButton }
 }
 </script>
 ```

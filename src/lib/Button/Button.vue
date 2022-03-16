@@ -12,7 +12,7 @@
     <slot />
   </button>
 </template>
-<script lang="ts">
+<script>
 import { computed } from "vue";
 export default {
   props: {

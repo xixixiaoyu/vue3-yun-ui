@@ -23,18 +23,13 @@
       <div class="gulu-tabs-nav-indicator" ref="indicator"></div>
     </div>
     <div class="gulu-tabs-content">
-      <component
-        class="gulu-tabs-content-item"
-        :is="current"
-        :key="current.props.title"
-      />
+      <component class="gulu-tabs-content-item" :is="current" :key="current.props.title" />
     </div>
   </div>
 </template>
 
-<script lang="ts">
+<script>
 import { computed, ref, watchEffect, onMounted } from "vue";
-
 import Tab from "./Tab.vue";
 export default {
   props: {
@@ -43,9 +38,9 @@ export default {
     },
   },
   setup(props, context) {
-    const selectedItem = ref<HTMLDivElement>(null);
-    const indicator = ref<HTMLDivElement>(null);
-    const container = ref<HTMLDivElement>(null);
+    const selectedItem = ref(null);
+    const indicator = ref(null);
+    const container = ref(null);
     onMounted(() => {
       watchEffect(
         () => {
@@ -64,7 +59,6 @@ export default {
 
     const defaults = context.slots.default();
     defaults.forEach((tag) => {
-      // @ts-ignore
       if (tag.type.name !== Tab.name) {
         throw new Error("Tabs 子标签必须是 Tab");
       }

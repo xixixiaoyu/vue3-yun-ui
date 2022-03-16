@@ -21,8 +21,8 @@
   </template>
 </template>
 
-<script lang="ts">
-import Button from "./Button.vue";
+<script>
+import Button from "../Button/Button.vue";
 export default {
   components: {
     Button,
@@ -63,7 +63,7 @@ export default {
     };
     const cancel = () => {
       // props.cancel?.();
-      props.cancel && props.cancel()
+      props.cancel && props.cancel();
       close();
     };
 

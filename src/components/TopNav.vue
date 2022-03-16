@@ -17,8 +17,8 @@
     </svg>
   </div>
 </template>
-<script lang="ts">
-import { inject, Ref } from "vue";
+<script>
+import { inject } from "vue";
 export default {
   props: {
     toggleMenuButtonVisible: {
@@ -27,7 +27,7 @@ export default {
     },
   },
   setup() {
-    const menuVisible = inject<Ref<boolean>>("menuVisible"); // get
+    const menuVisible = inject("menuVisible"); // get
     const toggleMenu = () => {
       menuVisible.value = !menuVisible.value;
     };
@@ -87,8 +87,8 @@ $color: #007974;
     > svg {
       position: relative;
       top: 8px;
-      width: 32px;
-      height: 32px;
+      width: 30px;
+      height: 30px;
       margin-right: 8px;
       animation: movex 10s linear infinite alternate;
     }

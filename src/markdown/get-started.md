@@ -6,7 +6,7 @@ Yun-ui 是一款基于 Vue 3 、 TypeScript、 Vite 的 UI 组件库，因此拥
 
 文档完整，拥有完整的组件使用示例代码。
 
-源代码放在了 github：https://github.com/xixixiaoyu/vue3-yun-ui 上，并实现了自动化部署脚本
+源代码放在了 github：https://github.com/xixixiaoyu/vue3-yun-ui 上
 
 历史提交信息非常规范，你可以按提交的顺序逐个查看；你也可以直接查看每个组件的源代码和示例，运行方法见 README.md。
 

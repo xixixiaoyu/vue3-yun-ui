@@ -7,7 +7,7 @@
   </div>
 </template>
 
-<script lang="ts">
+<script>
 import CodePer from "./Codeper.vue";
 export default {
   name: "demo-doc",

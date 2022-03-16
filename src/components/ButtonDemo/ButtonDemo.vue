@@ -1,20 +1,8 @@
 <template>
-  <div>Button 示例</div>
-  <Demo
-    :component="Button1Demo"
-    title="基本用法"
-    description="开关按钮的基本用法"
-  />
-  <Demo
-    :component="Button2Demo"
-    title="按钮尺寸"
-    description="提供三种不同尺寸的按钮"
-  />
-  <Demo
-    :component="Button3Demo"
-    title="按钮类型"
-    description="提供三种不同类型的按钮"
-  />
+  <h1>Button 示例</h1>
+  <Demo :component="Button1Demo" title="基本用法" description="开关按钮的基本用法" />
+  <Demo :component="Button2Demo" title="按钮尺寸" description="提供三种不同尺寸的按钮" />
+  <Demo :component="Button3Demo" title="按钮类型" description="提供三种不同类型的按钮" />
   <Demo
     :component="Button4Demo"
     title="不可用状态"
@@ -38,7 +26,7 @@
 
   <Attr :columns="columns" :data="data" />
 </template>
-<script lang="ts">
+<script>
 import Demo from "../Demo.vue";
 import Button1Demo from "./Button1.demo.vue";
 import Button2Demo from "./Button2.demo.vue";

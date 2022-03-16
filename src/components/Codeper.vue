@@ -10,9 +10,7 @@
       </div>
       <div class="demo-block-control" @click="toggle">
         <svg class="down">
-          <use
-            :xlink:href="showCode === false ? '#icon-up' : '#icon-down'"
-          ></use>
+          <use :xlink:href="showCode === false ? '#icon-up' : '#icon-down'"></use>
         </svg>
         <transition name="fade">
           <span class="show-world" v-show="show">{{
@@ -24,10 +22,10 @@
   </div>
 </template>
 
-<script lang="ts">
+<script>
 import { ref } from "vue";
-import 'prismjs';
-const Prism = (window as any).Prism;
+import "prismjs";
+const Prism = window.Prism;
 export default {
   name: "code-per",
   props: {
@@ -108,8 +106,7 @@ pre {
   border-radius: 3px;
   transition: 0.2s;
   &:hover {
-    box-shadow: 0 0 8px 0 rgba(232, 237, 250, 0.6),
-      0 2px 4px 0 rgba(232, 237, 250, 0.5);
+    box-shadow: 0 0 8px 0 rgba(232, 237, 250, 0.6), 0 2px 4px 0 rgba(232, 237, 250, 0.5);
     .down {
       transform: translateX(-35px);
     }
@@ -128,11 +125,11 @@ pre {
     height: 44px;
     box-sizing: border-box;
     background-color: #fff;
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
     text-align: center;
     margin-top: -1px;
-    color: #d3dce6;
+    color: #bcc6d3;
     cursor: pointer;
     position: relative;
     text-align: center;

@@ -2,13 +2,13 @@
   <article class="markdown-body" v-html="content"></article>
 </template>
 
-<script lang="ts">
+<script>
 export default {
- props: {
+  props: {
     content: {
       type: String,
-      required: true
-    }
-  }
+      required: true,
+    },
+  },
 };
 </script>
