@@ -1,9 +1,10 @@
 <demo>
 支持步骤条
 </demo>
+
 <template>
   <div>
-    <Step :count="count" :active="active"></Step>
+    <Step :count="count" :active="active" width="80%"></Step>
     <Button @click="next">点击下一步</Button>
   </div>
 </template>
@@ -27,5 +28,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss"></style>

@@ -1,5 +1,8 @@
 <template>
   <div class="layout">
+    <Teleport to="body">
+      <div class="aside-overlay" v-show="menuVisible" @click="closeOverlay"></div>
+    </Teleport>
     <Topnav class="nav" toggleMenuButtonVisible />
     <div class="content" :class="{ open: menuVisible }">
       <aside :class="{ open: menuVisible }">
@@ -32,6 +35,9 @@
           <li>
             <router-link to="/doc/step">Step 组件</router-link>
           </li>
+          <li>
+            <router-link to="/doc/layout">Layout 组件</router-link>
+          </li>
         </ol>
       </aside>
       <main>
@@ -48,12 +54,26 @@ export default {
   components: { Topnav },
   setup() {
     const menuVisible = inject("menuVisible"); // get
-    return { menuVisible };
+
+    const closeOverlay = () => {
+      menuVisible.value = false;
+    };
+
+    return { menuVisible, closeOverlay };
   },
 };
 </script>
 
 <style lang="scss" scoped>
+$asideIndex: 10;
+.aside-overlay {
+  position: fixed;
+  top: 0;
+  left: 160px;
+  right: 0;
+  bottom: 0;
+  z-index: $asideIndex;
+}
 .layout {
   display: flex;
   flex-direction: column;

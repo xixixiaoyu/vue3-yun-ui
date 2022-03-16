@@ -13,6 +13,7 @@
 </template>
 
 <script>
+import { computed } from "vue";
 export default {
   name: "LgSteps",
   props: {
@@ -32,12 +33,23 @@ export default {
       type: String,
       default: "skyblue",
     },
+    width: {
+      type: String,
+      default: "100%",
+    },
+  },
+  setup(props) {
+    const color = computed(() => props.width);
+    return {
+      color,
+    };
   },
 };
 </script>
 
 <style>
 .lg-steps {
+  width: v-bind(color);
   padding: 20px 0;
   position: relative;
   display: flex;

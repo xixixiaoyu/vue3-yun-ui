@@ -50,11 +50,7 @@ $green: #02bcb0;
 $border-radius: 4px;
 $color: #039994;
 .topnavAndBanner {
-  background: linear-gradient(
-    145deg,
-    rgba(227, 255, 253, 1) 0%,
-    rgba(183, 233, 230, 1) 100%
-  );
+  background: linear-gradient(145deg, rgba(227, 255, 253, 1) 0%, rgba(183, 233, 230, 1) 100%);
   clip-path: ellipse(80% 60% at 50% 40%);
 }
 .features {
@@ -97,7 +93,6 @@ $color: #039994;
       > h3 {
         grid-area: title;
         font-size: 28px;
-       
       }
       > p {
         grid-area: text;

@@ -43,7 +43,6 @@ $color: #007974;
 .topnav {
   color: $color;
   display: flex;
-
   padding: 2px;
   position: fixed;
   top: 0;
@@ -70,7 +69,7 @@ $color: #007974;
   }
   > .logo {
     display: flex;
-    max-width: 8em;
+    max-width: 9em;
     margin-right: auto;
     vertical-align: middle;
 
@@ -87,10 +86,10 @@ $color: #007974;
     > svg {
       position: relative;
       top: 8px;
-      width: 30px;
-      height: 30px;
+      width: 36px;
+      height: 36px;
       margin-right: 8px;
-      animation: movex 10s linear infinite alternate;
+      animation: movex 15s linear infinite alternate;
     }
     &:hover {
       animation-play-state: paused;

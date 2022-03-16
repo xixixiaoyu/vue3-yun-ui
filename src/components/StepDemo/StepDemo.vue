@@ -4,7 +4,7 @@
     <Demo
       :component="Step1Demo"
       title="步骤条组件"
-      description="添加 loading 属性即可让按钮处于加载状态"
+      description="添加 count 和 active 属性即可控制步骤条"
     />
 
     <Attr :columns="columns" :data="data" />
@@ -17,12 +17,12 @@ import Step1Demo from "./Step1.demo.vue";
 import { columns } from "../../lib/data";
 import Attr from "../Attr.vue";
 export default {
-  components: { Demo, Attr },
+  components: { Demo, Attr, Step1Demo },
   setup() {
     const data = [
       {
         params: "count",
-        desc: "几个步骤",
+        desc: "步骤数量",
         type: "number",
         select: "number",
         default: "3",
