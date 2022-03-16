@@ -1,13 +1,14 @@
 <demo>
 一键打开 Dialog
 </demo>
+
 <template>
   <div>
     <Button @click="showDialog">另一种方式对话框</Button>
   </div>
 </template>
 
-<script lang="ts">
+<script>
 import { Button, openDialog } from "../../lib/index";
 import { h } from "vue";
 export default {

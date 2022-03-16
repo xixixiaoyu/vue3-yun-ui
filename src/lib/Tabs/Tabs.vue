@@ -1,24 +1,20 @@
 <template>
   <div>Tabs 组件</div>
-  <!-- <component :is="defaults[0]"></component>
-  <component :is="defaults[1]"></component> -->
-  <!-- <div v-for="(t, index) in title" :key="index">{{ t }}</div>
-  <component v-for="(c, index) in defaults" :is="c" :key="index"></component> -->
   <div class="gulu-tabs">
     <div class="gulu-tabs-nav" ref="container">
       <div
         class="gulu-tabs-nav-item"
-        v-for="(t, index) in titles"
+        v-for="(tab, index) in subElements"
         :key="index"
-        :class="{ selected: t === selected }"
-        @click="select(t)"
+        :class="{ selected: tab.title === selected, 'yun-tab-disabled': tab.disabled }"
+        @click="select(tab.title)"
         :ref="
           (el) => {
-            if (t === selected) selectedItem = el;
+            if (tab.title === selected) selectedItem = el;
           }
         "
       >
-        {{ t }}
+        {{ tab.title }}
       </div>
       <div class="gulu-tabs-nav-indicator" ref="indicator"></div>
     </div>
@@ -58,25 +54,20 @@ export default {
     });
 
     const defaults = context.slots.default();
+
+    const subElements = defaults.map((tag) => ({
+      title: tag.props.title,
+      disabled: tag.props.disabled === true || tag.props.disabled === "",
+    }));
+
     defaults.forEach((tag) => {
       if (tag.type.name !== Tab.name) {
         throw new Error("Tabs 子标签必须是 Tab");
       }
     });
 
-    // const current = computed(() => {
-    //   console.log("重新 return");
-    //   return defaults.filter((tag) => {
-    //     return tag.props.title === props.selected;
-    //   })[0];
-    // });
-
     const current = computed(() => {
       return defaults.find((tag) => tag.props.title === props.selected);
-    });
-
-    const titles = defaults.map((tag) => {
-      return tag.props.title;
     });
 
     const select = (title) => {
@@ -84,12 +75,12 @@ export default {
     };
     return {
       defaults,
-      titles,
       select,
       selectedItem,
       indicator,
       container,
       current,
+      subElements,
     };
   },
 };
@@ -129,5 +120,11 @@ $border-color: #d9d9d9;
   &-content {
     padding: 8px 0;
   }
+}
+
+.gulu-tabs-nav-item.yun-tab-disabled {
+  user-select: none;
+  color: #999;
+  cursor: not-allowed;
 }
 </style>

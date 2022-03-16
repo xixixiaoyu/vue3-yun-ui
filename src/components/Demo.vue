@@ -1,6 +1,6 @@
 <template>
   <div class="demo-container">
-    <h2>{{ title }}</h2>
+    <h2>{{ title || component.__sourceCodeTitle }}</h2>
     <p>{{ description }}</p>
     <!--展示代码的地方-->
     <code-per ref="codePer" :component="component"></code-per>
@@ -15,7 +15,6 @@ export default {
   props: {
     title: {
       type: String,
-      default: "组件功能",
     },
     description: {
       type: String,

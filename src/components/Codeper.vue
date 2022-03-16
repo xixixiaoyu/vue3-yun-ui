@@ -72,8 +72,7 @@ export default {
       "javascript"
     );
     this.$nextTick(() => {
-      const codePer = this.$refs.codePer;
-      let { height } = codePer.getBoundingClientRect();
+      let { height } = this.$refs.codePer.getBoundingClientRect();
       this.computedHeight = height;
     });
   },
@@ -104,7 +103,7 @@ pre {
   overflow: hidden;
   border: 1px solid #ebebeb;
   border-radius: 3px;
-  transition: 0.2s;
+  transition: 300ms;
   &:hover {
     box-shadow: 0 0 8px 0 rgba(232, 237, 250, 0.6), 0 2px 4px 0 rgba(232, 237, 250, 0.5);
     .down {

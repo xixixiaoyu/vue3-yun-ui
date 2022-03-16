@@ -30,7 +30,7 @@ export default {
       x.value = !x.value;
     };
     const f1 = () => {
-      return false;
+      // return false;
     };
     const f2 = () => {};
     return {

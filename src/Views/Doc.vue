@@ -1,7 +1,7 @@
 <template>
   <div class="layout">
     <Teleport to="body">
-      <div class="aside-overlay" v-show="menuVisible" @click="closeOverlay"></div>
+      <div class="aside-overlay" v-show="menuVisible && isPhone" @click="closeOverlay"></div>
     </Teleport>
     <Topnav class="nav" toggleMenuButtonVisible />
     <div class="content" :class="{ open: menuVisible }">
@@ -49,17 +49,17 @@
 
 <script>
 import Topnav from "../components/TopNav.vue";
-import { inject } from "vue";
+import { inject, computed } from "vue";
 export default {
   components: { Topnav },
   setup() {
+    const isPhone = computed(() => document.documentElement.clientWidth < 500);
     const menuVisible = inject("menuVisible"); // get
-
     const closeOverlay = () => {
       menuVisible.value = false;
     };
 
-    return { menuVisible, closeOverlay };
+    return { menuVisible, closeOverlay, isPhone };
   },
 };
 </script>

@@ -1,7 +1,11 @@
 <template>
   <h1>Dialog 示例</h1>
   <Demo :component="Dialog1Demo" title="基本用法" description="弹出一个对话框" />
-  <Demo :component="Dialog2Demo" title="函数式调用" description="隐藏dom结构，只暴露出调用的api" />
+  <Demo
+    :component="Dialog2Demo"
+    title="函数式调用"
+    description="隐藏 DOM 结构，只暴露出调用的API"
+  />
   <attr :columns="columns" :data="data"></attr>
 </template>
 
