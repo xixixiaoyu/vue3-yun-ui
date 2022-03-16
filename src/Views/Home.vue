@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="topnavAndBanner">
+    <div class="topNav-wrapper">
       <Topnav />
       <div class="banner">
         <h2 class="title"><span>Y</span>un-UI</h2>
@@ -11,44 +11,49 @@
         </p>
       </div>
     </div>
-    <div class="features">
+    <div class="content">
       <ul>
-        <li>
-          <svg>
-            <use xlink:href="#icon-vue"></use>
-          </svg>
-          <h3>基于 Vue3</h3>
-          <p>使用最新 Vue3 Composition API</p>
-        </li>
-        <li>
-          <svg>
-            <use xlink:href="#icon-vite"></use>
-          </svg>
-          <h3>基于 Vite2</h3>
-          <p>官网基于 Vite2.x 构建</p>
-        </li>
-        <li>
-          <svg>
-            <use xlink:href="#icon-ts"></use>
-          </svg>
-          <h3>基于 TypeScript</h3>
-          <p>源代码采用 TypeScript 书写</p>
-        </li>
-        <li>
-          <svg>
-            <use xlink:href="#icon-gj"></use>
-          </svg>
-          <h3>文档完整</h3>
-          <p>所有组件拥有完整的使用文档和示例</p>
+        <li v-for="item in contentList" :key="item.title">
+          <Icon :name="item.iconName" prefix="icon" class="icon" />
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.description }}</p>
         </li>
       </ul>
     </div>
   </div>
 </template>
-<script lang="ts">
+<script>
 import Topnav from "../components/Topnav.vue";
+import Icon from "../lib/Icon/Icon.vue";
 export default {
-  components: { Topnav },
+  components: { Topnav, Icon },
+  setup() {
+    return {
+      contentList: [
+        {
+          iconName: "vue",
+          title: "Vue3",
+          description: "使用了最新的 Vue3 Composition API",
+        },
+        {
+          iconName: "vite",
+          title: "Vite",
+          description: "官网基于 Vite2.x 构建",
+        },
+        {
+          iconName: "ts",
+          title: "TypeScript",
+          description: "源代码采用了 TypeScript 编写",
+        },
+
+        {
+          iconName: "gj",
+          title: "文档完整",
+          description: "所有组件拥有完整的使用文档及示例",
+        },
+      ],
+    };
+  },
 };
 </script>
 
@@ -56,16 +61,48 @@ export default {
 $green: #02bcb0;
 $border-radius: 4px;
 $color: #039994;
-.topnavAndBanner {
+.topNav-wrapper {
   background: linear-gradient(145deg, rgb(168, 228, 251), rgb(194, 224, 236));
   clip-path: ellipse(80% 60% at 50% 40%);
+  .topNav {
+    background: transparent;
+    border-bottom: none;
+    box-shadow: none;
+  }
 }
-.features {
+
+.banner {
+  padding: 100px 0 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #fff;
+  > .actions {
+    margin-top: 40px;
+    padding: 8px 0;
+    display: flex;
+    justify-content: center;
+    a {
+      display: flex;
+      align-items: center;
+      margin-right: 16px;
+    }
+    .icon {
+      margin-left: 4px;
+    }
+  }
+}
+.content {
   margin: 64px auto;
-  padding: 0 45px;
-  width: 500px;
-  > ul > li {
-    width: 100%;
+  padding: 0 16px;
+  @media (min-width: 500px) {
+    width: 500px;
+    > ul {
+      > li {
+        width: 100%;
+      }
+    }
   }
   @media (min-width: 800px) {
     width: 800px;
@@ -76,7 +113,7 @@ $color: #039994;
     }
   }
   @media (min-width: 1200px) {
-    width: 1450px;
+    width: 1200px;
     > ul {
       > li {
         width: 25%;
@@ -111,39 +148,15 @@ $color: #039994;
     }
   }
 }
-.banner {
-  color: $color;
-  padding: 100px 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  > .title span {
-    font-size: 32px;
-    font-weight: 700;
-    color: #36b1bf;
-    font-style: italic;
-    margin-right: 2px;
-    text-decoration: underline;
-  }
-
-  > h3 {
-    margin: 7px 0;
-  }
-
-  > .actions {
-    padding: 8px 0;
-    a {
-      margin: 0 8px;
-      background: $green;
-      color: white;
-      display: inline-block;
-      padding: 8px 24px;
-      border-radius: $border-radius;
-      &:hover {
-        text-decoration: none;
-      }
-    }
+a {
+  margin: 0 8px;
+  background: $green;
+  color: white;
+  display: inline-block;
+  padding: 8px 24px;
+  border-radius: $border-radius;
+  &:hover {
+    text-decoration: none;
   }
 }
 </style>
