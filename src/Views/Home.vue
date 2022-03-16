@@ -18,7 +18,14 @@
             <use xlink:href="#icon-vue"></use>
           </svg>
           <h3>基于 Vue 3</h3>
-          <p>完全使用 Vue 3 Composition API</p>
+          <p>使用最新 Vue3 Composition API</p>
+        </li>
+        <li>
+          <svg>
+            <use xlink:href="#icon-vite"></use>
+          </svg>
+          <h3>基于 Vite</h3>
+          <p>官网基于 Vite 构建</p>
         </li>
         <li>
           <svg>
@@ -31,8 +38,8 @@
           <svg>
             <use xlink:href="#icon-gj"></use>
           </svg>
-          <h3>代码易读</h3>
-          <p>每个组件的源代码都极其简洁</p>
+          <h3>文档完整</h3>
+          <p>所有组件拥有完整的使用文档和示例</p>
         </li>
       </ul>
     </div>
@@ -55,7 +62,11 @@ $color: #039994;
 }
 .features {
   margin: 64px auto;
-  padding: 0 16px;
+  padding: 0 45px;
+  width: 500px;
+  > ul > li {
+    width: 100%;
+  }
   @media (min-width: 800px) {
     width: 800px;
     > ul {
@@ -65,10 +76,10 @@ $color: #039994;
     }
   }
   @media (min-width: 1200px) {
-    width: 1200px;
+    width: 1450px;
     > ul {
       > li {
-        width: 33.3333%;
+        width: 25%;
       }
     }
   }
