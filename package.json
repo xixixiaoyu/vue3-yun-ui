@@ -6,17 +6,18 @@
     "build": "vite build"
   },
   "dependencies": {
+    "@vitejs/plugin-vue": "^2.2.4",
     "async-validator": "^4.0.3",
     "github-markdown-css": "^4.0.0",
     "marked": "^1.1.1",
     "mitt": "^3.0.0",
-    "prismjs": "^1.21.0",
+    "prismjs": "^1.27.0",
     "vue": "^3.2.31",
     "vue-router": "4.0.0-beta.3"
   },
   "devDependencies": {
     "@vue/compiler-sfc": "^3.2.31",
     "sass": "1.26.10",
-    "vite": "^1.0.0-rc.1"
+    "vite": "^2.8.6"
   }
 }
