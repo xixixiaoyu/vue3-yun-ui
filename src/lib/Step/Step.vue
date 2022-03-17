@@ -15,7 +15,7 @@
 <script>
 import { computed } from "vue";
 export default {
-  name: "LgSteps",
+  name: "YunStep",
   props: {
     count: {
       type: Number,

@@ -63,7 +63,7 @@ interface InputProps {
   size: InputSizeType;
 }
 export default defineComponent({
-  name: "CoastInput",
+  name: "YunInput",
   components: { Icon },
   props: {
     value: {

@@ -32,7 +32,7 @@ interface CardProps {
   type?: CardTypeType;
 }
 export default defineComponent({
-  name: "CoastCard",
+  name: "YunCard",
   props: {
     title: {
       type: String,

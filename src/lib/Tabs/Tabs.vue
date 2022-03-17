@@ -28,6 +28,7 @@
 import { computed, ref, watchEffect } from "vue";
 import Tab from "./Tab.vue";
 export default {
+  name: "YunTabs",
   props: {
     selected: {
       type: String,

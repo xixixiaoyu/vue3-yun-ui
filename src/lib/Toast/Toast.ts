@@ -14,12 +14,14 @@ const Toast = (options: ToastProps) => {
 };
 
 const createToast = (options: ToastProps) => {
+  const { destroyed = () => {}, ...rest } = options;
   const div = document.createElement("div");
   document.body.appendChild(div);
   const vm = createVNode(ToastConstructor, {
-    ...options,
+    ...rest,
     top: 10 + toastQueue.length * 60,
     onDestroy: () => {
+      destroyed();
       onDestroy(options.id, div);
     },
   });
@@ -31,8 +33,7 @@ const onDestroy = (id: string, wrapper: HTMLDivElement) => {
   render(null, wrapper);
   wrapper.remove();
   const currentIndex = toastQueue.findIndex((item) => {
-    const _id = item.component.props.id;
-    return _id === id;
+    return item.component.props.id === id;
   });
   if (currentIndex === -1) return;
   const h = toastQueue[currentIndex].el.offsetHeight;

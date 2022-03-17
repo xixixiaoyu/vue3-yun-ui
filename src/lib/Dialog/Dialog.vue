@@ -24,6 +24,7 @@
 <script>
 import Button from "../Button/Button.vue";
 export default {
+  name: "YunDialog",
   components: {
     Button,
   },

@@ -10,6 +10,7 @@ export interface ToastProps {
   showClose?: boolean;
   top?: number;
   id?: string;
+  destroyed?: Function;
 }
 
 export type ToastVM = VNode;

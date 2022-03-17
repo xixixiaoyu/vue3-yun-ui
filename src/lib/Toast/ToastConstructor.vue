@@ -18,7 +18,7 @@ import { computed, defineComponent, onMounted, ref } from "vue";
 import type { ToastType, ToastProps } from "./toast.d";
 import Icon from "../icon/Icon.vue";
 export default defineComponent({
-  name: "CoastToast",
+  name: "YunToast",
   components: { Icon },
   props: {
     text: {

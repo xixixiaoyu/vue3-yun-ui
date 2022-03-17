@@ -16,6 +16,9 @@ const onClick1 = () => {
     text: "一条可以关闭的消息提示，不操作五秒后我就会自动消失哦 ~",
     showClose: true,
     delay: 5,
+    destroyed() {
+      console.log("我走了");
+    },
   });
 };
 const onClick2 = () => {
@@ -23,6 +26,9 @@ const onClick2 = () => {
     text: "这是一条需要点击关闭的消息提示 ~",
     showClose: true,
     delay: 0,
+    destroyed() {
+      console.log("我走了");
+    },
   });
 };
 </script>
