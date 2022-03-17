@@ -10,6 +10,7 @@ import LayoutDemo from "./components/LayoutDemo/index.vue";
 import CardDemo from "./components/CardDemo/index.vue";
 import InputDemo from "./components/InputDemo/index.vue";
 import ToastDemo from "./components/ToastDemo/index.vue";
+import CarouselDemo from "./components/Carousel/index.vue";
 import { h } from "vue";
 import Markdown from "./components/Markdown.vue";
 import intro from "./markdown/intro.md";
@@ -39,6 +40,7 @@ export const router = createRouter({
         { path: "card", component: CardDemo },
         { path: "input", component: InputDemo },
         { path: "toast", component: ToastDemo },
+        { path: "carousel", component: CarouselDemo },
       ],
     },
   ],
