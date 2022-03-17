@@ -1,6 +1,7 @@
 <demo>
 支持 size
 </demo>
+
 <template>
   <div>
     <div>
@@ -21,11 +22,6 @@
   </div>
 </template>
 
-<script lang="ts">
+<script setup>
 import { Button } from "../../lib/index";
-export default {
-  components: {
-    Button,
-  },
-};
 </script>

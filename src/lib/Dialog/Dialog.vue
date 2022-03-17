@@ -12,8 +12,8 @@
             <slot name="content">内容</slot>
           </main>
           <footer>
-            <Button level="main" @click="ok">OK</Button>
-            <Button @click="cancel">Cancel</Button>
+            <Button level="main" @click="confirmDialog">确定</Button>
+            <Button @click="cancel">取消</Button>
           </footer>
         </div>
       </div>
@@ -27,16 +27,17 @@ export default {
   components: {
     Button,
   },
+  emits: ["closeOverlay", "update:visible"],
   props: {
     visible: {
       type: Boolean,
       default: false,
     },
-    closeOnClickOverlay: {
+    overlayClosable: {
       type: Boolean,
       default: true,
     },
-    ok: {
+    confirm: {
       type: Function,
     },
     cancel: {
@@ -49,20 +50,17 @@ export default {
     };
 
     const onClickOverlay = () => {
-      if (props.closeOnClickOverlay) {
+      if (props.overlayClosable) {
         close();
+        emit("closeOverlay");
       }
     };
-    const ok = () => {
-      // if (props.ok?.() !== false) {
-      //   close();
-      // }
-      if (props.ok && props.ok() !== false) {
+    const confirmDialog = () => {
+      if (props.confirm && props.confirm() !== false) {
         close();
       }
     };
     const cancel = () => {
-      // props.cancel?.();
       props.cancel && props.cancel();
       close();
     };
@@ -70,7 +68,7 @@ export default {
     return {
       close,
       onClickOverlay,
-      ok,
+      confirmDialog,
       cancel,
     };
   },

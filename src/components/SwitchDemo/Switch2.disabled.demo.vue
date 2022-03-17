@@ -6,18 +6,9 @@
   <Switch v-model:value="bool" disabled />
 </template>
 
-<script>
+<script setup>
 import { Switch } from "../../lib/index";
 import { ref } from "vue";
-export default {
-  components: {
-    Switch,
-  },
-  setup() {
-    const bool = ref(true);
-    return {
-      bool,
-    };
-  },
-};
+
+const bool = ref(true);
 </script>

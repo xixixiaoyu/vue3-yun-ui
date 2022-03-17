@@ -1,33 +1,40 @@
+import { createVNode, render } from "vue";
 import Dialog from "./Dialog.vue";
-import { createApp, h } from "vue";
-export const openDialog = (options) => {
-  const { title, content, ok, cancel } = options;
+
+interface Options {
+  content: string;
+  title?: string;
+  overlayClosable?: boolean;
+  confirm?: () => void;
+  cancel?: () => void;
+}
+
+export const openDialog = (options: Options) => {
+  const { title, content, overlayClosable, confirm, cancel } = options;
   const div = document.createElement("div");
   document.body.appendChild(div);
   const close = () => {
-    app.unmount(div);
+    render(null, div);
     div.remove();
   };
-  const app = createApp({
-    render() {
-      return h(
-        Dialog,
-        {
-          visible: true,
-          "onUpdate:visible": (newVisible) => {
-            if (newVisible === false) {
-              close();
-            }
-          },
-          ok,
-          cancel,
-        },
-        {
-          title,
-          content,
+  const vm = createVNode(
+    Dialog,
+    {
+      visible: true,
+      title,
+      overlayClosable,
+      confirm,
+      cancel,
+      "onUpdate:visible": (newVisible: boolean) => {
+        if (newVisible === false) {
+          close();
         }
-      );
+      },
     },
-  });
-  app.mount(div);
+    {
+      default: () => content,
+    }
+  );
+  render(vm, div);
+  return { close };
 };

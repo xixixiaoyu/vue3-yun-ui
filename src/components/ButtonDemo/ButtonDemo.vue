@@ -1,92 +1,79 @@
 <template>
   <h1>Button 示例</h1>
-  <Demo :component="Button1Demo" title="基本用法" description="开关按钮的基本用法" />
-  <Demo :component="Button2Demo" title="按钮尺寸" description="提供三种不同尺寸的按钮" />
-  <Demo
-    :component="Button4Demo"
-    title="不可用状态"
-    description="添加 disabled 属性即可让按钮处于不可用状态，同时按钮样式也会改变"
-  />
-  <Demo
-    :component="Button5Demo"
-    title="加载中状态"
-    description="添加 loading、sword-loading、circle-loading 属性即可让按钮处于加载状态，添加可选的 sword-loaded 属性加载完毕"
-  />
+  <Demo :component="Button1Demo" />
+  <Demo :component="Button2Demo" />
+  <Demo :component="Button3Demo" />
+  <Demo :component="Button4Demo" />
+  <Demo :component="Button5Demo" />
 
   <Attr :columns="columns" :data="data" />
 </template>
-<script>
+<script setup>
 import Demo from "../Demo.vue";
-import Button1Demo from "./Button1.demo.vue";
-import Button2Demo from "./Button2.demo.vue";
-import Button3Demo from "./Button3.demo.vue";
-import Button4Demo from "./Button4.demo.vue";
-import Button5Demo from "./Button5.demo.vue";
-import { columns } from "../../lib/data";
 import Attr from "../Attr.vue";
-export default {
-  components: { Demo, Attr },
-  setup() {
-    const data = [
-      {
-        params: "size",
-        desc: "尺寸",
-        type: "string",
-        select: "normal / small / mini",
-        default: "normal",
-      },
-      {
-        params: "level",
-        desc: "按钮类型",
-        type: "string",
-        select: "primary / success / warning / info / danger / text",
-        default: "primary",
-      },
-      {
-        params: "theme",
-        desc: "按钮类型",
-        type: "string",
-        select: "primary / success / warning / info / danger / text",
-        default: "primary",
-      },
-      {
-        params: "loading",
-        desc: "加载中",
-        type: "boolean",
-        select: "false / true",
-        default: "false",
-      },
-      {
-        params: "sword-loading",
-        desc: "加载中",
-        type: "boolean",
-        select: "false / true",
-        default: "false",
-      },
-      {
-        params: "circle-loading",
-        desc: "加载中",
-        type: "boolean",
-        select: "false / true",
-        default: "false",
-      },
-      {
-        params: "sword-loaded",
-        desc: "加载中",
-        type: "boolean",
-        select: "false / true",
-        default: "false",
-      },
-    ];
-    return {
-      Button1Demo,
-      Button2Demo,
-      Button3Demo,
-      Button4Demo,
-      Button5Demo,
-      columns,
-      data,
-    };
+import Button1Demo from "./Button.default.demo.vue";
+import Button2Demo from "./Button.size.demo.vue";
+import Button3Demo from "./Button.level.demo.vue";
+import Button4Demo from "./Button.disabled.demo.vue";
+import Button5Demo from "./Button.loading.demo.vue";
+import { columns } from "../../lib/data";
+
+const data = [
+  {
+    params: "size",
+    desc: "尺寸",
+    type: "string",
+    select: "normal / big / small",
+    default: "normal",
   },
-};
+  {
+    params: "level",
+    desc: "按钮类型",
+    type: "string",
+    select: "normal / main / warning / danger ",
+    default: "normal",
+  },
+  {
+    params: "theme",
+    desc: "按钮类型",
+    type: "string",
+    select: "normal / link / text",
+    default: "normal",
+  },
+  {
+    params: "disabled",
+    desc: "是否禁用",
+    type: "boolean",
+    select: "false / true",
+    default: "false",
+  },
+  {
+    params: "loading",
+    desc: "加载中",
+    type: "boolean",
+    select: "false / true",
+    default: "false",
+  },
+  {
+    params: "sword-loading",
+    desc: "加载中",
+    type: "boolean",
+    select: "false / true",
+    default: "false",
+  },
+  {
+    params: "circle-loading",
+    desc: "加载中",
+    type: "boolean",
+    select: "false / true",
+    default: "false",
+  },
+  {
+    params: "sword-loaded",
+    desc: "加载中",
+    type: "boolean",
+    select: "false / true",
+    default: "false",
+  },
+];
 </script>
