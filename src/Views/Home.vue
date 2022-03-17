@@ -33,11 +33,11 @@ export default {
         {
           iconName: "vue",
           title: "Vue3",
-          description: "使用了最新的 Vue3 Composition API",
+          description: "使用了最新的 Vue3.2 setup 语法",
         },
         {
           iconName: "vite",
-          title: "Vite",
+          title: "Vite2",
           description: "官网基于 Vite2.x 构建",
         },
         {
@@ -143,7 +143,7 @@ $color: #039994;
         "icon title"
         "icon text";
       grid-template-columns: 80px auto;
-      grid-template-rows: 1fr auto;
+      grid-template-rows: 1fr 1fr;
       > svg {
         grid-area: icon;
         width: 64px;

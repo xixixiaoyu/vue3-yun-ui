@@ -57,11 +57,8 @@
   </co-layout>
 </template>
 
-<script>
+<script setup>
 import { CoAside, CoFooter, CoHeader, CoContent, CoLayout } from "../../lib/Layout/index";
-export default {
-  components: { CoAside, CoFooter, CoHeader, CoContent, CoLayout },
-};
 </script>
 
 <style lang="scss" scoped>

@@ -1,16 +1,11 @@
-<demo>常规使用</demo>
+<demo>
+基本使用
+</demo>
 
 <template>
-  <div>
-    <Card class="box" title="card 标题">card 内容</Card>
-  </div>
+  <Card class="box" title="card 标题">card 内容</Card>
 </template>
 
-<script lang="ts">
-import { Card } from "../../lib/Card/index";
-export default {
-  components: {
-    Card,
-  },
-};
+<script setup>
+import { Card } from "../../lib/index";
 </script>

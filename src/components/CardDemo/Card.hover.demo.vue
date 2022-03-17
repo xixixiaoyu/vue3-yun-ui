@@ -1,4 +1,6 @@
-<demo>常规使用</demo>
+<demo>
+Hover 效果
+</demo>
 
 <template>
   <div>
@@ -6,11 +8,6 @@
   </div>
 </template>
 
-<script lang="ts">
-import { Card } from "../../lib/Card/index";
-export default {
-  components: {
-    Card,
-  },
-};
+<script setup>
+import { Card } from "../../lib/index";
 </script>

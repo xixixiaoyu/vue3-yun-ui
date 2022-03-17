@@ -1,5 +1,5 @@
 <demo>
-使用 theme
+基本使用 theme
 </demo>
 
 <template>
@@ -11,5 +11,5 @@
 </template>
 
 <script setup>
-import { Button } from "../../lib/Button/index";
+import { Button } from "../../lib/index";
 </script>

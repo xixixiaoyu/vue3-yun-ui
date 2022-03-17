@@ -1,4 +1,7 @@
-<demo>Shadow 效果</demo>
+<demo>
+Footer slot
+</demo>
+
 <template>
   <div class="wrap">
     <Card title="支持 footer" hoverable shadow>
@@ -12,19 +15,13 @@
   </div>
 </template>
 
-<script>
-import { Card } from "../../lib/Card/index";
-export default {
-  components: {
-    Card,
-  },
-};
+<script setup>
+import { Card } from "../../lib/index";
 </script>
 
 <style lang="scss" scoped>
 .wrap {
   display: flex;
-
   .coast-card {
     width: 40%;
     margin-left: 5%;

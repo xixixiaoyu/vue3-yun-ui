@@ -1,4 +1,6 @@
-<demo>常规用法 v-model</demo>
+<demo>
+基本使用 v-model
+</demo>
 
 <template>
   <Input v-model:value="inputVal" placeholder="please input username" />

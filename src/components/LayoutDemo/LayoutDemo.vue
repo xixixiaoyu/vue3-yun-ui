@@ -9,16 +9,7 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import Demo from "../Demo.vue";
 import LayoutDemo from "./Layout1.demo.vue";
-export default {
-  components: { Demo, LayoutDemo },
-  setup() {
-    return {
-      Demo,
-      LayoutDemo,
-    };
-  },
-};
 </script>

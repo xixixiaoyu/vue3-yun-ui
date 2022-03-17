@@ -1,4 +1,6 @@
-<demo>Shadow 效果</demo>
+<demo>
+支持不同的 Type
+</demo>
 
 <template>
   <div class="wrap">
@@ -8,31 +10,21 @@
   </div>
 </template>
 
-<script>
-import { Card } from "../../lib/Card/index";
-export default {
-  components: {
-    Card,
-  },
-  setup() {
-    const types = [
-      "secondary",
-      "alert",
-      "success",
-      "purple",
-      "warning",
-      "violet",
-      "cyan",
-      "error",
-      "dark",
-      "lite",
-    ];
+<script setup>
+import { Card } from "../../lib/index";
 
-    return {
-      types,
-    };
-  },
-};
+const types = [
+  "secondary",
+  "alert",
+  "success",
+  "purple",
+  "warning",
+  "violet",
+  "cyan",
+  "error",
+  "dark",
+  "lite",
+];
 </script>
 
 <style lang="scss" scoped>
