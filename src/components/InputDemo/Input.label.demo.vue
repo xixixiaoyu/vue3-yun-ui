@@ -6,17 +6,11 @@
   <Input v-model:value="value3" placeholder="yun-ui.y2y7" label="http://" labelRight=".com" />
 </template>
 
-<script>
+<script setup>
 import { ref } from "vue";
 import { Input } from "../../lib/index";
-export default {
-  components: { Input },
-  setup() {
-    const value1 = ref("");
-    const value2 = ref("");
-    const value3 = ref("");
 
-    return { value1, value2, value3 };
-  },
-};
+const value1 = ref("");
+const value2 = ref("");
+const value3 = ref("");
 </script>

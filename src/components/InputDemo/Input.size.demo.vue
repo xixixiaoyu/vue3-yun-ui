@@ -7,14 +7,9 @@
   <Input v-model:value="inputVal" placeholder="large input" size="large" />
 </template>
 
-<script>
+<script setup>
 import { ref } from "vue";
 import { Input } from "../../lib/index";
-export default {
-  components: { Input },
-  setup() {
-    const inputVal = ref("");
-    return { inputVal };
-  },
-};
+
+const inputVal = ref("");
 </script>

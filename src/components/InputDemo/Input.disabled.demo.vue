@@ -5,10 +5,6 @@
   <Input value="this is readonly" readonly />
 </template>
 
-<script>
+<script setup>
 import { Input } from "../../lib/index";
-export default {
-  components: { Input },
-  setup() {},
-};
 </script>

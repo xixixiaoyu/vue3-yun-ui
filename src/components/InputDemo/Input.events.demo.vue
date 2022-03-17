@@ -12,29 +12,25 @@
   />
 </template>
 
-<script>
+<script setup>
 import { ref } from "vue";
 import { Input } from "../../lib/index";
-export default {
-  components: { Input },
-  setup() {
-    const inputVal = ref("");
-    const handleInput = (value) => {
-      console.log("input event", value);
-    };
-    const handleChange = (value) => {
-      console.log("change event", value);
-    };
-    const handleBlur = (event) => {
-      console.log("blur event", event);
-    };
-    const handleFocus = (event) => {
-      console.log("focus event", event);
-    };
-    const handleKeydown = (event) => {
-      console.log("keydown event", event);
-    };
-    return { inputVal, handleInput, handleChange, handleBlur, handleFocus, handleKeydown };
-  },
+
+const inputVal = ref("");
+
+const handleInput = (value) => {
+  console.log("input event", value);
+};
+const handleChange = (value) => {
+  console.log("change event", value);
+};
+const handleBlur = (event) => {
+  console.log("blur event", event);
+};
+const handleFocus = (event) => {
+  console.log("focus event", event);
+};
+const handleKeydown = (event) => {
+  console.log("keydown event", event);
 };
 </script>

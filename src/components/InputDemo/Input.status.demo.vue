@@ -8,18 +8,13 @@
   <Input v-model:value="value5" placeholder="error" status="error" />
 </template>
 
-<script>
+<script setup>
 import { ref } from "vue";
 import { Input } from "../../lib/index";
-export default {
-  components: { Input },
-  setup() {
-    const value1 = ref("");
-    const value2 = ref("");
-    const value3 = ref("");
-    const value4 = ref("");
-    const value5 = ref("");
-    return { value1, value2, value3, value4, value5 };
-  },
-};
+
+const value1 = ref("");
+const value2 = ref("");
+const value3 = ref("");
+const value4 = ref("");
+const value5 = ref("");
 </script>

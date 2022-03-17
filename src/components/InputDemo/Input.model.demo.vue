@@ -9,17 +9,13 @@
   input value: {{ inputVal }}
 </template>
 
-<script>
+<script setup>
 import { ref } from "vue";
 import { Input } from "../../lib/index";
-export default {
-  components: { Input },
-  setup() {
-    const inputVal = ref("");
-    const handleUpdate = (newValue) => {
-      console.log("input get new value", newValue);
-    };
-    return { inputVal, handleUpdate };
-  },
+
+const inputVal = ref("");
+
+const handleUpdate = (newValue) => {
+  console.log("input get new value", newValue);
 };
 </script>
