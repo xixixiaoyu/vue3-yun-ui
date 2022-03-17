@@ -8,3 +8,4 @@ export { default as Step } from "./Step/Step.vue";
 export { openDialog as openDialog } from "./Dialog/openDialog";
 export { default as Input } from "./Input/Input.vue";
 export { default as Card } from "./Card/Card.vue";
+export { Toast } from "./Toast/Toast.ts";

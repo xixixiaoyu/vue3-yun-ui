@@ -1,14 +1,15 @@
 import { createWebHashHistory, createRouter } from "vue-router";
 import Home from "./views/Home.vue";
 import Doc from "./views/Doc.vue";
-import SwitchDemo from "./components/SwitchDemo/SwitchDemo.vue";
-import ButtonDemo from "./components/ButtonDemo/ButtonDemo.vue";
-import DialogDemo from "./components/DialogDemo/DialogDemo.vue";
-import TabsDemo from "./components/TabsDemo/TabsDemo.vue";
-import StepDemo from "./components/StepDemo/StepDemo.vue";
-import LayoutDemo from "./components/LayoutDemo/LayoutDemo.vue";
-import CardDemo from "./components/CardDemo/CardDemo.vue";
-import InputDemo from "./components/InputDemo/Input.vue";
+import SwitchDemo from "./components/SwitchDemo/index.vue";
+import ButtonDemo from "./components/ButtonDemo/index.vue";
+import DialogDemo from "./components/DialogDemo/index.vue";
+import TabsDemo from "./components/TabsDemo/index.vue";
+import StepDemo from "./components/StepDemo/index.vue";
+import LayoutDemo from "./components/LayoutDemo/index.vue";
+import CardDemo from "./components/CardDemo/index.vue";
+import InputDemo from "./components/InputDemo/index.vue";
+import ToastDemo from "./components/ToastDemo/index.vue";
 import { h } from "vue";
 import Markdown from "./components/Markdown.vue";
 import intro from "./markdown/intro.md";
@@ -37,6 +38,7 @@ export const router = createRouter({
         { path: "layout", component: LayoutDemo },
         { path: "card", component: CardDemo },
         { path: "input", component: InputDemo },
+        { path: "toast", component: ToastDemo },
       ],
     },
   ],

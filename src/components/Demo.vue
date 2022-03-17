@@ -1,7 +1,7 @@
 <template>
   <div class="demo-container">
     <h2>{{ title || component.__sourceCodeTitle }}</h2>
-    <p>{{ description }}</p>
+    <p>{{ description || component.__sourceDescription }}</p>
     <!--展示代码的地方-->
     <code-per ref="codePer" :component="component"></code-per>
   </div>

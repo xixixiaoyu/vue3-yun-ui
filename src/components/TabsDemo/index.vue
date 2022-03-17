@@ -1,7 +1,9 @@
 <template>
   <h1>Tabs 示例</h1>
-  <Demo :component="Tabs1Demo" description="默认选中项与 title 对应" />
-  <Demo :component="Tabs2Demo" description="给对应 tab 组件添加 disabled 属性即可禁用对应项" />
+
+  <Demo :component="Tabs1Demo" />
+  <Demo :component="Tabs2Demo" />
+
   <attr :columns="columns" :data="data"></attr>
 </template>
 
@@ -9,7 +11,7 @@
 import Demo from "../Demo.vue";
 import Attr from "../Attr.vue";
 import Tabs1Demo from "./Tabs.default.demo.vue";
-import Tabs2Demo from "./Tabs2.disabled.demo.vue";
+import Tabs2Demo from "./Tabs.disabled.demo.vue";
 import { columns } from "../../lib/data";
 
 const data = [

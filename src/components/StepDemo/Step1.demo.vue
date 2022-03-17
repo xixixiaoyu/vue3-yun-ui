@@ -11,7 +11,7 @@
 import { Step, Button } from "../../lib/index";
 import { ref } from "vue";
 
-const count = ref(4);
+const count = ref(5);
 const active = ref(0);
 const next = () => {
   active.value++;

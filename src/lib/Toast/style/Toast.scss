@@ -1,0 +1,56 @@
+@import "../../style//common.scss";
+
+.coast-toast {
+  white-space: nowrap;
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translate(-50%);
+  min-width: 380px;
+  border-radius: 5px;
+  background: #fff;
+  color: $colorBlack;
+  z-index: $popoverIndex;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
+  padding: 15px;
+  padding-right: 35px;
+  transition: top 0.3s;
+
+  > .coast-toast-close {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 15px;
+    cursor: pointer;
+    color: #c0c4cc;
+    font-size: 20px;
+
+    &:hover {
+      color: #909399;
+    }
+  }
+
+  &-center {
+    text-align: center;
+  }
+
+  &-secondary {
+    background-color: $secondary;
+    color: #fff;
+  }
+
+  &-success {
+    background-color: $success;
+    color: #fff;
+  }
+
+  &-warning {
+    background-color: $warning;
+    color: #fff;
+  }
+
+  &-error {
+    background-color: $error;
+    color: #fff;
+  }
+}

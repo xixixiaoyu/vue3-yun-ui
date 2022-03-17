@@ -1,5 +1,6 @@
 <demo>
-支持 disabled
+  <title>支持 disabled</title>
+  <desc>给对应 tab 组件添加 disabled 属性即可禁用对应项</desc>
 </demo>
 
 <template>

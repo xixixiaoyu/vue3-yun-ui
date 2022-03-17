@@ -22,7 +22,7 @@ const data = [
   },
   {
     params: "active ",
-    desc: "是否激活",
+    desc: "激活数量",
     type: "number",
     select: "number",
     default: "1",

@@ -1,5 +1,6 @@
 <demo>
-基本使用
+  <title>基本使用</title>
+  <desc>默认选中项与 title 对应</desc>
 </demo>
 
 <template>
