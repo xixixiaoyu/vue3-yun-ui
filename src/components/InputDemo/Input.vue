@@ -21,7 +21,7 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import Demo from "../Demo.vue";
 import Input1 from "./Input.default.demo.vue";
 import Input2 from "./Input.disabled.demo.vue";
@@ -34,23 +34,4 @@ import Input8 from "./Input.width.demo.vue";
 import Input9 from "./Input.label.demo.vue";
 import Input10 from "./Input.model.demo.vue";
 import Input11 from "./Input.events.demo.vue";
-export default {
-  components: { Demo },
-  setup() {
-    return {
-      Demo,
-      Input1,
-      Input2,
-      Input3,
-      Input4,
-      Input5,
-      Input6,
-      Input7,
-      Input8,
-      Input9,
-      Input10,
-      Input11,
-    };
-  },
-};
 </script>
