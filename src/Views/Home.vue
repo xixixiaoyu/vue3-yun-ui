@@ -14,7 +14,7 @@
     <div class="content">
       <ul>
         <li v-for="item in contentList" :key="item.title">
-          <Icon :name="item.iconName" prefix="icon" class="icon" />
+          <Icon :name="item.iconName" class="icon" />
           <h3>{{ item.title }}</h3>
           <p>{{ item.description }}</p>
         </li>

@@ -8,6 +8,7 @@ import TabsDemo from "./components/TabsDemo/TabsDemo.vue";
 import StepDemo from "./components/StepDemo/StepDemo.vue";
 import LayoutDemo from "./components/LayoutDemo/LayoutDemo.vue";
 import CardDemo from "./components/CardDemo/CardDemo.vue";
+import InputDemo from "./components/InputDemo/Input.vue";
 import { h } from "vue";
 import Markdown from "./components/Markdown.vue";
 import intro from "./markdown/intro.md";
@@ -35,6 +36,7 @@ export const router = createRouter({
         { path: "step", component: StepDemo },
         { path: "layout", component: LayoutDemo },
         { path: "card", component: CardDemo },
+        { path: "input", component: InputDemo },
       ],
     },
   ],

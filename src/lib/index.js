@@ -5,3 +5,4 @@ export { default as Tab } from "./Tabs/Tab.vue";
 export { default as Dialog } from "./Dialog/Dialog.vue";
 export { default as Step } from "./Step/Step.vue";
 export { openDialog as openDialog } from "./Dialog/openDialog";
+export { default as Input } from "./Input/Input.vue";

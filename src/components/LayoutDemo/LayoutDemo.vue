@@ -1,5 +1,5 @@
 <template>
-  <h1>Layout示例</h1>
+  <h1>Layout 示例</h1>
   <div>
     <Demo
       :component="LayoutDemo"
@@ -13,9 +13,10 @@
 import Demo from "../Demo.vue";
 import LayoutDemo from "./Layout1.demo.vue";
 export default {
-  components: { Demo, Attr, LayoutDemo },
+  components: { Demo, LayoutDemo },
   setup() {
     return {
+      Demo,
       LayoutDemo,
     };
   },

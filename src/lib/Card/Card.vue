@@ -11,6 +11,7 @@
 </template>
 
 <script lang="ts">
+import "./style/card.scss";
 import type { PropType } from "vue";
 import { computed, defineComponent } from "vue";
 type CardTypeType =

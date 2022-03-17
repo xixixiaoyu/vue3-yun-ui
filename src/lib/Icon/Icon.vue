@@ -1,5 +1,5 @@
 <template>
-  <svg aria-hidden="true" class="coast-icon">
+  <svg aria-hidden="true" class="yun-icon">
     <use :xlink:href="iconName"></use>
   </svg>
 </template>
@@ -8,7 +8,7 @@
 import "./Icon.scss";
 import { computed } from "vue";
 export default {
-  name: "CoastIcon",
+  name: "YunIcon",
   props: {
     name: {
       type: String,
@@ -17,7 +17,7 @@ export default {
     prefix: {
       type: String,
       required: false,
-      default: "coast-icon-",
+      default: "icon",
     },
   },
   setup(props) {

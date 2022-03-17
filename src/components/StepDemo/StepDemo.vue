@@ -1,5 +1,5 @@
 <template>
-  <h1>Step示例</h1>
+  <h1>Step 示例</h1>
   <div>
     <Demo
       :component="Step1Demo"
