@@ -2,6 +2,7 @@
   <h1>Carousel 示例</h1>
 
   <Demo :component="Carousel1Demo" />
+  <Demo :component="Carousel2Demo" />
 
   <attr :columns="columns" :data="data"></attr>
 </template>
@@ -10,7 +11,8 @@
 import Demo from "../Demo.vue";
 import Attr from "../Attr.vue";
 import { columns } from "../../lib/data";
-import Carousel1Demo from "./Carousel.default.demo.vue";
+import Carousel1Demo from "./Carousel.scroll.demo.vue";
+import Carousel2Demo from "./Carousel.perfect.demo.vue";
 
 const data = [
   {

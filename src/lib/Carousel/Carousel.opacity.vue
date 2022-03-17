@@ -61,7 +61,6 @@ export default {
   setup(props) {
     // 默认显示的图片的索引
     const index = ref(0);
-
     // 自动播放
     let timer = null;
     const autoPlayFn = () => {
@@ -73,7 +72,6 @@ export default {
         }
       }, props.duration);
     };
-
     watch(
       () => props.sliders,
       (newVal) => {
@@ -85,7 +83,6 @@ export default {
       },
       { immediate: true }
     );
-
     // 鼠标进入停止，移出开启自动，前提条件：autoPlay为true
     const stop = () => {
       if (timer) clearInterval(timer);
@@ -95,7 +92,6 @@ export default {
         autoPlayFn();
       }
     };
-
     // 上一张下一张
     const toggle = (step) => {
       const newIndex = index.value + step;
@@ -111,15 +107,12 @@ export default {
           return;
         }
       }
-
       index.value = newIndex;
     };
-
     // 组件消耗，清理定时器
     onUnmounted(() => {
       clearInterval(timer);
     });
-
     return { index, start, stop, toggle };
   },
 };

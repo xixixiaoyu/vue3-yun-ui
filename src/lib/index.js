@@ -9,4 +9,5 @@ export { openDialog as openDialog } from "./Dialog/openDialog";
 export { default as Input } from "./Input/Input.vue";
 export { default as Card } from "./Card/Card.vue";
 export { Toast } from "./Toast/Toast.ts";
-export { default as Carousel } from "./Carousel/Carousel.vue";
+// export { default as CarouselBase } from "./Carousel/Carousel.opacity.vue";
+export { default as CarouselScroll } from "./Carousel/Carousel.scroll.vue";
