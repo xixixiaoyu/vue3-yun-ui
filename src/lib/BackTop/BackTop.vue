@@ -16,7 +16,7 @@ import Icon from "../Icon/Icon.vue";
 const props = defineProps({
   visibilityHeight: {
     type: Number,
-    default: 0,
+    default: 100,
   },
   right: {
     type: String,

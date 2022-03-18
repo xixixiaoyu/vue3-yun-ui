@@ -5,7 +5,7 @@
 
 <template>
   Scroll down to see the bottom-right button
-  <BackTop right="30" :visibilityHeight="400">
+  <BackTop right="30" :visibilityHeight="330" @clicked="handleClick">
     <div
       style="
         height: 45px;
@@ -25,4 +25,8 @@
 
 <script setup>
 import { BackTop } from "../../lib/index";
+
+const handleClick = () => {
+  console.log("BackTop is clicked");
+};
 </script>

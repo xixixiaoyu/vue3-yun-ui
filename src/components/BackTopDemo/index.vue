@@ -17,11 +17,32 @@ import BackDemo2 from "./Back.custom.demo.vue";
 
 const data = [
   {
-    params: "size",
-    desc: "尺寸",
-    type: "string",
-    select: "normal / big / small",
-    default: "normal",
+    params: "visibility-height",
+    desc: "滚动高度大于此参数值才出现",
+    type: "number",
+    select: "number",
+    default: "100",
+  },
+  {
+    params: "right",
+    desc: "	控制其显示位置，距离页面右边距",
+    type: "	string",
+    select: "string",
+    default: "20",
+  },
+  {
+    params: "bottom",
+    desc: "	控制其显示位置，距离页面下边距",
+    type: "	string",
+    select: "string",
+    default: "16",
+  },
+  {
+    params: "clicked",
+    desc: "	点击按钮回传触发的事件",
+    type: "	function",
+    select: "() => {}",
+    default: "() => {}",
   },
 ];
 </script>
