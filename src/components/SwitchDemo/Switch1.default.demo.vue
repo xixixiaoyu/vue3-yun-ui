@@ -1,5 +1,6 @@
 <demo>
-基本使用
+  <title>基本使用</title>
+  <desc>会呼吸的开关</desc>
 </demo>
 
 <template>

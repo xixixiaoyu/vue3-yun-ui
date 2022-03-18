@@ -1,5 +1,5 @@
 <demo>
-支持 level
+ButtonGroup
 </demo>
 
 <template>

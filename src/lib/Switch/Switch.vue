@@ -50,7 +50,7 @@ $h2: $h - 4px;
   }
   &:active {
     > span {
-      width: $h2 + 4px;
+      width: $h2 + 6px;
     }
   }
   &.gulu-checked:active {

@@ -1,5 +1,6 @@
 <demo>
-支持 disabled
+  <title>支持 disabled</title>
+  <desc>添加 disabled 属性即可禁用</desc>
 </demo>
 
 <template>
