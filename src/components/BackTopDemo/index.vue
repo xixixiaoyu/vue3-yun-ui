@@ -2,6 +2,7 @@
   <h1>BackTop 示例</h1>
 
   <Demo :component="BackDemo1" />
+  <Demo :component="BackDemo2" />
 
   <Attr :columns="columns" :data="data" />
 
@@ -12,6 +13,7 @@ import Demo from "../Demo.vue";
 import Attr from "../Attr.vue";
 import { columns } from "../../lib/data";
 import BackDemo1 from "./Back.default.demo.vue";
+import BackDemo2 from "./Back.custom.demo.vue";
 
 const data = [
   {
