@@ -53,6 +53,9 @@
           <li>
             <router-link to="/doc/backtop">BackTop 组件</router-link>
           </li>
+          <li>
+            <router-link to="/doc/grid">Grid 组件</router-link>
+          </li>
         </ol>
       </aside>
       <main>
