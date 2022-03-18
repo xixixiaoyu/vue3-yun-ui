@@ -29,6 +29,11 @@
     <Col :span="6"><div class="card light"></div></Col>
     <Col :span="6"><div class="card"></div></Col>
   </Row>
+  <Row justify="space-evenly">
+    <Col :span="6"><div class="card"></div></Col>
+    <Col :span="6"><div class="card light"></div></Col>
+    <Col :span="6"><div class="card"></div></Col>
+  </Row>
 </template>
 
 <script setup>
