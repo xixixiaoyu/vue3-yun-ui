@@ -12,3 +12,4 @@ export { Toast } from "./Toast/Toast.ts";
 export { default as CarouselBase } from "./Carousel/Carousel.opacity.vue";
 export { default as CarouselScroll } from "./Carousel/Carousel.scroll.vue";
 export { default as BackTop } from "./BackTop/BackTop.vue";
+export { default as Skeleton } from "./Skeleton/Skeleton.vue";

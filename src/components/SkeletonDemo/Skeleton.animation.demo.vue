@@ -1,0 +1,23 @@
+<demo>
+  <title>增加闪烁动画</title>
+  <desc>添加 animated 属性即可开启</desc>
+</demo>
+
+<template>
+  <div class="skeleton-container">
+    <div v-for="i in 5" :key="i">
+      <Skeleton width="200" height="200" bg="#b9e3f3" animated></Skeleton>
+    </div>
+  </div>
+</template>
+
+<script setup>
+import { Skeleton } from "../../lib/index";
+</script>
+
+<style lang="scss" scoped>
+.skeleton-container {
+  display: flex;
+  justify-content: space-between;
+}
+</style>

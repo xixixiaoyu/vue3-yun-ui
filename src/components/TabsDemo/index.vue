@@ -10,9 +10,9 @@
 <script setup>
 import Demo from "../Demo.vue";
 import Attr from "../Attr.vue";
+import { columns } from "../../lib/data";
 import Tabs1Demo from "./Tabs.default.demo.vue";
 import Tabs2Demo from "./Tabs.disabled.demo.vue";
-import { columns } from "../../lib/data";
 
 const data = [
   {
