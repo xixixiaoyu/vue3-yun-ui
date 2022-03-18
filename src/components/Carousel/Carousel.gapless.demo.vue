@@ -1,10 +1,11 @@
 <demo>
-  支持无缝轮播
+  <title>支持无缝轮播</title>
+  <desc>设置 gapless 属性开启无缝轮播</desc>
 </demo>
 
 <template>
   <div class="home-banner">
-    <CarouselScroll :sliders="sliders" width="1250" height="600" :perfect="true"></CarouselScroll>
+    <CarouselScroll :sliders="sliders" width="1150" height="600" :gapless="true"></CarouselScroll>
   </div>
 </template>
 
@@ -46,6 +47,7 @@ onMounted(() => {
 
 <style lang="scss">
 .home-banner {
-  margin: 0 auto;
+  display: flex;
+  justify-content: center;
 }
 </style>

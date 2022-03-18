@@ -84,6 +84,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import "../style/common.scss";
+
 $blue: #40a9ff;
 $color: #333;
 $border-color: #d9d9d9;
@@ -101,13 +103,13 @@ $border-color: #d9d9d9;
         margin-left: 0;
       }
       &.selected {
-        color: $blue;
+        color: $theme;
       }
     }
     &-indicator {
       position: absolute;
       height: 3px;
-      background: $blue;
+      background: $theme;
       left: 0;
       bottom: -1px;
       width: 0;

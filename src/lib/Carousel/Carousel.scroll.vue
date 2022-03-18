@@ -1,13 +1,12 @@
 <template>
   <div class="xtx-carousel" @mouseenter="stop" @mouseleave="start">
     <ul class="carousel-body" ref="carouselBody" :style="{ left: offseLeft }">
-      <li class="carousel-item" v-for="(item, i) in sliders" :key="item.id">
-        <RouterLink v-if="item.hrefUrl" :to="item.hrefUrl">
-          <img :src="item.imgUrl" />
-        </RouterLink>
+      <li class="carousel-item" v-for="item in sliders" :key="item.id">
+        <!-- <RouterLink v-if="item.hrefUrl" :to="item.hrefUrl"> -->
+        <img :src="item.imgUrl" />
+        <!-- </RouterLink> -->
       </li>
     </ul>
-
     <!-- 小圆点 -->
     <a href="javascript:;" class="carousel-btn prev" @click="toggle(-1)">
       <Icon name="zuojiantou" />
@@ -21,139 +20,135 @@
         v-for="(item, i) in sliders"
         :key="i"
         @click="index = i"
-        :class="{ active: index === i }"
+        :class="{ active: index % sliders.length === i }"
       ></span>
     </div>
   </div>
 </template>
 
-<script>
-import { ref, watch, computed, onUnmounted } from "vue";
+<script setup>
+import { ref, watch, computed, onUnmounted, nextTick } from "vue";
 import Icon from "../Icon/Icon.vue";
-export default {
-  name: "XtxCarousel",
-  components: {
-    Icon,
+const props = defineProps({
+  width: {
+    type: String,
+    require: true,
+    default: "1150",
   },
-  props: {
-    width: {
-      type: String,
-    },
-    height: {
-      type: String,
-    },
-    perfect: {
-      type: Boolean,
-      default: false,
-    },
-    sliders: {
-      type: Array,
-      default: () => [],
-    },
-    duration: {
-      type: Number,
-      default: 3000,
-    },
-    autoPlay: {
-      type: Boolean,
-      default: false,
-    },
-    scroll,
+  height: {
+    type: String,
+    require: true,
+    default: "600",
   },
-  setup(props) {
-    const carouselBody = ref(null);
-    // 默认显示的图片的索引
-    const index = ref(0);
-    const wrapWidth = props.width + "px";
-    const wrapHeight = props.height + "px";
-    const offseLeft = computed(() => -props.width * index.value + "px");
-    const perfect = props.perfect;
-    perfect &&
-      setTimeout(() => {
-        let clonefirstImg = carouselBody.value.firstElementChild.cloneNode(true);
-        // 将第一张图片添加至图片列表的末尾
-        carouselBody.value.appendChild(clonefirstImg);
-      });
-
-    // 自动播放
-    let timer = null;
-    const autoPlayFn = () => {
-      clearInterval(timer);
-      timer = setInterval(() => {
-        index.value++;
-        if (index.value >= props.sliders.length) {
-          index.value = 0;
-        }
-      }, props.duration);
-    };
-
-    watch(
-      () => props.sliders,
-      (newVal) => {
-        // 有数据&开启自动播放，才调用自动播放函数
-        if (newVal.length && props.autoPlay) {
-          index.value = 0;
-          autoPlayFn();
-        }
-      },
-      { immediate: true }
-    );
-
-    // 鼠标进入停止，移出开启自动，前提条件：autoPlay为true
-    const stop = () => {
-      if (timer) clearInterval(timer);
-    };
-    const start = () => {
-      if (props.sliders.length && props.autoPlay) {
-        autoPlayFn();
-      }
-    };
-
-    // 上一张下一张
-    const toggle = (step) => {
-      const newIndex = index.value + step;
-      if (!perfect) {
-        if (newIndex >= props.sliders.length) {
-          index.value = 0;
-          return;
-        }
-        if (newIndex < 0) {
-          index.value = props.sliders.length - 1;
-          return;
-        }
-        index.value = newIndex;
-      } else {
-        carouselBody.value.style.transition = "300ms";
-        if (newIndex === -1) {
-          carouselBody.value.style.transition = "none";
-          carouselBody.value.style.left = props.sliders.length * -props.width + "px";
-          setTimeout(() => {
-            index.value = props.sliders.length - 1;
-            carouselBody.value.style.transition = "300ms";
-            carouselBody.value.style.left = index.value * -props.width + "px";
-          }, 0);
-        } else if (newIndex === props.sliders.length) {
-          carouselBody.value.style.left = props.sliders.length * -props.width + "px";
-          setTimeout(() => {
-            index.value = 0;
-            carouselBody.value.style.transition = "none";
-            carouselBody.value.style.left = "0px";
-          }, 300);
-        } else {
-          index.value = newIndex;
-        }
-      }
-    };
-
-    // 组件消耗，清理定时器
-    onUnmounted(() => {
-      clearInterval(timer);
-    });
-
-    return { carouselBody, index, start, stop, toggle, wrapWidth, wrapHeight, offseLeft };
+  sliders: {
+    type: Array,
+    default: () => [],
+    require: true,
   },
+  gapless: {
+    type: Boolean,
+    default: false,
+  },
+  duration: {
+    type: Number,
+    default: 3000,
+  },
+  autoPlay: {
+    type: Boolean,
+    default: false,
+  },
+});
+
+const carouselBody = ref(null);
+// 默认显示的图片的索引
+const index = ref(0);
+const wrapWidth = props.width + "px";
+const wrapHeight = props.height + "px";
+const offseLeft = computed(() => -props.width * index.value + "px");
+const gapless = props.gapless;
+
+nextTick(() => {
+  if (gapless) {
+    let clonefirstImg = carouselBody.value.firstElementChild.cloneNode(true);
+    // 将第一张图片添加至图片列表的末尾
+    carouselBody.value.appendChild(clonefirstImg);
+  }
+});
+
+// 自动播放
+let timer = null;
+const autoPlayFn = () => {
+  clearInterval(timer);
+  timer = setInterval(() => {
+    index.value++;
+    if (index.value >= props.sliders.length) {
+      index.value = 0;
+    }
+  }, props.duration);
 };
+
+watch(
+  () => props.sliders,
+  (newVal) => {
+    // 有数据&开启自动播放，才调用自动播放函数
+    if (newVal.length && props.autoPlay) {
+      index.value = 0;
+      autoPlayFn();
+    }
+  },
+  { immediate: true }
+);
+
+// 鼠标进入停止，移出开启自动，前提条件：autoPlay为true
+const stop = () => {
+  if (timer) clearInterval(timer);
+};
+const start = () => {
+  if (props.sliders.length && props.autoPlay) {
+    autoPlayFn();
+  }
+};
+
+// 上一张下一张
+const toggle = (step) => {
+  const newIndex = index.value + step;
+  if (!gapless) {
+    if (newIndex >= props.sliders.length) {
+      index.value = 0;
+      return;
+    }
+    if (newIndex < 0) {
+      index.value = props.sliders.length - 1;
+      return;
+    }
+    index.value = newIndex;
+  } else {
+    carouselBody.value.style.transition = "300ms";
+    if (newIndex === -1) {
+      carouselBody.value.style.transition = "none";
+      index.value = props.sliders.length;
+      setTimeout(() => {
+        carouselBody.value.style.transition = "300ms";
+        index.value = props.sliders.length - 1;
+      }, 0);
+    } else if (newIndex === props.sliders.length) {
+      index.value = props.sliders.length;
+      setTimeout(() => {
+        carouselBody.value.style.transition = "none";
+        index.value = 0;
+      }, 300);
+    } else {
+      index.value = newIndex;
+    }
+  }
+};
+
+// 组件消耗，清理定时器
+onUnmounted(() => {
+  clearInterval(timer);
+});
 </script>
+
 <style lang="scss">
 .xtx-carousel {
   overflow: hidden;
@@ -208,14 +203,14 @@ export default {
       width: 40px;
       height: 70px;
       border-radius: 10px;
-      background-color: rgba(0, 0, 0, 0.5);
+      background-color: rgba(0, 0, 0, 0.4);
       color: white;
       user-select: none;
       font-size: 50px;
       text-align: center;
       line-height: 70px;
       text-decoration: none;
-      z-index: 100;
+      z-index: 1;
       svg {
         width: 30px;
         height: 30px;
@@ -230,7 +225,7 @@ export default {
   }
   &:hover {
     .carousel-btn {
-      opacity: 1;
+      background-color: rgba(0, 0, 0, 0.6);
     }
   }
 }

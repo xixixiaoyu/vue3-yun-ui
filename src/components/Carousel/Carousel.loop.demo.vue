@@ -1,26 +1,19 @@
 <demo>
-  <title>滚动轮播基本使用</title>
-  <desc>sliders 传入轮播数据，width、height 设置轮播高度，autoPlay、duration 设置自动轮播和间隔</desc>
+  <title>支持 loop</title>
+  <desc>设置 loop 属性开启无限轮播</desc>
 </demo>
 
 <template>
   <div class="home-banner">
-    <CarouselScroll
-      :sliders="sliders"
-      width="1150"
-      height="600"
-      autoPlay
-      :duration="2000"
-    ></CarouselScroll>
+    <CarouselBase :sliders="sliders" width="1150" height="600" autoPlay loop></CarouselBase>
   </div>
 </template>
 
 <script setup>
 import { ref, onMounted } from "vue";
-import { CarouselScroll } from "../../lib/index";
+import { CarouselBase } from "../../lib/index";
 
 const sliders = ref([]);
-
 onMounted(() => {
   sliders.value = [
     {
