@@ -33,7 +33,7 @@
             <router-link to="/doc/tabs">Tabs 组件</router-link>
           </li>
           <li>
-            <router-link to="/doc/step">Step 组件</router-link>
+            <router-link to="/doc/step">Steps 组件</router-link>
           </li>
           <li>
             <router-link to="/doc/layout">Layout 组件</router-link>

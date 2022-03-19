@@ -27,11 +27,11 @@ export default {
     },
     activeColor: {
       type: String,
-      default: "green",
+      default: "#27ba9b",
     },
     defaultColor: {
       type: String,
-      default: "#3fa8d3",
+      default: "#e4e4e4",
     },
     width: {
       type: String,
@@ -54,6 +54,7 @@ export default {
   position: relative;
   display: flex;
   justify-content: space-between;
+  margin: 0 auto;
 }
 
 .lg-steps-line {
@@ -70,14 +71,13 @@ export default {
 .lg-step {
   border: 2px solid;
   border-radius: 50%;
-  height: 32px;
-  width: 32px;
+  width: 48px;
+  height: 48px;
   display: flex;
   justify-content: center;
   align-items: center;
   font-weight: 700;
   z-index: 2;
   background-color: white;
-  box-sizing: border-box;
 }
 </style>
