@@ -5,7 +5,7 @@
 
 <template>
   Scroll down to see the bottom-right button
-  <BackTop right="30" :visibilityHeight="330" @clicked="handleClick">
+  <BackTop right="60" :visibilityHeight="330" @clicked="handleClick">
     <div
       style="
         height: 45px;
