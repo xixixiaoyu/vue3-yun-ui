@@ -18,6 +18,10 @@ import { Skeleton } from "../../lib/index";
 <style lang="scss" scoped>
 .skeleton-container {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
+}
+:deep(.yun-skeleton) {
+  margin-bottom: 15px;
 }
 </style>

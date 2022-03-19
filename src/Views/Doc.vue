@@ -59,6 +59,9 @@
           <li>
             <router-link to="/doc/skeleton">Skeleton 组件</router-link>
           </li>
+          <li>
+            <router-link to="/doc/breadcrumb">Breadcrumb组件</router-link>
+          </li>
         </ol>
       </aside>
       <main>
@@ -144,8 +147,9 @@ aside {
   }
   > ol {
     > li {
+      white-space: nowrap;
       text-align: left;
-      text-indent: 6px;
+      text-indent: 4px;
       margin: 6px 0;
       > a {
         display: block;
