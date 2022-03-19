@@ -1,0 +1,26 @@
+<demo>
+  <title>基本使用</title>
+</demo>
+
+<template>
+  <div class="city-container">
+    <div class="label">地区：{{ fullLocation }}</div>
+    <City placeholder="召唤师，请选择所在地区" :fullLocation="fullLocation" @change="changeCity" />
+  </div>
+</template>
+
+<script setup>
+import { ref } from "vue";
+import { City } from "../../lib/index";
+
+const fullLocation = ref(null);
+const changeCity = (result) => {
+  fullLocation.value = result.fullLocation;
+};
+</script>
+
+<style>
+.city-container {
+  padding-bottom: 310px;
+}
+</style>

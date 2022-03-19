@@ -63,7 +63,10 @@
             <router-link to="/doc/breadcrumb">Breadcrumb组件</router-link>
           </li>
           <li>
-            <router-link to="/doc/pagination">Pagination组件</router-link>
+            <router-link to="/doc/pagination">Pagination 组件</router-link>
+          </li>
+          <li>
+            <router-link to="/doc/city">City 组件</router-link>
           </li>
         </ol>
       </aside>
