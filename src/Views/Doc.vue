@@ -19,7 +19,7 @@
           </li>
         </ol>
         <h2>组件列表</h2>
-        <ol>
+        <ol class="Cpn">
           <li>
             <router-link to="/doc/switch">Switch 组件</router-link>
           </li>
@@ -146,6 +146,10 @@ aside {
   z-index: 30;
   transition: 250ms;
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+  .Cpn {
+    height: 100vh;
+    overflow: auto;
+  }
   > h2 {
     margin-bottom: 8px;
     padding: 0 20px;

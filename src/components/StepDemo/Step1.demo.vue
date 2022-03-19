@@ -4,8 +4,8 @@
 
 <template>
   <div class="step-container">
-    <Step :count="count" :active="active" width="80%" />
-    <Button @click="next" style="margin-left: 60px">点击下一步</Button>
+    <Step :count="count" :active="active" />
+    <Button @click="next">点击下一步</Button>
   </div>
 </template>
 
