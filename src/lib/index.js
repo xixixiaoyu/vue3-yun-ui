@@ -15,3 +15,4 @@ export { default as BackTop } from "./BackTop/BackTop.vue";
 export { default as Skeleton } from "./Skeleton/Skeleton.vue";
 export { default as Breadcrumb } from "./Breadcrumb/Breadcrumb.vue";
 export { default as BreadcrumbItem } from "./Breadcrumb/BreadcrumbItem.vue";
+export { default as Pagination } from "./Pagination/Pagination.vue";

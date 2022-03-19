@@ -15,6 +15,7 @@ import BackTopDemo from "./components/BackTopDemo/index.vue";
 import GridDemo from "./components/GridDemo/index.vue";
 import SkeletonDemo from "./components/SkeletonDemo/index.vue";
 import BreadcrumbDemo from "./components/BreadcrumbDemo/index.vue";
+import PaginationDemo from "./components/PaginationDemo/index.vue";
 import { h } from "vue";
 import Markdown from "./components/Markdown.vue";
 import intro from "./markdown/intro.md";
@@ -49,6 +50,7 @@ export const router = createRouter({
         { path: "grid", component: GridDemo },
         { path: "skeleton", component: SkeletonDemo },
         { path: "breadcrumb", component: BreadcrumbDemo },
+        { path: "pagination", component: PaginationDemo },
       ],
     },
   ],
