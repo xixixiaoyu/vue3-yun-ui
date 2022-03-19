@@ -40,11 +40,23 @@ export default {
     },
   },
   setup(props, { emit }) {
+    // 定义选择的 省市区 数据
+    const changeResult = reactive({
+      provinceCode: "",
+      provinceName: "",
+      cityCode: "",
+      cityName: "",
+      countyCode: "",
+      countyName: "",
+      fullLocation: "",
+    });
+
     // 显示隐藏数据
     const visible = ref(false);
 
     // 所有省市区数据
     const allCityData = ref([]);
+
     // 正在加载数据
     const loading = ref(false);
 
@@ -62,13 +74,17 @@ export default {
         changeResult[key] = "";
       }
     };
+
+    // 关闭的函数
     const close = () => {
       visible.value = false;
     };
+
     // 提供一个切换函数给select使用
     const toggle = () => {
       visible.value ? close() : open();
     };
+
     // 实现点击组件外部元素进行关闭操作
     const target = ref(null);
     onClickOutside(target, () => {
@@ -77,32 +93,6 @@ export default {
       close();
     });
 
-    // 实现计算属性：获取当前显示的地区数组
-    const currList = computed(() => {
-      // console.log(allCityData.value);
-      // 默认省一级
-      let list = allCityData.value;
-      // 可能：市一级
-      if (changeResult.provinceCode && changeResult.provinceName) {
-        list = list.find((p) => p.code === changeResult.provinceCode).areaList;
-      }
-      // 可能：县地区一级
-      if (changeResult.cityCode && changeResult.cityName) {
-        list = list.find((c) => c.code === changeResult.cityCode).areaList;
-      }
-      return list;
-    });
-
-    // 定义选择的 省市区 数据
-    const changeResult = reactive({
-      provinceCode: "",
-      provinceName: "",
-      cityCode: "",
-      cityName: "",
-      countyCode: "",
-      countyName: "",
-      fullLocation: "",
-    });
     // 当你点击按钮的时候记录
     const changeItem = (item) => {
       if (item.level === 0) {
@@ -126,6 +116,21 @@ export default {
         emit("change", changeResult);
       }
     };
+
+    // 实现计算属性：获取当前显示的地区数组
+    const currList = computed(() => {
+      // 默认省一级
+      let list = allCityData.value;
+      // 可能：市一级
+      if (changeResult.provinceCode && changeResult.provinceName) {
+        list = list.find((p) => p.code === changeResult.provinceCode).areaList;
+      }
+      // 可能：县地区一级
+      if (changeResult.cityCode && changeResult.cityName) {
+        list = list.find((c) => c.code === changeResult.cityCode).areaList;
+      }
+      return list;
+    });
 
     return { visible, toggle, target, loading, currList, changeItem };
   },
