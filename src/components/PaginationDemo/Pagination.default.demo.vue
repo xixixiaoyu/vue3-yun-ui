@@ -1,6 +1,5 @@
 <demo>
   <title>基本使用</title>
-  <desc></desc>
 </demo>
 
 <template>

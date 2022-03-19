@@ -29,6 +29,10 @@ import { computed, ref, watch } from "vue";
 export default {
   name: "YunPagination",
   props: {
+    showCount: {
+      type: Number,
+      default: 5,
+    },
     total: {
       type: Number,
       default: 100,
@@ -45,12 +49,12 @@ export default {
   setup(props, { emit }) {
     // 需要数据：
     // 1. 约定按钮的个数 5 个，如果成为动态的需要设置响应式数据
-    const count = 5;
+    const count = props.showCount;
     // 2. 当前显示的页码
-    const myCurrentPage = ref(1);
+    const myCurrentPage = ref(props.currentPage);
     // 3. 总页数 = 总条数 / 每一页条数  向上取整
-    const myTotal = ref(100);
-    const myPageSize = ref(10);
+    const myTotal = ref(props.total);
+    const myPageSize = ref(props.pageSize);
     // 其他数据（总页数，起始按钮，结束按钮，按钮数组）依赖上面数据得到
     const pager = computed(() => {
       // 总页数
