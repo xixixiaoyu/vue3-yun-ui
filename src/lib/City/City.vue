@@ -3,7 +3,7 @@
     <div class="select" @click="toggle()" :class="{ active: visible }">
       <span v-if="!fullLocation" class="placeholder">{{ placeholder }}</span>
       <span v-else class="value">{{ fullLocation }}</span>
-      <i class="iconfont icon-angle-down"></i>
+      <Icon name="angle-down" class="angle-down" />
     </div>
     <div class="option" v-if="visible">
       <div v-if="loading" class="loading"></div>
@@ -21,10 +21,14 @@
 </template>
 <script>
 import { computed, reactive, ref } from "vue";
+import Icon from "../Icon/Icon.vue";
 import { onClickOutside } from "@vueuse/core";
 import axios from "axios";
 export default {
   name: "YunCity",
+  components: {
+    Icon,
+  },
   props: {
     fullLocation: {
       type: String,
@@ -147,30 +151,40 @@ const getCityData = () => {
   });
 };
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 .xtx-city {
   display: inline-block;
   position: relative;
-  z-index: 400;
+  z-index: 99999;
+  .angle-down {
+    opacity: 0.7;
+    width: 25px;
+    height: 25px;
+    margin-top: 12px;
+    margin-left: 5px;
+  }
   .select {
+    display: flex;
+    height: 50px;
+    line-height: 48px;
     border: 1px solid #e4e4e4;
-    height: 30px;
-    padding: 0 5px;
-    line-height: 28px;
+    padding: 0 10px;
+    justify-content: space-between;
     cursor: pointer;
     &.active {
       background: #fff;
     }
     .placeholder {
-      color: #999;
+      color: #ccc;
     }
     .value {
       color: #666;
       font-size: 12px;
     }
     i {
-      font-size: 12px;
-      margin-left: 5px;
+      color: #ccc;
+      font-size: 20px;
+      transform: rotate(90deg);
     }
   }
   .option {
@@ -178,7 +192,7 @@ const getCityData = () => {
     border: 1px solid #e4e4e4;
     position: absolute;
     left: 0;
-    top: 29px;
+    top: 50px;
     background: #fff;
     min-height: 30px;
     line-height: 30px;

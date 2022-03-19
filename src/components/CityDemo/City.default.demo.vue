@@ -4,7 +4,6 @@
 
 <template>
   <div class="city-container">
-    <div class="label">地区：{{ fullLocation }}</div>
     <City placeholder="召唤师，请选择所在地区" :fullLocation="fullLocation" @change="changeCity" />
   </div>
 </template>
