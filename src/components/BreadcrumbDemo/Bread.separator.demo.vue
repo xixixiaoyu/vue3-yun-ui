@@ -17,6 +17,6 @@ import { Breadcrumb, BreadcrumbItem } from "../../lib/index";
 
 <style lang="scss">
 .yun-bread-item a {
-  color: rgb(136, 189, 136);
+  color: #8ca38c;
 }
 </style>

@@ -6,7 +6,7 @@
 <template>
   <div class="skeleton-container">
     <div v-for="i in 5" :key="i">
-      <Skeleton width="200" height="200" bg="#b9e3f3" animated></Skeleton>
+      <Skeleton width="200" height="200" bg="rgb(204 228 237)" animated></Skeleton>
     </div>
   </div>
 </template>

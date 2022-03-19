@@ -7,7 +7,7 @@
         <h3>简约 轻巧 好用</h3>
         <p class="actions">
           <a href="https://github.com/xixixiaoyu/vue3-yun-ui" target="_blank">GitHub</a>
-          <router-link to="/doc">开始</router-link>
+          <router-link to="/doc/get-started">开始</router-link>
         </p>
       </div>
     </div>

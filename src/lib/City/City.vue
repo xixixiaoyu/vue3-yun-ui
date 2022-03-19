@@ -162,7 +162,7 @@ const getCityData = () => {
   position: relative;
   z-index: 99999;
   .angle-down {
-    opacity: 0.7;
+    opacity: 0.5;
     width: 25px;
     height: 25px;
     margin-top: 12px;

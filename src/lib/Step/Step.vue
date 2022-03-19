@@ -31,7 +31,7 @@ export default {
     },
     defaultColor: {
       type: String,
-      default: "skyblue",
+      default: "#3fa8d3",
     },
     width: {
       type: String,
