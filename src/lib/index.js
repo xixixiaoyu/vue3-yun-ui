@@ -18,3 +18,4 @@ export { default as BreadcrumbItem } from "./Breadcrumb/BreadcrumbItem.vue";
 export { default as Pagination } from "./Pagination/Pagination.vue";
 export { default as City } from "./City/City.vue";
 export { default as InfiniteLoading } from "./InfiniteLoading/InfiniteLoading.vue";
+export { default as Sticky } from "./Sticky/Sticky.vue";

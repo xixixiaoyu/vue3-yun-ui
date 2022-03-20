@@ -69,7 +69,10 @@
             <router-link to="/doc/city">City 组件</router-link>
           </li>
           <li>
-            <router-link to="/doc/infinite">InfiniteLoaing 组件</router-link>
+            <router-link to="/doc/infinite">InfiniteLoaing组件</router-link>
+          </li>
+          <li>
+            <router-link to="/doc/sticky">Sticky 组件</router-link>
           </li>
         </ol>
       </aside>
@@ -144,15 +147,12 @@ aside {
   position: fixed;
   top: 53px;
   left: 0;
-  // padding-top: 70px;
+  padding-bottom: 70px;
   height: 100%;
   z-index: 30;
   transition: 250ms;
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
-  .Cpn {
-    height: 100vh;
-    overflow: auto;
-  }
+
   > h2 {
     margin-bottom: 8px;
     padding: 0 20px;
@@ -163,7 +163,7 @@ aside {
       white-space: nowrap;
       text-align: left;
       text-indent: 4px;
-      margin: 6px 0;
+      padding: 6px 0;
       > a {
         display: block;
         padding: 4px 16px;
