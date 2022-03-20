@@ -4,7 +4,7 @@
 
 <template>
   <div class="city-container">
-    <City placeholder="召唤师，请选择所在地区" :fullLocation="fullLocation" @change="changeCity" />
+    <City placeholder="召唤师，请选择出生地" :fullLocation="fullLocation" @change="changeCity" />
   </div>
 </template>
 
