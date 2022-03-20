@@ -21,9 +21,19 @@
   </template>
 </template>
 
-<script>
+<script lang="ts">
+import type { PropType } from "vue";
+import { defineComponent } from "vue";
 import Button from "../Button/Button.vue";
-export default {
+
+interface DialogProps {
+  visible: boolean;
+  overlayClosable?: boolean;
+  confirm?: () => unknown;
+  cancel?: () => unknown;
+}
+
+export default defineComponent({
   name: "YunDialog",
   components: {
     Button,
@@ -37,15 +47,18 @@ export default {
     overlayClosable: {
       type: Boolean,
       default: true,
+      required: false,
     },
     confirm: {
-      type: Function,
+      type: Function as PropType<() => unknown>,
+      required: false,
     },
     cancel: {
-      type: Function,
+      type: Function as PropType<() => unknown>,
+      required: false,
     },
   },
-  setup(props, { emit }) {
+  setup(props: DialogProps, { emit }) {
     const close = () => {
       emit("update:visible", false);
     };
@@ -73,7 +86,7 @@ export default {
       cancel,
     };
   },
-};
+});
 </script>
 
 <style lang="scss">

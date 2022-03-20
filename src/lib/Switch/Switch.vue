@@ -3,19 +3,25 @@
     <span></span>
   </button>
 </template>
-<script>
-export default {
+<script lang="ts">
+import { defineComponent } from "vue";
+
+interface SwitchProps {
+  value: boolean;
+}
+export default defineComponent({
   name: "YunSwitch",
   props: {
     value: Boolean,
   },
-  setup(props, { emit }) {
+  emits: ["update:value"],
+  setup(props: SwitchProps, { emit }) {
     const toggle = () => {
       emit("update:value", !props.value);
     };
     return { toggle };
   },
-};
+});
 </script>
 
 <style lang="scss">
