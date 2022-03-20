@@ -1,6 +1,6 @@
 <demo>
   <title>基本使用</title>
-  <desc>当滚动到可视区再加载</desc>
+  <desc>当滚动到可视区再加载，数据请求完成会停止加载</desc>
 </demo>
 
 <template>
