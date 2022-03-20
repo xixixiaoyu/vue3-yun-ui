@@ -37,7 +37,7 @@ export default {
 <style lang="scss">
 .app-header-sticky {
   width: 100%;
-  height: 80px;
+  // height: 80px;
   position: fixed;
   left: v-bind(isOffset);
   top: 53px;
