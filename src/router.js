@@ -17,6 +17,7 @@ import SkeletonDemo from "./components/SkeletonDemo/index.vue";
 import BreadcrumbDemo from "./components/BreadcrumbDemo/index.vue";
 import PaginationDemo from "./components/PaginationDemo/index.vue";
 import CityDemo from "./components/CityDemo/index.vue";
+import InfiniteLoadingDemo from "./components/InfiniteLoadingDemo/index.vue";
 import { h } from "vue";
 import Markdown from "./components/Markdown.vue";
 import intro from "./markdown/intro.md";
@@ -53,6 +54,7 @@ export const router = createRouter({
         { path: "breadcrumb", component: BreadcrumbDemo },
         { path: "pagination", component: PaginationDemo },
         { path: "city", component: CityDemo },
+        { path: "infinite", component: InfiniteLoadingDemo },
       ],
     },
   ],

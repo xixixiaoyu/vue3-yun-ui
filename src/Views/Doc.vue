@@ -68,6 +68,9 @@
           <li>
             <router-link to="/doc/city">City 组件</router-link>
           </li>
+          <li>
+            <router-link to="/doc/infinite">InfiniteLoaing 组件</router-link>
+          </li>
         </ol>
       </aside>
       <main>
