@@ -18,27 +18,27 @@ onMounted(() => {
   sliders.value = [
     {
       id: "1",
-      imgUrl: "https://s1.ax1x.com/2022/03/17/qPh86f.jpg",
+      imgUrl: "//tva1.sinaimg.cn/large/007c1Ltfgy1h0plytaly5j32yo1o0tj6.jpg",
       hrefUrl: "carousel",
     },
     {
       id: "2",
-      imgUrl: "https://s1.ax1x.com/2022/03/17/qPhN7Q.jpg",
+      imgUrl: "//tva3.sinaimg.cn/large/007c1Ltfgy1h0pm00mnrcj32yo1o0qhq.jpg",
       hrefUrl: "carousel",
     },
     {
       id: "3",
-      imgUrl: "https://s1.ax1x.com/2022/03/17/qPhwhn.jpg",
+      imgUrl: "//tvax2.sinaimg.cn/large/007c1Ltfgy1h0pm0au14kj33341rp4fh.jpg",
       hrefUrl: "carousel",
     },
     {
       id: "4",
-      imgUrl: "https://s1.ax1x.com/2022/03/17/qPhsXT.jpg",
+      imgUrl: "//tva4.sinaimg.cn/large/007c1Ltfgy1h0pm0i71mxj33kv1o07ir.jpg",
       hrefUrl: "category",
     },
     {
       id: "5",
-      imgUrl: "https://s1.ax1x.com/2022/03/17/qPh6nU.jpg",
+      imgUrl: "//tva3.sinaimg.cn/large/007c1Ltfgy1h0pm0seq94j333426k105.jpg",
       hrefUrl: "carousel",
     },
   ];
