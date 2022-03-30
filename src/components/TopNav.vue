@@ -4,9 +4,8 @@
       <svg class="icon">
         <use xlink:href="#icon-yun"></use>
       </svg>
-      <h1><span>Y</span>un-ui</h1>
+      <h1><span>Y</span>un-ui Vue</h1>
     </router-link>
-
     <ul class="menu">
       <li>
         <router-link to="/doc/switch">文档</router-link>
