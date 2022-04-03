@@ -1,7 +1,7 @@
 <template>
-  <h1>Sticky 示例</h1>
+  <h1>CountDown 示例</h1>
 
-  <Demo :component="StickyDemo1" />
+  <Demo :component="CountDownDemo" />
 
   <Attr :columns="columns" :data="data" />
 
@@ -11,15 +11,36 @@
 import Demo from "../Demo.vue";
 import Attr from "../Attr.vue";
 import { columns } from "../../lib/data";
-import StickyDemo1 from "./Sticky.default.demo.vue";
+import CountDownDemo from "./CountDown.default.vue";
 
 const data = [
   {
-    params: "component",
-    desc: "传入组件",
-    type: "object",
-    select: "object",
-    default: "一",
+    params: "time",
+    desc: "多少秒后结束",
+    type: "number/string",
+    select: "number/string",
+    default: "0",
+  },
+  {
+    params: "end",
+    desc: "倒计时",
+    type: "number/string",
+    select: "number/string",
+    default: "0",
+  },
+  {
+    params: "isMilliSecond",
+    desc: "是否是毫秒",
+    type: "boolean",
+    select: "boolean",
+    default: "false",
+  },
+  {
+    params: "refreshCounter",
+    desc: "刷新当前时间",
+    type: "boolean",
+    select: "boolean",
+    default: "false",
   },
 ];
 </script>

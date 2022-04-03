@@ -19,6 +19,7 @@ import PaginationDemo from "./components/PaginationDemo/index.vue";
 import CityDemo from "./components/CityDemo/index.vue";
 import InfiniteLoadingDemo from "./components/InfiniteLoadingDemo/index.vue";
 import StickyDemo from "./components/StickyDemo/index.vue";
+import CountDownDemo from "./components/CountDownDemo/index.vue";
 import { h } from "vue";
 import Markdown from "./components/Markdown.vue";
 import intro from "./markdown/intro.md";
@@ -57,6 +58,7 @@ export const router = createRouter({
         { path: "city", component: CityDemo },
         { path: "infinite", component: InfiniteLoadingDemo },
         { path: "sticky", component: StickyDemo },
+        { path: "countdown", component: CountDownDemo },
       ],
     },
   ],

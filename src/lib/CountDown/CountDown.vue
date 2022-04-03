@@ -115,14 +115,13 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-// @import "~@assets/css/common.scss";
 ._base-count-down {
-  color: #fff;
-  text-align: left;
   position: relative;
+  font-size: 20px;
   .content {
     width: auto;
     display: flex;
+    justify-content: center;
     align-items: center;
   }
   span {
