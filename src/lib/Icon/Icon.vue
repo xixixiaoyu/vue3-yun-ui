@@ -1,6 +1,6 @@
 <template>
   <svg aria-hidden="true" class="yun-icon">
-    <use :xlink:href="iconName"></use>
+    <use :xlink:href="iconName" :class="extraClass" :full="color"></use>
   </svg>
 </template>
 
@@ -8,7 +8,7 @@
 import "./Icon.scss";
 import { computed } from "vue";
 export default {
-  name: "YunIcon",
+  name: "Icon",
   props: {
     name: {
       type: String,
@@ -18,6 +18,12 @@ export default {
       type: String,
       required: false,
       default: "icon",
+    },
+    extraClass: {
+      type: String,
+    },
+    color: {
+      type: String,
     },
   },
   setup(props) {

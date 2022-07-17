@@ -100,7 +100,7 @@ pre {
 }
 .fold-code {
   //height: 0;
-  overflow: hidden;
+  // overflow: hidden;
   border: 1px solid #ebebeb;
   border-radius: 3px;
   transition: 300ms;

@@ -6,6 +6,7 @@ import { defineConfig } from "vite";
 import { searchTagContent } from "./src/utils";
 import vue from "@vitejs/plugin-vue";
 import vueJsx from "@vitejs/plugin-vue-jsx";
+import { createSvgIconsPlugin } from "vite-plugin-svg-icons";
 
 type FindElementType = {
   tag: string;
@@ -33,7 +34,18 @@ export default defineConfig({
     assetsDir: "assets",
   },
   base: "./",
-  plugins: [md(), vue(), coastDemoParse, vueJsx()],
+  plugins: [
+    md(),
+    vue(),
+    coastDemoParse,
+    vueJsx(),
+    createSvgIconsPlugin({
+      // 指定需要缓存的图标文件夹
+      iconDirs: [path.resolve(process.cwd(), "src/assets/icons")],
+      // 指定symbolId格式
+      symbolId: "icon-[name]",
+    }),
+  ],
   resolve: {
     alias: {
       "coast-ui-vue3": path.resolve("lib"),
