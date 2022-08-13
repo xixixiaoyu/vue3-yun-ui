@@ -1,19 +1,17 @@
 <template>
-  <div class="z-attr">
-    <h2>Attributes</h2>
+  <div class="yun-attr">
+    <h2>Props</h2>
     <table class="attr-table">
       <thead>
         <tr>
-          <th class="z-attr-title" v-for="(item, index) in columns" :key="index">
+          <th class="yun-attr-title" v-for="item in columns" :key="item.title">
             {{ item.title }}
           </th>
         </tr>
       </thead>
       <tbody>
-        <tr v-for="(item, index) in data" :key="index">
-          <td class="z-attr-title td" v-for="(value, key) in item" :key="key">
-            {{ value }}
-          </td>
+        <tr v-for="item in data" :key="item">
+          <td class="yun-attr-title" v-for="value in item" :key="value">{{ value }}</td>
         </tr>
       </tbody>
     </table>
@@ -35,34 +33,38 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.z-attr {
+.yun-attr {
+  position: relative;
   width: 100%;
   overflow-x: auto;
+
   h2 {
-    font-weight: 400;
-    color: #1f2f3d;
-    font-size: 22px;
-    margin: 55px 0 20px;
+    color: var(--yun-text-color-3);
+    font-size: 20px;
+    margin: 55px 0 18px;
   }
   .attr-table {
     width: 100%;
-    border-collapse: collapse;
     background-color: #fff;
     font-size: 14px;
     margin-bottom: 45px;
     line-height: 1.5em;
   }
-  .z-attr-title {
+
+  .yun-attr-title {
+    max-width: 250px;
+    padding: 15px;
     text-align: left;
     white-space: nowrap;
-    color: #909399;
-    font-weight: 400;
-    border-bottom: 1px solid #dcdfe6;
-    padding: 15px;
-    max-width: 250px;
+    border-radius: 6px;
   }
-  .td {
+  th {
+    background-color: #fafafa;
+    color: var(--yun-text-color-3);
+  }
+  td {
     color: #606266;
+    color: var(--yun-text-color-5);
   }
 }
 </style>

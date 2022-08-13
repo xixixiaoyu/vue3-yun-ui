@@ -21,6 +21,7 @@ import InfiniteLoadingDemo from "./components/InfiniteLoadingDemo/index.vue";
 import StickyDemo from "./components/StickyDemo/index.vue";
 import CountDownDemo from "./components/CountDownDemo/index.vue";
 import PopoverDemo from "./components/PopoverDemo/index.vue";
+import DrawerDemo from "./components/DrawerDemo/index.vue";
 import { h } from "vue";
 import Markdown from "./components/Markdown.vue";
 import intro from "./markdown/intro.md";
@@ -61,6 +62,7 @@ export const router = createRouter({
         { path: "sticky", component: StickyDemo },
         { path: "countdown", component: CountDownDemo },
         { path: "popover", component: PopoverDemo },
+        { path: "drawer", component: DrawerDemo },
       ],
     },
   ],

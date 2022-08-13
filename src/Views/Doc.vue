@@ -45,6 +45,9 @@
           <li>
             <router-link to="/doc/popover">Popover 组件</router-link>
           </li>
+          <li>
+            <router-link to="/doc/drawer">Drawer 抽屉</router-link>
+          </li>
 
           <li class="title">
             <span>导航</span>
@@ -164,7 +167,8 @@ $offsetLeftWidth: 220px;
   > main {
     flex-grow: 1;
     padding: 36px;
-    padding-left: 84px;
+    padding-left: 120px;
+    padding-right: 60px;
     background: white;
   }
 }

@@ -1,5 +1,5 @@
 <demo>
-基本使用
+基础用法
 </demo>
 
 <template>

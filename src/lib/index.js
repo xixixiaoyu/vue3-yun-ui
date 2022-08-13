@@ -45,8 +45,9 @@ import ButtonGroup from "./Button/ButtonGroup";
 import Icon from "./Icon/Icon.vue";
 import MyDialog from "./Dialog/index.vue";
 import Dialog from "./Dialog/Dialog.vue";
+import Drawer from "./Drawer/Drawer.vue";
 
-const arrComponents = [Button, ButtonGroup, Popover, Icon, MyDialog, Dialog];
+const arrComponents = [Button, ButtonGroup, Popover, Icon, MyDialog, Dialog, Drawer];
 
 export default function (app) {
   arrComponents.forEach((component) => {

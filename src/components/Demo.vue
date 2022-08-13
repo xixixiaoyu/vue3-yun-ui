@@ -31,9 +31,9 @@ export default {
 .demo-container {
   //padding: 40px;
   h2 {
-    color: #1f2f3d;
-    font-size: 22px;
-    margin: 55px 0 20px;
+    color: var(--yun-text-color-3);
+    font-size: 18px;
+    margin-top: 56px;
   }
   p {
     font-size: 14px;
