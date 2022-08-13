@@ -1,5 +1,5 @@
 <demo>
-ButtonGroup
+ ButtonGroup 按钮组
 </demo>
 
 <template>

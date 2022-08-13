@@ -1,5 +1,5 @@
 <demo>
-支持 size
+  自定义 size
 </demo>
 
 <template>

@@ -1,5 +1,6 @@
 <demo>
-基本使用 theme
+  <title>基本使用</title>
+  <desc>使用 theme 属性指定按钮类型</desc>
 </demo>
 
 <template>

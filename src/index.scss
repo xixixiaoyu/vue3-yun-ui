@@ -3,20 +3,37 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --active-theme-color: #41acb8;
+  --yun-text-color-0: rgb(20, 20, 20);
+  --yun-text-color-1: rgb(30, 30, 30);
+  --yun-text-color-2: rgb(50, 50, 50);
+  --yun-text-color-3: rgb(70, 70, 70);
+  --yun-text-color-4: rgb(90, 90, 90);
+  --yun-text-color-5: rgb(110, 110, 110);
+  --yun-text-color-6: rgb(130, 130, 130);
+  --yun-text-color-7: rgb(150, 150, 150);
+  --yun-text-color-8: rgb(170, 170, 170);
+  --yun-text-color-9: rgb(190, 190, 190);
+}
+
 #app {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
 }
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 ul,
 ol {
   list-style: none;
 }
+
 a {
   text-decoration: none;
   color: inherit;
@@ -32,10 +49,10 @@ body {
   font-size: 16px;
   min-width: 300px;
   overflow-x: hidden;
-  font-family: -apple-system, "Noto Sans", "Helvetica Neue", Helvetica, "Nimbus Sans L", Arial,
-    "Liberation Sans", "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC", "Source Han Sans SC",
-    "Source Han Sans CN", "Microsoft YaHei", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti",
-    SimHei, "WenQuanYi Zen Hei Sharp", sans-serif;
+  font-family: HarmonyOS_Regular, -apple-system, "Noto Sans", "Helvetica Neue", Helvetica,
+    "Nimbus Sans L", Arial, "Liberation Sans", "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC",
+    "Source Han Sans SC", "Source Han Sans CN", "Microsoft YaHei", "Wenquanyi Micro Hei",
+    "WenQuanYi Zen Hei", "ST Heiti", SimHei, "WenQuanYi Zen Hei Sharp", sans-serif;
 }
 
 body,
@@ -53,12 +70,13 @@ html {
   overflow: hidden;
 }
 
+// 滚动条
 *::-webkit-scrollbar {
   width: 4px;
-  height: 8px;
+  height: 6px;
 }
 *::-webkit-scrollbar-thumb {
-  background-color: #b0e0df;
+  background-color: #a8e3e3;
   border-radius: 6px;
   -webkit-box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
 }

@@ -1,6 +1,6 @@
 <demo>
   <title>基本使用</title>
-  <desc>滚动查看 Sticky 组件</desc>
+  <desc>向下滚动查看 Sticky 组件</desc>
 </demo>
 
 <template>

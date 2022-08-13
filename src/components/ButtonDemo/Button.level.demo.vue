@@ -1,5 +1,5 @@
 <demo>
-支持 level
+  自定义 level
 </demo>
 
 <template>

@@ -1,5 +1,4 @@
 <template>
-  <div>Tabs 组件</div>
   <div class="gulu-tabs">
     <div class="gulu-tabs-nav" ref="container">
       <div
@@ -38,6 +37,7 @@ export default {
     const selectedItem = ref(null);
     const indicator = ref(null);
     const container = ref(null);
+
     watchEffect(
       () => {
         const { width } = selectedItem.value.getBoundingClientRect();
@@ -50,7 +50,7 @@ export default {
       { flush: "post" }
     );
 
-    const defaults = context.slots.default();
+    const defaults = context?.slots?.default();
 
     const subElements = defaults.map((tag) => ({
       title: tag.props.title,

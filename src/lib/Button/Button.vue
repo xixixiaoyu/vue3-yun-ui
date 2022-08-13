@@ -8,6 +8,7 @@
     </div>
     <div class="checked-style" v-if="swordLoaded"></div>
     <div class="circle-loading" v-if="circleLoading"></div>
+
     <span v-if="$slots.default">
       <slot />
     </span>
