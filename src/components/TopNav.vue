@@ -1,9 +1,7 @@
 <template>
   <div class="topnav">
     <router-link class="logo" to="/">
-      <svg class="icon">
-        <use xlink:href="#icon-yun"></use>
-      </svg>
+      <Icon name="yun"></Icon>
       <h1><span>Y</span>un-ui Vue</h1>
     </router-link>
     <ul class="menu">
@@ -18,6 +16,7 @@
 </template>
 <script>
 import { inject } from "vue";
+import Icon from "../lib/Icon/Icon.vue";
 export default {
   props: {
     toggleMenuButtonVisible: {
@@ -30,9 +29,9 @@ export default {
     const toggleMenu = () => {
       menuVisible.value = !menuVisible.value;
     };
-
     return { toggleMenu };
   },
+  components: { Icon },
 };
 </script>
 
@@ -52,21 +51,8 @@ $color: #007974;
   align-items: center;
   background-color: #fff;
   border-bottom: 1px solid rgb(226, 219, 219);
-  @keyframes movex {
-    0% {
-      transform: translateX(0);
-    }
-    35% {
-      transform: translateX(6px);
-    }
-    70% {
-      transform: translateX(-3px);
-    }
-    100% {
-      transform: translateX(0px);
-    }
-  }
   > .logo {
+    font-size: 30px;
     display: flex;
     max-width: 9em;
     margin-right: auto;
@@ -84,9 +70,8 @@ $color: #007974;
     }
     > svg {
       position: relative;
-      top: 8px;
-      width: 36px;
-      height: 36px;
+      top: 10px;
+      left: 6px;
       margin-right: 8px;
       animation: movex 15s linear infinite alternate;
     }
@@ -126,6 +111,17 @@ $color: #007974;
     > .toggleAside {
       display: inline-block;
     }
+  }
+}
+@keyframes movex {
+  0% {
+    transform: translateX(0);
+  }
+  55% {
+    transform: translateX(-3px);
+  }
+  100% {
+    transform: translateX(3px);
   }
 }
 </style>

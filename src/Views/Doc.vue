@@ -170,10 +170,13 @@ $offsetLeftWidth: 220px;
     padding-left: 120px;
     padding-right: 60px;
     background: white;
+    @media (max-width: 500px) {
+      padding: 0 20px;
+    }
   }
 }
 aside {
-  transform: translateX($offsetLeftWidth);
+  transform: translateX(-$offsetLeftWidth);
   overflow: auto;
   background: #fff;
   width: $offsetLeftWidth;
