@@ -1,5 +1,5 @@
 <demo>
-  <title>滚动轮播基本使用</title>
+  <title>基础用法</title>
   <desc>sliders 传入轮播数据，width、height 设置轮播高度，autoPlay、duration 设置自动轮播和间隔</desc>
 </demo>
 
@@ -7,8 +7,8 @@
   <div class="home-banner">
     <CarouselScroll
       :sliders="sliders"
-      width="1150"
-      height="600"
+      :width="width"
+      :height="height"
       autoPlay
       :duration="2000"
     ></CarouselScroll>
@@ -16,10 +16,14 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from "vue";
+import { ref, onMounted, inject } from "vue";
 import { CarouselScroll } from "../../lib/index";
 
 const sliders = ref([]);
+
+const isPC = inject("menuVisible");
+const width = isPC.value ? 1150 : 400;
+const height = isPC.value ? 600 : 200;
 
 onMounted(() => {
   sliders.value = [

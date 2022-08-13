@@ -31,12 +31,12 @@ import { ref, watch, computed, onUnmounted, nextTick } from "vue";
 import Icon from "../Icon/Icon.vue";
 const props = defineProps({
   width: {
-    type: String,
+    type: [String, Number],
     require: true,
     default: "1150",
   },
   height: {
-    type: String,
+    type: [String, Number],
     require: true,
     default: "600",
   },
