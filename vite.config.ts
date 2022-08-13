@@ -33,7 +33,7 @@ export default defineConfig({
   build: {
     assetsDir: "assets",
   },
-  base: "/vue3-yun-ui/dist/",
+  base: "./",
   plugins: [
     md(),
     vue(),
