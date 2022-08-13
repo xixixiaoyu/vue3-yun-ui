@@ -37,8 +37,8 @@ export default {
         },
         {
           iconName: "vite",
-          title: "Vite2",
-          description: "官网基于 Vite2.x 构建",
+          title: "Vite3",
+          description: "官网基于 Vite3.x 构建",
         },
         {
           iconName: "ts",
