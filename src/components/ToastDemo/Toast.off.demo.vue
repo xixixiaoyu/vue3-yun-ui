@@ -9,7 +9,7 @@
 </template>
 
 <script setup>
-import { Toast, Button } from "../../lib/index";
+import { Toast } from "../../lib/index";
 
 const onClick1 = () => {
   Toast({

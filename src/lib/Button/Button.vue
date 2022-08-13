@@ -30,7 +30,7 @@ interface ButtonProps {
   loading: boolean;
 }
 export default defineComponent({
-  name: "YunButton",
+  name: "Button",
   props: {
     theme: {
       type: String as PropType<ButtonThemeType>,

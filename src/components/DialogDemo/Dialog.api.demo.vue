@@ -9,7 +9,7 @@
 </template>
 
 <script setup>
-import { Button, openDialog } from "../../lib/index";
+import { openDialog } from "../../lib/index";
 
 const showDialog = () => {
   openDialog({

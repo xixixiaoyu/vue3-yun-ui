@@ -8,7 +8,7 @@
 </template>
 
 <script setup>
-import { Toast, Button } from "../../lib/index";
+import { Toast } from "../../lib/index";
 
 let index = 1;
 const onClick = () => {

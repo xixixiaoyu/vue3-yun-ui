@@ -19,7 +19,6 @@
 </template>
 
 <script setup>
-import { Button, Dialog } from "../../lib/index";
 import { ref } from "vue";
 const visible = ref(false);
 const toggle = () => {

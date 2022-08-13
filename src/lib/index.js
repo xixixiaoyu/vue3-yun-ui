@@ -19,11 +19,10 @@ export const useREM = () => {
 };
 
 export { default as Switch } from "./Switch/Switch.vue";
-export { default as Button } from "./Button/Button.vue";
-export { default as ButtonGroup } from "./Button/ButtonGroup";
+
 export { default as Tabs } from "./Tabs/Tabs.vue";
 export { default as Tab } from "./Tabs/Tab.vue";
-export { default as Dialog } from "./Dialog/Dialog.vue";
+
 export { default as Step } from "./Step/Step.vue";
 export { openDialog as openDialog } from "./Dialog/openDialog";
 export { default as Input } from "./Input/Input.vue";
@@ -40,9 +39,15 @@ export { default as City } from "./City/City.vue";
 export { default as InfiniteLoading } from "./InfiniteLoading/InfiniteLoading.vue";
 export { default as Sticky } from "./Sticky/Sticky.vue";
 export { default as CountDown } from "./CountDown/CountDown.vue";
+import Button from "./Button/Button.vue";
 import Popover from "./Popover/Popover.vue";
-import Icon from "../lib/Icon/Icon.vue";
-const arrComponents = [Popover, Icon];
+import ButtonGroup from "./Button/ButtonGroup";
+import Icon from "./Icon/Icon.vue";
+import MyDialog from "./Dialog/index.vue";
+import Dialog from "./Dialog/Dialog.vue";
+
+const arrComponents = [Button, ButtonGroup, Popover, Icon, MyDialog, Dialog];
+
 export default function (app) {
   arrComponents.forEach((component) => {
     app.component(component.name, component);

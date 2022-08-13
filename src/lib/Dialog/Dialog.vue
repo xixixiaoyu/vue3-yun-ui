@@ -34,7 +34,7 @@ interface DialogProps {
 }
 
 export default defineComponent({
-  name: "YunDialog",
+  name: "Dialog",
   components: {
     Button,
   },

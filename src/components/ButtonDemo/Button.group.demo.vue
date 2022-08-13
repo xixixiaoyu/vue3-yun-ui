@@ -10,7 +10,4 @@
   </ButtonGroup>
 </template>
 
-<script setup>
-import { Button } from "../../lib/index";
-import { ButtonGroup } from "../../lib/index";
-</script>
+<script setup></script>

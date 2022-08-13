@@ -10,7 +10,7 @@
 <script setup>
 import Demo from "../Demo.vue";
 import Attr from "../Attr.vue";
-import Dialog1Demo from "./Dialog.defalut.demo.vue";
+import Dialog1Demo from "./Dialog.default.demo.vue";
 import Dialog2Demo from "./Dialog.overlay.demo.vue";
 import Dialog3Demo from "./Dialog.stop.demo.vue";
 import Dialog4Demo from "./Dialog.api.demo.vue";

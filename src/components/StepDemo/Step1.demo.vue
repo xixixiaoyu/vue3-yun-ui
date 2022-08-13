@@ -10,7 +10,7 @@
 </template>
 
 <script setup>
-import { Step, Button } from "../../lib/index";
+import { Step } from "../../lib/index";
 import { ref } from "vue";
 
 const count = ref(5);

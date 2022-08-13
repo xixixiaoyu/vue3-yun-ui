@@ -8,6 +8,4 @@
   <Button theme="text" disabled>禁用按钮</Button>
 </template>
 
-<script setup>
-import { Button } from "../../lib/index";
-</script>
+<script setup></script>

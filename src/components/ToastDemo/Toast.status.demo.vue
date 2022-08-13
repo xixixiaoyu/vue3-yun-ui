@@ -12,7 +12,7 @@
 </template>
 
 <script setup>
-import { Toast, Button } from "../../lib/index";
+import { Toast } from "../../lib/index";
 
 const onClick1 = () => {
   Toast({ text: "这是一条普通的消息提示 ~", type: "normal" });

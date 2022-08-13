@@ -17,7 +17,6 @@
 <script setup>
 import { ref } from "vue";
 import { Steps, StepsItem } from "../../lib/Step/index";
-import { Button } from "../../lib/index";
 
 const count = ref(5);
 const active = ref(0);

@@ -22,6 +22,4 @@
   </div>
 </template>
 
-<script setup>
-import { Button } from "../../lib/index";
-</script>
+<script setup></script>

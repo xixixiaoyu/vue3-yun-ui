@@ -13,7 +13,6 @@
 </template>
 
 <script setup>
-import { Button } from "../../lib/index";
 import { ref } from "vue";
 const loading = ref(false);
 
