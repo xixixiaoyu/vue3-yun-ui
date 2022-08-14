@@ -4,7 +4,7 @@
 
 <template>
   <Drawer v-model:visible="visible1">凡所有相，皆是虚妄。 若见诸相非相，则见如来。</Drawer>
-  <Button @click="open1">默认右边</Button>
+  <Button @click="open1">右边（滚动锁定）</Button>
 
   <Drawer v-model:visible="visible2" position="bottom">
     一切有为法，如梦幻泡影， 如露亦如电，应作如是观。</Drawer
@@ -16,6 +16,8 @@
 
   <Drawer v-model:visible="visible4" position="top"> 所谓佛法者，即非佛法</Drawer>
   <Button @click="open4">上边</Button>
+
+  <div style="height: 300px"></div>
 </template>
 
 <script setup>

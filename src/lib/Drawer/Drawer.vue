@@ -23,6 +23,7 @@
 import { ref, watch } from "vue";
 import { useDOMCreate } from "../hooks/index";
 import { DrawerProps, getClass, getSizeStyle } from "./index";
+import { useScrollLock } from "@vueuse/core";
 useDOMCreate("yun-drawer");
 
 const emit = defineEmits(["update:visible"]);
@@ -30,14 +31,17 @@ const props = defineProps(DrawerProps);
 
 let visible = ref(props.visible);
 let isShowMain = ref(false);
+let isLockScroll = useScrollLock(document.body);
 
 watch(
   () => props.visible,
   (val) => {
     visible.value = val;
     setTimeout(() => {
-      // 设置固定单元格的阴影
+      // 展开抽屉
       isShowMain.value = val;
+      // 锁定body滚动
+      isLockScroll.value = val;
     }, 50);
   }
 );
