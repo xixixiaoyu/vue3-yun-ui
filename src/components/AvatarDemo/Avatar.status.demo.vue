@@ -1,0 +1,33 @@
+<demo>
+状态
+</demo>
+
+<template>
+  <Avatar
+    src="https://q1.qlogo.cn/g?b=qq&s=100&nk=1057072668"
+    status="online"
+    status-position="top-left"
+  />
+  <Avatar
+    src="https://q1.qlogo.cn/g?b=qq&s=100&nk=1057072668"
+    status="processing"
+    status-position="top-left"
+  />
+  <Avatar
+    src="https://q1.qlogo.cn/g?b=qq&s=100&nk=1057072668"
+    status="busy"
+    status-position="top-right"
+  />
+  <Avatar
+    src="https://q1.qlogo.cn/g?b=qq&s=100&nk=1057072668"
+    round
+    status="away"
+    status-position="bottom-left"
+  />
+  <Avatar
+    src="https://q1.qlogo.cn/g?b=qq&s=100&nk=1057072668"
+    round
+    status="offline"
+    status-position="bottom-right"
+  />
+</template>

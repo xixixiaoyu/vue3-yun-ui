@@ -24,6 +24,9 @@
             <span>基础</span>
           </li>
           <li>
+            <router-link to="/doc/avatar">Avatar 头像</router-link>
+          </li>
+          <li>
             <router-link to="/doc/button">Button 按钮</router-link>
           </li>
           <li>
@@ -169,7 +172,8 @@ $offsetLeftWidth: 220px;
     padding: 36px;
     padding-left: 120px;
     padding-right: 60px;
-    background: white;
+    margin-top: -8px;
+    background: var(--yun-bgcolor-1);
     @media (max-width: 500px) {
       padding: 0 20px;
     }

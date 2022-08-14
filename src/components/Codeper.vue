@@ -97,6 +97,7 @@ pre {
 }
 .demo-wrapper {
   padding: 24px;
+  background-color: #fff;
 }
 .fold-code {
   //height: 0;

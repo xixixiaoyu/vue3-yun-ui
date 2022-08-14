@@ -3,7 +3,7 @@
  */
 export const useREM = () => {
   // 定义最大的 fontSize
-  const MAX_FONT_SIZE = 40;
+  const MAX_FONT_SIZE = 30;
 
   // 监听 html 文档被解析完成的事件
   document.addEventListener("DOMContentLoaded", () => {
@@ -46,8 +46,9 @@ import Icon from "./Icon/Icon.vue";
 import MyDialog from "./Dialog/index.vue";
 import Dialog from "./Dialog/Dialog.vue";
 import Drawer from "./Drawer/Drawer.vue";
+import Avatar from "./Avatar/Avatar.vue";
 
-const arrComponents = [Button, ButtonGroup, Popover, Icon, MyDialog, Dialog, Drawer];
+const arrComponents = [Button, ButtonGroup, Popover, Icon, MyDialog, Dialog, Drawer, Avatar];
 
 export default function (app) {
   arrComponents.forEach((component) => {
