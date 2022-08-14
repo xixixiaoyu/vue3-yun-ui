@@ -2,8 +2,8 @@
   <div class="demo-container">
     <h2>{{ title || component.__sourceCodeTitle }}</h2>
     <p>{{ description || component.__sourceDescription }}</p>
-    <slot></slot>
-    <p v-html="html"></p>
+    <p class="slot-content" v-if="$slots.default"><slot></slot></p>
+    <p v-html="html" v-if="html"></p>
     <!--展示代码的地方-->
     <code-per ref="codePer" :component="component"></code-per>
   </div>
@@ -47,6 +47,12 @@ export default {
     color: #5e6d82;
     line-height: 1.5em;
     margin: 14px 0;
+  }
+  .slot-content {
+    font-size: 14px;
+    color: var(--yun-text-color-6);
+    font-weight: 400;
+    line-height: 30px;
   }
 }
 </style>

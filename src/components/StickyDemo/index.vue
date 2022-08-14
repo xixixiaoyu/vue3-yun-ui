@@ -19,7 +19,7 @@ const data = [
     desc: "传入组件",
     type: "object",
     select: "object",
-    default: "一",
+    default: "/",
   },
 ];
 </script>

@@ -25,6 +25,8 @@ import DrawerDemo from "./components/DrawerDemo/index.vue";
 import AvatarDemo from "./components/AvatarDemo/index.vue";
 import IconDemo from "./components/IconDemo/index.vue";
 import TagDemo from "./components/TagDemo/index.vue";
+import MarkDemo from "./components/MarkDemo/index.vue";
+
 import { h } from "vue";
 import Markdown from "./components/Markdown.vue";
 import intro from "./markdown/intro.md";
@@ -69,6 +71,7 @@ export const router = createRouter({
         { path: "avatar", component: AvatarDemo },
         { path: "icon", component: IconDemo },
         { path: "tag", component: TagDemo },
+        { path: "mark", component: MarkDemo },
       ],
     },
   ],

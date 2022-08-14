@@ -4,7 +4,7 @@
       <div class="aside-overlay" v-show="menuVisible && isPhone" @click="closeOverlay"></div>
     </Teleport>
     <Topnav class="nav" toggleMenuButtonVisible />
-    <div class="content" :class="{ open: menuVisible }">
+    <div class="content">
       <aside :class="{ open: menuVisible }">
         <h2>引导</h2>
         <ol class="intro">
@@ -39,6 +39,9 @@
             <router-link to="/doc/layout">Layout 布局</router-link>
           </li>
           <li>
+            <router-link to="/doc/mark">Mark 标记</router-link>
+          </li>
+          <li>
             <router-link to="/doc/icon">Icon 图标</router-link>
           </li>
 
@@ -52,10 +55,10 @@
             <router-link to="/doc/toast">Toast 组件</router-link>
           </li>
           <li>
-            <router-link to="/doc/popover">Popover 组件</router-link>
+            <router-link to="/doc/drawer">Drawer 抽屉</router-link>
           </li>
           <li>
-            <router-link to="/doc/drawer">Drawer 抽屉</router-link>
+            <router-link to="/doc/popover">Popover 组件</router-link>
           </li>
 
           <li class="title">
@@ -198,7 +201,7 @@ aside {
   height: 100%;
   z-index: 30;
   transition: 250ms;
-  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+  // box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
 
   .title {
     margin: 22px 7px 18px;

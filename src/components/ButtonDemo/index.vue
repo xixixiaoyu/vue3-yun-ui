@@ -1,5 +1,8 @@
 <template>
-  <h1>Button 按钮示例</h1>
+  <indexTitle
+    title="Button"
+    subTitle="这里仅用了一个元素来实现这个组件，我希望 Yun-ui 是极简的。"
+  />
 
   <Demo :component="Button1Demo" />
   <Demo :component="Button2Demo" />
@@ -11,6 +14,7 @@
   <Attr :columns="columns" :data="data" />
 </template>
 <script setup>
+import indexTitle from "../indexTitle.vue";
 import Demo from "../Demo.vue";
 import Attr from "../Attr.vue";
 import Button1Demo from "./Button.default.demo.vue";

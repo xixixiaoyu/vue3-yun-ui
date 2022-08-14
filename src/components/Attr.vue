@@ -49,6 +49,7 @@ export default {
     font-size: 14px;
     margin-bottom: 45px;
     line-height: 1.5em;
+    border-radius: 10px;
   }
 
   .yun-attr-title {
@@ -56,14 +57,16 @@ export default {
     padding: 15px;
     text-align: left;
     white-space: nowrap;
-    border-radius: 6px;
   }
   th {
+    opacity: 0.8;
+    border: 1px solid var(--yun-bgcolor-2);
+    border-radius: 4px;
+    font-weight: 600;
     background-color: #fafafa;
     color: var(--yun-text-color-3);
   }
   td {
-    color: #606266;
     color: var(--yun-text-color-5);
   }
 }
