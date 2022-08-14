@@ -1,0 +1,131 @@
+#app {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #2c3e50;
+}
+
+body,
+dl,
+dt,
+dd,
+pre,
+form,
+fieldset,
+input,
+p,
+blockquote,
+th,
+td,
+a,
+button,
+select {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h4,
+h5 {
+  margin: 0;
+  padding: 0;
+}
+
+select {
+  font-size: 14px;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+fieldset,
+img {
+  border: 0 none;
+}
+
+fieldset {
+  margin: 0;
+  padding: 0;
+}
+
+fieldset p {
+  margin: 0;
+  padding: 0 0 0 8px;
+}
+
+legend {
+  display: none;
+}
+
+address,
+caption,
+em,
+th,
+i {
+  font-style: normal;
+  font-weight: 400;
+}
+
+table caption {
+  margin-left: -var(--lew-border-width);
+}
+
+ol,
+ul {
+  list-style-image: none;
+  list-style-position: outside;
+}
+
+caption,
+th {
+  text-align: left;
+}
+
+q:before,
+q:after,
+blockquote:before,
+blockquote:after {
+  content: "";
+}
+
+a {
+  text-decoration: none;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  transition-delay: 9999999s;
+  -webkit-transition: color 9999999s ease-out, background-color 9999999s ease-out;
+}
+
+// 滚动条
+*::-webkit-scrollbar {
+  width: 4px;
+  height: 6px;
+  background-color: rgb(209 213 219 / 0);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: rgb(209 213 219 / 0);
+  border-radius: 6px;
+  -webkit-box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(126, 126, 126);
+}
+
+*::-webkit-scrollbar-track {
+  background: #acaeac;
+}
+
+body,
+html {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
