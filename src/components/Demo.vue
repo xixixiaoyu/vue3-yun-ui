@@ -2,6 +2,7 @@
   <div class="demo-container">
     <h2>{{ title || component.__sourceCodeTitle }}</h2>
     <p>{{ description || component.__sourceDescription }}</p>
+    <slot></slot>
     <p v-html="html"></p>
     <!--展示代码的地方-->
     <code-per ref="codePer" :component="component"></code-per>

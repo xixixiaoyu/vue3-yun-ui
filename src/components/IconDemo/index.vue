@@ -4,7 +4,7 @@
   <Demo
     :component="IconDemo1"
     html="这里强烈建议您可以使用 <a href='https://www.xicons.org/#/' target='_blank'>xicons</a> ，这是 Naive UI 官方推荐使用的图标库，非常棒。"
-  />
+  ></Demo>
 
   <Attr :columns="columns" :data="data" />
 </template>
