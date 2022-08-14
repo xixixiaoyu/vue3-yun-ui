@@ -30,10 +30,13 @@
             <router-link to="/doc/button">Button 按钮</router-link>
           </li>
           <li>
-            <router-link to="/doc/grid">Grid 组件</router-link>
+            <router-link to="/doc/grid">Grid 网格</router-link>
           </li>
           <li>
-            <router-link to="/doc/layout">Layout 组件</router-link>
+            <router-link to="/doc/layout">Layout 布局</router-link>
+          </li>
+          <li>
+            <router-link to="/doc/icon">Icon 图标</router-link>
           </li>
 
           <li class="title">
