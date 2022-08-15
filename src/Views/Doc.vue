@@ -3,7 +3,7 @@
     <Teleport to="body">
       <div class="aside-overlay" v-show="menuVisible && isPhone" @click="closeOverlay"></div>
     </Teleport>
-    <Topnav class="nav" toggleMenuButtonVisible />
+    <Topnav class="nav" :toggleMenuButtonVisible="true" />
     <div class="content">
       <aside :class="{ open: menuVisible }">
         <h2>引导</h2>
@@ -40,6 +40,9 @@
           </li>
           <li>
             <router-link to="/doc/mark">Mark 标记</router-link>
+          </li>
+          <li>
+            <router-link to="/doc/color">Color 色彩</router-link>
           </li>
           <li>
             <router-link to="/doc/icon">Icon 图标</router-link>
@@ -142,8 +145,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$asideIndex: 10;
 $offsetLeftWidth: 220px;
+$asideIndex: 99999999;
 .aside-overlay {
   position: fixed;
   top: 0;
@@ -199,7 +202,7 @@ aside {
   left: 0;
   padding-bottom: 70px;
   height: 100%;
-  z-index: 30;
+  z-index: $asideIndex;
   transition: 250ms;
   // box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
 
