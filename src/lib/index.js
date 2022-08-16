@@ -49,6 +49,7 @@ import Drawer from "./Drawer/Drawer.vue";
 import Avatar from "./Avatar/Avatar.vue";
 import Tag from "./Tag/Tag.vue";
 import Mark from "./Mark/Mark.vue";
+import Badge from "./Badge/Badge.vue";
 
 const arrComponents = [
   Button,
@@ -61,6 +62,7 @@ const arrComponents = [
   Avatar,
   Tag,
   Mark,
+  Badge,
 ];
 
 export default function (app) {

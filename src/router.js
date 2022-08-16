@@ -27,6 +27,7 @@ import IconDemo from "./components/IconDemo/index.vue";
 import TagDemo from "./components/TagDemo/index.vue";
 import MarkDemo from "./components/MarkDemo/index.vue";
 import ColorDemo from "./components/ColorDemo/index.vue";
+import BadgeDemo from "./components/BadgeDemo/index.vue";
 
 import { h } from "vue";
 import Markdown from "./components/Markdown.vue";
@@ -74,6 +75,7 @@ export const router = createRouter({
         { path: "tag", component: TagDemo },
         { path: "mark", component: MarkDemo },
         { path: "color", component: ColorDemo },
+        { path: "badge", component: BadgeDemo },
       ],
     },
   ],

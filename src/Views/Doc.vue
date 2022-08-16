@@ -33,6 +33,9 @@
             <router-link to="/doc/tag">Tag 标签</router-link>
           </li>
           <li>
+            <router-link to="/doc/badge">Badge 徽章</router-link>
+          </li>
+          <li>
             <router-link to="/doc/grid">Grid 网格</router-link>
           </li>
           <li>

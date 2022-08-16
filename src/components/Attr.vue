@@ -37,6 +37,7 @@ export default {
   position: relative;
   width: 100%;
   overflow-x: auto;
+  margin-bottom: 80px;
 
   h2 {
     color: var(--yun-text-color-3);
@@ -44,10 +45,11 @@ export default {
     margin: 55px 0 18px;
   }
   .attr-table {
+    overflow-x: auto;
     width: 100%;
+    min-width: 600px;
     background-color: #fff;
     font-size: 14px;
-    margin-bottom: 45px;
     line-height: 1.5em;
     border-radius: 10px;
   }
@@ -56,7 +58,7 @@ export default {
     max-width: 250px;
     padding: 15px;
     text-align: left;
-    white-space: nowrap;
+    // white-space: nowrap;
   }
   th {
     opacity: 0.8;
