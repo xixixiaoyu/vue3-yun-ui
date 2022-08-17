@@ -36,10 +36,13 @@
             <router-link to="/doc/badge">Badge 徽章</router-link>
           </li>
           <li>
-            <router-link to="/doc/grid">Grid 网格</router-link>
+            <router-link to="/doc/flex">Flex 弹性布局</router-link>
           </li>
           <li>
-            <router-link to="/doc/layout">Layout 布局</router-link>
+            <router-link to="/doc/grid">Grid 网格布局</router-link>
+          </li>
+          <li>
+            <router-link to="/doc/layout">Layout 页面布局</router-link>
           </li>
           <li>
             <router-link to="/doc/title">Title 标题</router-link>

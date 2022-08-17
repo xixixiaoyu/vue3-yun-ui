@@ -1,12 +1,10 @@
 <template>
-  <div>
-    <h1>Tag</h1>
+  <h1>Tag</h1>
 
-    <Demo :component="TagDemo1" />
-    <Demo :component="TagDemo2" />
-    <Demo :component="TagDemo3" />
-    <Demo :component="TagDemo4" />
-  </div>
+  <Demo :component="TagDemo1" />
+  <Demo :component="TagDemo2" />
+  <Demo :component="TagDemo3" />
+  <Demo :component="TagDemo4" />
 
   <Attr :columns="columns" :data="data" />
 </template>

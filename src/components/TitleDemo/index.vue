@@ -1,10 +1,8 @@
 <template>
-  <div>
-    <h1>Title</h1>
+  <h1>Title</h1>
 
-    <Demo :component="TitleDemo1" />
-    <Demo :component="TitleDemo2" />
-  </div>
+  <Demo :component="TitleDemo1" />
+  <Demo :component="TitleDemo2" />
 
   <Attr :columns="columns" :data="data" />
 </template>

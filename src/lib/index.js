@@ -51,6 +51,7 @@ import Tag from "./Tag/Tag.vue";
 import Mark from "./Mark/Mark.vue";
 import Badge from "./Badge/Badge.vue";
 import Title from "./Title/Title.vue";
+import Flex from "./Flex/Flex.vue";
 
 const arrComponents = [
   Button,
@@ -65,6 +66,7 @@ const arrComponents = [
   Mark,
   Badge,
   Title,
+  Flex,
 ];
 
 export default function (app) {

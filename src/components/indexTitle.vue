@@ -28,7 +28,7 @@ h2 {
   margin-bottom: 20px;
 }
 h3 {
-  font-size: 14px;
+  font-size: 16px;
   color: var(--yun-text-color-6);
   font-weight: 400;
   line-height: 30px;
