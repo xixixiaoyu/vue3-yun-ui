@@ -50,6 +50,7 @@ import Avatar from "./Avatar/Avatar.vue";
 import Tag from "./Tag/Tag.vue";
 import Mark from "./Mark/Mark.vue";
 import Badge from "./Badge/Badge.vue";
+import Title from "./Title/Title.vue";
 
 const arrComponents = [
   Button,
@@ -63,6 +64,7 @@ const arrComponents = [
   Tag,
   Mark,
   Badge,
+  Title,
 ];
 
 export default function (app) {

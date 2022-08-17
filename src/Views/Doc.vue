@@ -42,6 +42,9 @@
             <router-link to="/doc/layout">Layout 布局</router-link>
           </li>
           <li>
+            <router-link to="/doc/title">Title 标题</router-link>
+          </li>
+          <li>
             <router-link to="/doc/mark">Mark 标记</router-link>
           </li>
           <li>
