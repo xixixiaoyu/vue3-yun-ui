@@ -54,6 +54,7 @@ import Flex from "./Flex/Flex.vue";
 import Checkbox from "./Checkbox/Checkbox.vue";
 import CheckboxGroup from "./Checkbox/CheckboxGroup.vue";
 import Switch from "./Switch/Switch.vue";
+import Input from "./Input/Input.vue";
 
 import * as directives from "./directives/index";
 
@@ -79,6 +80,7 @@ const arrComponents = [
   Checkbox,
   CheckboxGroup,
   Switch,
+  Input,
 ];
 
 export default function (app) {

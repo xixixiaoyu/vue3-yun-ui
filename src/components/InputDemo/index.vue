@@ -1,37 +1,102 @@
 <template>
-  <h1>Input 示例</h1>
-  <div>
-    <Demo :component="Input1" />
-    <Demo :component="Input2" />
-    <Demo :component="Input3" />
-    <Demo :component="Input4" />
-    <Demo :component="Input5" />
-    <Demo
-      :component="Input6"
-      description="共支持 mini，small，medium，large 四种 size，默认的 size 是 medium"
-    />
-    <Demo
-      :component="Input7"
-      description="共支持 normal，secondary，success，warning，error 五种 status，默认的 status 是 normal"
-    />
-    <Demo :component="Input8" />
-    <Demo :component="Input9" />
-    <Demo :component="Input10" description="可通过事件 update:value 获取最新值" />
-    <Demo :component="Input11" description="事件包含: input, change, focus, blur, keydown" />
-  </div>
+  <h1>Input & Textarea</h1>
+
+  <Demo :component="InputDemo1" />
+  <Demo :component="InputDemo2" />
+
+  <Attr :columns="columns" :data="data" />
 </template>
 
 <script setup>
 import Demo from "../Demo.vue";
-import Input1 from "./Input.default.demo.vue";
-import Input2 from "./Input.disabled.demo.vue";
-import Input3 from "./Input.clearable.demo.vue";
-import Input4 from "./Input.password.demo.vue";
-import Input5 from "./input-max-demo.vue";
-import Input6 from "./Input.size.demo.vue";
-import Input7 from "./Input.status.demo.vue";
-import Input8 from "./Input.width.demo.vue";
-import Input9 from "./Input.label.demo.vue";
-import Input10 from "./Input.model.demo.vue";
-import Input11 from "./Input.events.demo.vue";
+import Attr from "../Attr.vue";
+import InputDemo1 from "./Input.default.demo.vue";
+import InputDemo2 from "./TextArea.default.demo.vue";
+
+const data = [
+  {
+    params: "type",
+    desc: "输入框类型（textarea：多行文本）",
+    type: "string",
+    select: "/",
+    default: "''",
+  },
+  {
+    params: "v-model(model-value)",
+    desc: "绑定值",
+    type: "string",
+    select: "/",
+    default: "''",
+  },
+  {
+    params: "placeholder",
+    desc: "默认提示",
+    type: "string",
+    select: "/",
+    default: "请输入",
+  },
+  {
+    params: "disabled",
+    desc: "禁用",
+    type: "boolean",
+    select: "true / false",
+    default: "false",
+  },
+  {
+    params: "readonly",
+    desc: "是否只读",
+    type: "boolean",
+    select: "true / false",
+    default: "false",
+  },
+  {
+    params: "clearable",
+    desc: "是否可清空",
+    type: "boolean",
+    select: "true / false",
+    default: "false",
+  },
+  {
+    params: "resize",
+    desc: "缩放模式（只对多行文本框有效）",
+    type: "string",
+    select: "/",
+    default: "none",
+  },
+  {
+    params: "input",
+    desc: "输入触发的回调方法",
+    type: "(e: value) => void",
+    select: "/",
+    default: "/",
+  },
+  {
+    params: "clear",
+    desc: "清空触发的回调方法",
+    type: "(e: value) => void",
+    select: "/",
+    default: "/",
+  },
+  {
+    params: "change",
+    desc: "值变化触发的回调方法",
+    type: "(e: value) => void",
+    select: "/",
+    default: "/",
+  },
+  {
+    params: "focus",
+    desc: "聚焦触发的回调方法",
+    type: "(e: value) => void",
+    select: "/",
+    default: "/",
+  },
+  {
+    params: "blur",
+    desc: "失焦触发的回调方法",
+    type: "(e: value) => void",
+    select: "/",
+    default: "/",
+  },
+];
 </script>

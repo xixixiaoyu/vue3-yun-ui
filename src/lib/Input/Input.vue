@@ -1,191 +1,405 @@
 <template>
   <div
-    :class="{ [`coast-input-wrapper-size-${size}`]: size }"
-    :style="`width:${width}`"
-    class="coast-input-wrapper"
+    class="yun-input-view"
+    :class="`
+            yun-input-view-${size} 
+            ${_type == 'textarea' ? 'yun-input-view-textarea' : ''}
+            ${readonly ? 'yun-input-view-readonly' : ''} 
+            ${disabled ? 'yun-input-view-disabled' : ''}
+            ${align ? 'yun-input-view-align-' + align : ''}
+            ${autoWidth ? 'yun-input-view-auto-width' : ''}
+            `"
   >
-    <span v-if="label" class="coast-label left">{{ label }}</span>
-    <input
-      ref="inputRef"
-      v-bind="$attrs"
-      :class="classes"
+    <span v-if="labelLeft" class="label-left">{{ labelLeft }}</span>
+    <textarea
+      v-if="_type == 'textarea'"
+      v-model="v"
+      class="btf-scrollbar"
+      :class="`yun-textarea-resize-${resize}`"
+      rows="3"
+      cols="3"
       :disabled="disabled"
-      :maxlength="maxlength"
-      :placeholder="placeholder"
       :readonly="readonly"
-      :type="type === 'password' ? (passwordVisible ? 'text' : 'password') : type"
-      :value="value"
-      class="coast-input"
-      @blur="onBlur"
-      @change="onChange"
-      @focus="onFocus"
-      @input="onInput"
-      @keydown="onKeydown"
+      :placeholder="placeholder"
+      @input="input"
+      @change="emit('change', v)"
+      @blur="emit('blur', v)"
+      @focus="emit('focus', v)"
+    ></textarea>
+
+    <input
+      v-else
+      v-model="v"
+      :disabled="disabled"
+      :placeholder="placeholder"
+      :type="_type"
+      :readonly="readonly"
+      onkeypress="if(window.event.keyCode==13) this.blur()"
+      @input="input"
+      @change="emit('change', v)"
+      @blur="emit('blur', v)"
+      @focus="emit('focus', v)"
     />
-    <Icon
-      v-if="clearable"
-      :style="`transform: translateX(${actionIconTransform}px)`"
-      class="coast-input-action"
-      name="clear"
-      @click="onClear"
-    />
-    <Icon
-      v-if="type === 'password'"
-      :name="passwordVisible ? 'eye' : 'eye-close'"
-      :style="`transform: translateX(${actionIconTransform + 24}px)`"
-      class="coast-input-action"
-      @click="onTogglePasswordVisible"
-    />
-    <span v-if="labelRight" ref="labelRightRef" class="coast-label right">{{ labelRight }}</span>
+    <label v-if="autoWidth" class="input-auto-width">{{ v }}</label>
+    <div
+      v-if="showPassword || clearable || showCount"
+      class="yun-input-controls"
+      :class="{
+        'yun-input-controls-show':
+          (v && showPassword) ||
+          (v && clearable) ||
+          (showCount && !clearable && !showPassword) ||
+          (showCount && maxLength),
+      }"
+    >
+      <div v-if="getCheckNumStr" class="yun-input-show-count">
+        {{ getCheckNumStr }}
+      </div>
+      <div v-if="showPassword" class="yun-input-show-password">
+        <Icon class="eye-icon-view" size="18" @mousedown.prevent="" @click="showPasswordFn">
+          <EyeOutline v-show="_type == 'text'" />
+          <EyeOffOutline v-show="_type == 'password'" />
+        </Icon>
+      </div>
+      <div v-if="clearable" class="yun-input-clear">
+        <Icon class="close-icon-view" size="18" @mousedown.prevent="" @click="clear">
+          <CloseCircleOutline />
+        </Icon>
+      </div>
+    </div>
   </div>
 </template>
 
-<script lang="ts">
-import "./style/Input.scss";
-import type { PropType } from "vue";
-import { computed, defineComponent, nextTick, ref } from "vue";
-import Icon from "../icon/Icon.vue";
-type InputStatusType = "normal" | "secondary" | "error" | "warning" | "success";
-type InputSizeType = "mini" | "small" | "medium" | "large";
-type InputElementEvent = Event & { target: HTMLInputElement };
-interface InputProps {
-  value: string | number;
-  type: string;
-  clearable: boolean;
-  maxlength: number;
-  placeholder: string;
-  disabled: boolean;
-  readonly: boolean;
-  width: string;
-  label: string;
-  labelRight: string;
-  status: InputStatusType;
-  size: InputSizeType;
-}
-export default defineComponent({
-  name: "YunInput",
-  components: { Icon },
-  props: {
-    value: {
-      type: [String, Number],
-      required: true,
-    },
-    type: {
-      type: String,
-      default: "text",
-    },
-    clearable: {
-      type: Boolean,
-      required: false,
-      default: false,
-    },
-    maxlength: {
-      type: Number,
-      required: false,
-    },
-    placeholder: {
-      type: String,
-      required: false,
-    },
-    disabled: {
-      type: Boolean,
-      required: false,
-    },
-    readonly: {
-      type: Boolean,
-      required: false,
-    },
-    width: {
-      type: String,
-      required: false,
-    },
-    label: {
-      type: String,
-      required: false,
-    },
-    labelRight: {
-      type: String,
-      required: false,
-    },
-    status: {
-      type: String as PropType<InputStatusType>,
-      required: false,
-      default: "normal",
-      validator: (val: string) => {
-        return ["normal", "secondary", "success", "warning", "error"].includes(val);
-      },
-    },
-    size: {
-      type: String as PropType<InputSizeType>,
-      required: false,
-      default: "medium",
-      validator: (val: string) => {
-        return ["mini", "small", "medium", "large"].includes(val);
-      },
-    },
-  },
-  emits: ["update:value", "input", "change", "blur", "focus", "keydown", "clear"],
-  setup(props: InputProps, { emit }) {
-    const labelRightRef = ref<HTMLSpanElement>(null);
-    const inputRef = ref<HTMLInputElement>(null);
-    const passwordVisible = ref(false);
-    const classes = computed(() => ({
-      "coast-input-label-left": props.label,
-      "coast-input-label-right": props.labelRight,
-      "coast-input-suffix-clear": props.clearable,
-      "coast-input-suffix-password": props.type === "password",
-      [`coast-input-status-${props.status}`]: props.status,
-    }));
-    const actionIconTransform = computed(() => {
-      const labelRightOffsetWidth = labelRightRef.value ? labelRightRef.value.offsetWidth : 0;
-      const passwordIconOffsetWidth = props.type === "password" ? 24 : 0;
-      return -labelRightOffsetWidth - passwordIconOffsetWidth;
-    });
-    const focus = () => {
-      nextTick(() => {
-        inputRef.value.focus();
-      });
-    };
-    const onClear = () => {
-      emit("update:value", "");
-      emit("change", "");
-      emit("clear");
-      focus();
-    };
-    const onTogglePasswordVisible = () => {
-      passwordVisible.value = !passwordVisible.value;
-      focus();
-    };
-    const onInput = (event: InputElementEvent) => {
-      emit("update:value", event.target.value);
-      emit("input", event.target.value);
-    };
-    const onChange = (event: InputElementEvent) => {
-      emit("change", event.target.value);
-    };
-    const onBlur = (event: InputElementEvent) => {
-      emit("blur", event);
-    };
-    const onFocus = (event: InputElementEvent) => {
-      emit("focus", event);
-    };
-    const onKeydown = (event: KeyboardEvent) => {
-      emit("keydown", event);
-    };
-    return {
-      classes,
-      onClear,
-      onInput,
-      onChange,
-      onBlur,
-      onFocus,
-      onKeydown,
-      onTogglePasswordVisible,
-      inputRef,
-      labelRightRef,
-      actionIconTransform,
-      passwordVisible,
-    };
-  },
+<script setup lang="ts">
+import { ref, watch, computed } from "vue";
+import { CloseCircleOutline, EyeOutline, EyeOffOutline } from "@vicons/ionicons5";
+import { Icon } from "@vicons/utils";
+import { inputProps } from "./props";
+const props = defineProps(inputProps);
+const v = ref(props.modelValue);
+watch(
+  () => props.modelValue,
+  () => {
+    v.value = props.modelValue;
+  }
+);
+const emit = defineEmits(["update:modelValue", "clear", "blur", "focus", "change", "input"]);
+const input = () => {
+  if (props.maxLength) {
+    // @ts-ignore
+    for (let i = 0; i <= v.value.length - 1; i++) {
+      // @ts-ignore
+      if (getTextLength(v.value.slice(0, i)) >= props.maxLength) {
+        // @ts-ignore
+        v.value = v.value.slice(0, i);
+      }
+    }
+  }
+  emit("update:modelValue", v.value);
+  emit("input", v.value);
+};
+const clear = (): void => {
+  emit("clear", v.value);
+  v.value = "";
+  emit("update:modelValue", v.value);
+};
+let _type = ref(props.type);
+const showPasswordFn = (): void => {
+  _type.value == "text" ? (_type.value = "password") : (_type.value = "text");
+};
+let getCheckNumStr = computed(() => {
+  if (props.showCount && props.maxLength) {
+    // @ts-ignore
+    return getTextLength(v.value) + " / " + props.maxLength;
+  } else if (props.showCount) {
+    // @ts-ignore
+    return getTextLength(v.value);
+  } else {
+    return false;
+  }
 });
+/**
+ * 获取字符长度
+ * @param val
+ */
+const getTextLength = (val: string) => {
+  if (!props.niceCount) {
+    return val.length;
+  } else {
+    let len = 0;
+    for (let i = 0; i <= val.length - 1; i++) {
+      let length = val.charCodeAt(i);
+      if (length >= 0 && length <= 128) {
+        len += 0.5;
+      } else {
+        len += 1;
+      }
+    }
+    return Math.trunc(len);
+  }
+};
 </script>
+
+<script lang="ts">
+export default {
+  name: "Input",
+};
+</script>
+
+<style lang="scss" scoped>
+.yun-input-view {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  border: var(--yun-form-border-width) var(--yun-form-border-color) solid;
+  border-radius: var(--yun-form-border-radius);
+  background-color: var(--yun-form-bgcolor);
+  transition: var(--yun-form-transition);
+  box-sizing: border-box;
+  input,
+  textarea {
+    width: 100%;
+    text-overflow: ellipsis;
+    border: none;
+    background: none;
+    color: var(--yun-text-color-2);
+    outline: none;
+    box-sizing: border-box;
+  }
+  input {
+    height: 35px;
+    overflow: hidden;
+  }
+  textarea {
+    min-height: 35px;
+  }
+  input::placeholder,
+  textarea::placeholder {
+    color: rgb(165, 165, 165);
+  }
+  .yun-input-controls {
+    display: inline-flex;
+    align-items: center;
+    height: 35px;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: var(--yun-form-transition);
+    > div {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      white-space: nowrap;
+      min-width: 30px;
+      padding: 0px 5px;
+      box-sizing: border-box;
+      user-select: none;
+      opacity: 0.5;
+      transition: var(--yun-form-transition);
+    }
+    .yun-input-clear {
+      cursor: pointer;
+    }
+    .yun-input-show-password {
+      cursor: pointer;
+    }
+    > div:hover {
+      opacity: 1;
+    }
+  }
+  .yun-input-controls-show {
+    opacity: 0.8;
+    transform: translateX(0px);
+  }
+}
+.yun-input-view-align-left {
+  input,
+  textarea {
+    text-align: left;
+  }
+}
+.yun-input-view-align-center {
+  input,
+  textarea {
+    text-align: center;
+  }
+}
+.yun-input-view-align-right {
+  input,
+  textarea {
+    text-align: right;
+  }
+}
+.yun-input-view-auto-width {
+  position: relative;
+  width: auto;
+  input {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0px;
+    display: inline-block;
+    width: 100%;
+  }
+  .input-auto-width {
+    width: auto;
+    min-width: 50px;
+    height: 100%;
+    visibility: hidden;
+    box-sizing: border-box;
+  }
+}
+.yun-input-view-small {
+  input,
+  textarea {
+    padding: var(--yun-form-input-padding-small);
+    font-size: var(--yun-form-font-size-small);
+    line-height: var(--yun-form-input-line-height-small);
+  }
+  input {
+    height: var(--yun-form-input-height-small);
+  }
+  textarea {
+    min-height: var(--yun-form-input-height-small);
+  }
+  .yun-input-controls {
+    height: var(--yun-form-input-height-small);
+  }
+  .input-auto-width {
+    height: var(--yun-form-input-height-small);
+    padding: var(--yun-form-input-padding-small);
+    font-size: var(--yun-form-font-size-small);
+    line-height: var(--yun-form-input-line-height-small);
+  }
+}
+.yun-input-view-medium {
+  input,
+  textarea {
+    padding: var(--yun-form-input-padding-medium);
+    font-size: var(--yun-form-font-size-medium);
+    line-height: var(--yun-form-input-line-height-medium);
+  }
+  input {
+    height: var(--yun-form-input-height-medium);
+  }
+  textarea {
+    min-height: var(--yun-form-input-height-medium);
+  }
+  .yun-input-controls {
+    height: var(--yun-form-input-height-medium);
+  }
+  .input-auto-width {
+    height: var(--yun-form-input-height-medium);
+    font-size: var(--yun-form-font-size-medium);
+    line-height: var(--yun-form-input-line-height-medium);
+    padding: var(--yun-form-input-padding-medium);
+  }
+}
+.yun-input-view-large {
+  input,
+  textarea {
+    padding: var(--yun-form-input-padding-large);
+    font-size: var(--yun-form-font-size-large);
+    line-height: var(--yun-form-input-line-height-large);
+  }
+  input {
+    height: var(--yun-form-input-height-large);
+  }
+  textarea {
+    min-height: var(--yun-form-input-height-large);
+  }
+  .yun-input-controls {
+    height: var(--yun-form-input-height-large);
+  }
+  .input-auto-width {
+    height: var(--yun-form-input-height-large);
+    padding: var(--yun-form-input-padding-large);
+    font-size: var(--yun-form-font-size-large);
+    line-height: var(--yun-form-input-line-height-large);
+  }
+}
+.yun-input-view-textarea {
+  flex-direction: column;
+  justify-content: center;
+  .yun-input-controls {
+    width: 100%;
+    justify-content: end;
+    height: 25px;
+    box-sizing: border-box;
+    transform: translateY(100%);
+  }
+  .yun-input-controls-show {
+    transform: translateY(0px);
+  }
+  .yun-textarea-resize-none {
+    resize: none;
+  }
+  .yun-textarea-resize-horizontal {
+    resize: horizontal;
+  }
+  .yun-textarea-resize-vertical {
+    resize: vertical;
+  }
+  .yun-textarea-resize-both {
+    resize: both;
+  }
+  .yun-textarea-resize-inline {
+    resize: inline;
+  }
+}
+.yun-input-view:hover {
+  border: var(--yun-form-border-width) var(--yun-form-border-color-hover) solid;
+  background-color: var(--yun-form-bgcolor-hover);
+}
+.yun-input-view:active {
+  background-color: var(--yun-form-bgcolor-active);
+}
+.yun-input-view:focus-within {
+  background-color: var(--yun-form-bgcolor-focus);
+  border: var(--yun-form-border-width) var(--yun-form-border-color-focus) solid;
+}
+.yun-input-view-readonly {
+  cursor: default;
+  border: var(--yun-form-border-width) rgba(0, 0, 0, 0) solid;
+  background-color: var(--yun-form-bgcolor);
+  input {
+    user-select: auto;
+  }
+}
+.yun-input-view-readonly:hover {
+  border: var(--yun-form-border-width) rgba(0, 0, 0, 0) solid;
+  background-color: var(--yun-form-bgcolor);
+}
+.yun-input-view-readonly:active {
+  border: var(--yun-form-border-width) rgba(0, 0, 0, 0) solid;
+  background-color: var(--yun-form-bgcolor);
+}
+.yun-input-view-readonly:focus-within {
+  border: var(--yun-form-border-width) rgba(0, 0, 0, 0) solid;
+  background-color: var(--yun-form-bgcolor);
+}
+.yun-input-view-disabled {
+  input,
+  textarea {
+    cursor: not-allowed;
+  }
+  cursor: not-allowed;
+  opacity: var(--yun-disabled-opacity);
+  border: var(--yun-form-border-width) rgba(0, 0, 0, 0) solid;
+  background-color: var(--yun-form-bgcolor);
+}
+.yun-input-view-disabled:hover {
+  border: var(--yun-form-border-width) rgba(0, 0, 0, 0) solid;
+  background-color: var(--yun-form-bgcolor);
+}
+.yun-input-view-disabled:active {
+  border: var(--yun-form-border-width) rgba(0, 0, 0, 0) solid;
+  background-color: var(--yun-form-bgcolor);
+}
+.yun-input-view-disabled:focus-within {
+  border: var(--yun-form-border-width) rgba(0, 0, 0, 0) solid;
+  background-color: var(--yun-form-bgcolor);
+}
+</style>
