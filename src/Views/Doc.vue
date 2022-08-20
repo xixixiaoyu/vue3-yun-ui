@@ -83,10 +83,13 @@
             <router-link to="/doc/drawer">Drawer 抽屉</router-link>
           </li>
           <li>
-            <router-link to="/doc/popover">Popover 组件</router-link>
+            <router-link to="/doc/popover">Popover 信息气泡</router-link>
           </li>
           <li>
-            <router-link to="/doc/tooltip">Tooltip 组件</router-link>
+            <router-link to="/doc/dropdown">Dropdown 下拉菜单</router-link>
+          </li>
+          <li>
+            <router-link to="/doc/tooltip">Tooltip 文字提示</router-link>
           </li>
 
           <li class="title">

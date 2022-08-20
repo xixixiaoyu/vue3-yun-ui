@@ -50,11 +50,12 @@ import Mark from "./Mark/Mark.vue";
 import Badge from "./Badge/Badge.vue";
 import Title from "./Title/Title.vue";
 import Flex from "./Flex/Flex.vue";
-// import YunPopover from "./Popover/YunPopover/Popover.vue";
+import YunPopover from "./Popover/YunPopover/YunPopover.vue";
 import Checkbox from "./Checkbox/Checkbox.vue";
 import CheckboxGroup from "./Checkbox/CheckboxGroup.vue";
 import Switch from "./Switch/Switch.vue";
 import Input from "./Input/Input.vue";
+import Dropdown from "./Dropdown/Dropdown.vue";
 
 import * as directives from "./directives/index";
 
@@ -76,11 +77,12 @@ const arrComponents = [
   Badge,
   Title,
   Flex,
-  // YunPopover,
+  YunPopover,
   Checkbox,
   CheckboxGroup,
   Switch,
   Input,
+  Dropdown,
 ];
 
 export default function (app) {

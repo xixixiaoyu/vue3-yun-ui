@@ -32,6 +32,7 @@ import TitleDemo from "./components/TitleDemo/index.vue";
 import FlexDemo from "./components/FlexDemo/index.vue";
 import TooltipDemo from "./components/TooltipDemo/index.vue";
 import CheckboxDemo from "./components/CheckboxDemo/index.vue";
+import DropdownDemo from "./components/DropdownDemo/index.vue";
 
 import { h } from "vue";
 import Markdown from "./components/Markdown.vue";
@@ -84,6 +85,7 @@ export const router = createRouter({
         { path: "flex", component: FlexDemo },
         { path: "tooltip", component: TooltipDemo },
         { path: "checkbox", component: CheckboxDemo },
+        { path: "dropdown", component: DropdownDemo },
       ],
     },
   ],
