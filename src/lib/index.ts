@@ -18,8 +18,6 @@ export const useREM = () => {
   });
 };
 
-export { default as Switch } from "./Switch/Switch.vue";
-
 export { default as Tabs } from "./Tabs/Tabs.vue";
 export { default as Tab } from "./Tabs/Tab.vue";
 
@@ -55,6 +53,7 @@ import Flex from "./Flex/Flex.vue";
 // import YunPopover from "./Popover/YunPopover/Popover.vue";
 import Checkbox from "./Checkbox/Checkbox.vue";
 import CheckboxGroup from "./Checkbox/CheckboxGroup.vue";
+import Switch from "./Switch/Switch.vue";
 
 import * as directives from "./directives/index";
 
@@ -79,6 +78,7 @@ const arrComponents = [
   // YunPopover,
   Checkbox,
   CheckboxGroup,
+  Switch,
 ];
 
 export default function (app) {

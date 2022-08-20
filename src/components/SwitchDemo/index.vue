@@ -1,8 +1,8 @@
 <template>
   <div>
-    <h1>Switch 示例</h1>
+    <h1>Switch</h1>
     <Demo :component="Switch1Demo" />
-    <Demo :component="Switch2Demo" />
+    <Demo :component="Switch2Demo"> 添加 <Mark type="info">disabled</Mark> 属性即可禁用 </Demo>
   </div>
 
   <Attr :columns="columns" :data="data" />
@@ -17,11 +17,18 @@ import { columns } from "../../lib/data";
 
 const data = [
   {
-    params: "value",
-    desc: "是否选中",
+    params: "v-model (modelValue)",
+    desc: "绑定值",
     type: "boolean",
-    select: "false / true",
+    select: "true / false",
     default: "false",
+  },
+  {
+    params: "round",
+    desc: "是否是圆角",
+    type: "boolean",
+    select: "true / false",
+    default: "true",
   },
   {
     params: "disabled ",
@@ -32,32 +39,3 @@ const data = [
   },
 ];
 </script>
-
-<style lang="scss" scoped>
-$border-color: #d9d9d9;
-.demo {
-  border: 1px solid $border-color;
-  margin: 16px 0 32px;
-  > h2 {
-    font-size: 20px;
-    padding: 8px 16px;
-    border-bottom: 1px solid $border-color;
-  }
-  &-component {
-    padding: 16px;
-  }
-  &-actions {
-    padding: 8px 16px;
-    border-top: 1px dashed $border-color;
-  }
-  &-code {
-    padding: 8px 16px;
-    border-top: 1px dashed $border-color;
-    > pre {
-      line-height: 1.1;
-      font-family: Consolas, "Courier New", Courier, monospace;
-      margin: 0;
-    }
-  }
-}
-</style>

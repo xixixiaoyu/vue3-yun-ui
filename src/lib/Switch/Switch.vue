@@ -1,73 +1,121 @@
 <template>
-  <button class="gulu-switch" @click="toggle" :class="{ 'gulu-checked': value }">
-    <span></span>
-  </button>
+  <input
+    v-model="v"
+    :class="{ round: round, disabled: disabled }"
+    type="checkbox"
+    :disabled="disabled"
+    @change="change"
+  />
 </template>
-<script lang="ts">
-import { defineComponent } from "vue";
 
-interface SwitchProps {
-  value: boolean;
-}
-export default defineComponent({
-  name: "YunSwitch",
-  props: {
-    value: Boolean,
+<script setup lang="ts">
+import { ref, watch } from "vue";
+const props = defineProps({
+  modelValue: {
+    type: Boolean,
+    default: () => {
+      return false;
+    },
   },
-  emits: ["update:value"],
-  setup(props: SwitchProps, { emit }) {
-    const toggle = () => {
-      emit("update:value", !props.value);
-    };
-    return { toggle };
+  round: {
+    type: Boolean,
+    default: true,
+  },
+  disabled: {
+    type: Boolean,
+    default: false,
   },
 });
+const v = ref(props.modelValue);
+watch(
+  () => props.modelValue,
+  () => {
+    v.value = props.modelValue;
+  }
+);
+const emit = defineEmits(["update:modelValue"]);
+const change = () => {
+  emit("update:modelValue", v.value);
+};
 </script>
 
-<style lang="scss">
-$h: 22px;
-$h2: $h - 4px;
-.gulu-switch {
-  height: $h;
-  width: $h * 2;
-  border: none;
-  background: #bfbfbf;
-  border-radius: $h/2;
-  position: relative;
+<script lang="ts">
+export default {
+  name: "Switch",
+};
+</script>
 
-  > span {
-    position: absolute;
-    top: 2px;
-    left: 2px;
-    height: $h2;
-    width: $h2;
-    background: white;
-    border-radius: $h2/2;
-    transition: all 250ms;
-  }
-  &.gulu-checked {
-    background: #0cc0ba;
-    > span {
-      left: calc(100% - #{$h2} - 2px);
-    }
-  }
-  &:focus {
-    outline: none;
-  }
-  &:active {
-    > span {
-      width: $h2 + 6px;
-    }
-  }
-  &.gulu-checked:active {
-    > span {
-      width: $h2 + 4px;
-      margin-left: -4px;
-    }
-  }
+<style lang="scss" scoped>
+input {
+  position: relative;
+  width: 38px;
+  height: 24px;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+}
+input::before {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  content: "";
+  width: 38px;
+  height: 24px;
+  background: var(--yun-form-bgcolor);
+  border-radius: 4px;
+  transition: var(--yun-form-transition);
+  cursor: pointer;
+}
+input:hover::before {
+  background: var(--yun-form-bgcolor-hover);
+}
+input:active::before {
+  background: var(--yun-form-bgcolor-active);
+}
+.round::before {
+  border-radius: 50px;
+}
+input::after {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  content: "";
+  border-radius: 2px;
+  background: var(--yun-white-color);
+  transition: var(--yun-form-transition);
+  transform: translate(4px, 4px);
+  cursor: pointer;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.08);
+}
+.round::after {
+  border-radius: 50px;
+}
+input:checked::before {
+  background: var(--yun-primary-color);
+}
+input:checked::after {
+  transform: translate(18px, 4px);
 }
 
-.gulu-switch:disabled {
+input:checked:active:after {
+  margin-left: -2px;
+  width: 18;
+}
+input:active:after {
+  width: 18px;
+}
+
+input.disabled {
   opacity: 0.4;
+  &,
+  &::before,
+  &::after {
+    cursor: not-allowed;
+  }
 }
 </style>
