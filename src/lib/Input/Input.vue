@@ -171,15 +171,14 @@ export default {
     padding: 0 8px;
     background-color: #fafafa;
     color: #888;
-    border-top: 1px solid #d9d9d9;
-    border-bottom: 1px solid #d9d9d9;
-    border-left: 1px solid #d9d9d9;
+    border: 1px solid #d9d9d9;
     border-radius: var(--yun-form-border-radius);
+  }
+  .label-left {
     // border-top-left-radius: var(--yun-form-border-radius);
     // border-bottom-left-radius: var(--yun-form-border-radius);
   }
   .label-right {
-    border-right: 1px solid #d9d9d9;
     // border-top-right-radius: var(--yun-form-border-radius);
     // border-bottom-right-radius: var(--yun-form-border-radius);
   }
