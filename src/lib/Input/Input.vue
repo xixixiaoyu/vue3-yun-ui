@@ -8,6 +8,7 @@
             ${disabled ? 'yun-input-view-disabled' : ''}
             ${align ? 'yun-input-view-align-' + align : ''}
             ${autoWidth ? 'yun-input-view-auto-width' : ''}
+            ${status ? 'yun-input-status-' + status : ''}
             `"
   >
     <span v-if="labelLeft" class="label-left">{{ labelLeft }}</span>
@@ -29,17 +30,19 @@
 
     <input
       v-else
+      :class="{ label: labelLeft }"
       v-model="v"
       :disabled="disabled"
       :placeholder="placeholder"
       :type="_type"
       :readonly="readonly"
-      onkeypress="if(window.event.keyCode==13) this.blur()"
+      onkeypress="if(window.event.keyCode === 13) this.blur()"
       @input="input"
       @change="emit('change', v)"
       @blur="emit('blur', v)"
       @focus="emit('focus', v)"
     />
+    <span v-if="labelRight" class="label-right">{{ labelRight }}</span>
     <label v-if="autoWidth" class="input-auto-width">{{ v }}</label>
     <div
       v-if="showPassword || clearable || showCount"
@@ -159,6 +162,27 @@ export default {
   background-color: var(--yun-form-bgcolor);
   transition: var(--yun-form-transition);
   box-sizing: border-box;
+  .label-left,
+  .label-right {
+    height: 36px;
+    display: inline-flex;
+    vertical-align: middle;
+    align-items: center;
+    padding: 0 8px;
+    background-color: #fafafa;
+    color: #888;
+    border-top: 1px solid #d9d9d9;
+    border-bottom: 1px solid #d9d9d9;
+    border-left: 1px solid #d9d9d9;
+    border-radius: var(--yun-form-border-radius);
+    // border-top-left-radius: var(--yun-form-border-radius);
+    // border-bottom-left-radius: var(--yun-form-border-radius);
+  }
+  .label-right {
+    border-right: 1px solid #d9d9d9;
+    // border-top-right-radius: var(--yun-form-border-radius);
+    // border-bottom-right-radius: var(--yun-form-border-radius);
+  }
   input,
   textarea {
     width: 100%;
@@ -360,6 +384,20 @@ export default {
   background-color: var(--yun-form-bgcolor-focus);
   border: var(--yun-form-border-width) var(--yun-form-border-color-focus) solid;
 }
+
+.yun-input-view.yun-input-status-error {
+  border-color: var(--yun-error-color);
+}
+.yun-input-view.yun-input-status-info {
+  border-color: var(--yun-info-color);
+}
+.yun-input-view.yun-input-status-warning {
+  border-color: var(--yun-warning-color);
+}
+.yun-input-view.yun-input-status-success {
+  border-color: var(--yun-success-color);
+}
+
 .yun-input-view-readonly {
   cursor: default;
   border: var(--yun-form-border-width) rgba(0, 0, 0, 0) solid;

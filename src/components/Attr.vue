@@ -11,7 +11,7 @@
       </thead>
       <tbody>
         <tr v-for="item in data" :key="item">
-          <td class="yun-attr-title" v-for="value in item" :key="value">{{ value }}</td>
+          <td class="yun-attr-title" v-for="(value, index) in item" :key="index">{{ value }}</td>
         </tr>
       </tbody>
     </table>

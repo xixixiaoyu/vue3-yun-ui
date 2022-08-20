@@ -1,3 +1,7 @@
+import type { PropType } from "vue";
+type InputStatusType = "normal" | "info" | "error" | "warning" | "success";
+type InputSizeType = "small" | "medium" | "large";
+
 export const inputProps = {
   // 类型
   type: {
@@ -11,8 +15,11 @@ export const inputProps = {
     default: "",
   },
   size: {
-    type: String,
+    type: String as PropType<InputSizeType>,
     default: "medium",
+    validator: (val: string) => {
+      return ["small", "medium", "large"].includes(val);
+    },
   },
   align: {
     type: String,
@@ -67,5 +74,16 @@ export const inputProps = {
   labelLeft: {
     type: String,
     default: "",
+  },
+  labelRight: {
+    type: String,
+    default: "",
+  },
+  status: {
+    type: String as PropType<InputStatusType>,
+    default: "normal",
+    validator: (val: string) => {
+      return ["normal", "info", "success", "warning", "error"].includes(val);
+    },
   },
 };

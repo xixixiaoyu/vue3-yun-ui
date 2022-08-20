@@ -28,6 +28,14 @@
     <Input show-count clearable />
     宽度自适应
     <Input auto-width />
+    不同状态:
+    <Input status="info" />
+    <Input status="warning" />
+    <Input status="error" />
+    <Input status="success" />
+    label:
+    <Input labelLeft="userName" placeholder="云牧" />
+    <Input labelRight=".com" placeholder="yunmu" />
   </Flex>
 </template>
 

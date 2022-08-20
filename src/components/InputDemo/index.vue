@@ -10,6 +10,7 @@
 <script setup>
 import Demo from "../Demo.vue";
 import Attr from "../Attr.vue";
+import { columns } from "../../lib/data";
 import InputDemo1 from "./Input.default.demo.vue";
 import InputDemo2 from "./TextArea.default.demo.vue";
 
@@ -55,6 +56,13 @@ const data = [
     type: "boolean",
     select: "true / false",
     default: "false",
+  },
+  {
+    params: "status",
+    desc: "状态",
+    type: "string",
+    select: "normal" / "info" / "error" / "warning" / "success",
+    default: "normal",
   },
   {
     params: "resize",
