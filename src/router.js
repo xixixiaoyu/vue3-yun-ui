@@ -31,6 +31,7 @@ import BadgeDemo from "./components/BadgeDemo/index.vue";
 import TitleDemo from "./components/TitleDemo/index.vue";
 import FlexDemo from "./components/FlexDemo/index.vue";
 import TooltipDemo from "./components/TooltipDemo/index.vue";
+import CheckboxDemo from "./components/CheckboxDemo/index.vue";
 
 import { h } from "vue";
 import Markdown from "./components/Markdown.vue";
@@ -82,6 +83,7 @@ export const router = createRouter({
         { path: "title", component: TitleDemo },
         { path: "flex", component: FlexDemo },
         { path: "tooltip", component: TooltipDemo },
+        { path: "checkbox", component: CheckboxDemo },
       ],
     },
   ],

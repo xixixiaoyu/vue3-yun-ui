@@ -27,6 +27,9 @@ const colors = ref(["primary", "normal", "info", "warning", "error", "success"])
 <style lang="scss" scoped>
 .color-container {
   display: flex;
+  @media (max-width: 768px) {
+    flex-wrap: wrap;
+  }
 }
 .list {
   display: flex;

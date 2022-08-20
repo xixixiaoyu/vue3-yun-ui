@@ -58,6 +58,19 @@
           </li>
 
           <li class="title">
+            <span>表单</span>
+          </li>
+          <li>
+            <router-link to="/doc/switch">Switch 开关</router-link>
+          </li>
+          <li>
+            <router-link to="/doc/input">Input 组件</router-link>
+          </li>
+          <li>
+            <router-link to="/doc/checkbox">Checkbox 复选框</router-link>
+          </li>
+
+          <li class="title">
             <span>反馈</span>
           </li>
           <li>
@@ -118,16 +131,6 @@
           </li>
 
           <li class="title">
-            <span>表单</span>
-          </li>
-          <li>
-            <router-link to="/doc/switch">Switch 开关</router-link>
-          </li>
-          <li>
-            <router-link to="/doc/input">Input 组件</router-link>
-          </li>
-
-          <li class="title">
             <span>其他</span>
           </li>
         </ol>
@@ -158,7 +161,7 @@ export default {
 
 <style lang="scss" scoped>
 $offsetLeftWidth: 220px;
-$asideIndex: 99999999;
+$asideIndex: 9999;
 .aside-overlay {
   position: fixed;
   top: 0;

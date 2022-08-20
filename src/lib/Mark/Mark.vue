@@ -2,7 +2,7 @@
   <span
     class="yun-mark"
     :class="`yun-mark-${type} ${round ? 'yun-mark-round' : ''} ${to ? 'yun-mark-to' : ''}`"
-    :style="`font-weight:${bold};`"
+    :style="`font-weight:${bold}; font-size:${size + 'px'}`"
     @click="yunTo(to)"
   >
     <slot />
@@ -20,6 +20,10 @@ defineProps({
     validator(value: string) {
       return typeRules.includes(value);
     },
+  },
+  size: {
+    type: [String, Number],
+    default: "",
   },
   round: {
     type: Boolean,

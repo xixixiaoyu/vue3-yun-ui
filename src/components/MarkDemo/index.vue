@@ -30,6 +30,13 @@ const data = [
     default: "true",
   },
   {
+    params: "size",
+    desc: "大小",
+    type: "number / string",
+    select: "/",
+    default: "''",
+  },
+  {
     params: "bold",
     desc: "加粗",
     type: "number",

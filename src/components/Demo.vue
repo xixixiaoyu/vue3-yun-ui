@@ -1,6 +1,7 @@
 <template>
   <div class="demo-container">
-    <h2>{{ title || component.__sourceCodeTitle }}</h2>
+    <h2 v-if="$slots.customTitle"><slot name="customTitle"></slot></h2>
+    <h2 v-else>{{ title || component.__sourceCodeTitle }}</h2>
     <p>{{ description || component.__sourceDescription }}</p>
     <p class="slot-content" v-if="$slots.default"><slot></slot></p>
     <p v-html="html" v-if="html"></p>

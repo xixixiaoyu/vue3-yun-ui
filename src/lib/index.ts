@@ -52,7 +52,9 @@ import Mark from "./Mark/Mark.vue";
 import Badge from "./Badge/Badge.vue";
 import Title from "./Title/Title.vue";
 import Flex from "./Flex/Flex.vue";
-import YunPopover from "./Popover/YunPopover/Popover.vue";
+// import YunPopover from "./Popover/YunPopover/Popover.vue";
+import Checkbox from "./Checkbox/Checkbox.vue";
+import CheckboxGroup from "./Checkbox/CheckboxGroup.vue";
 
 import * as directives from "./directives/index";
 
@@ -74,7 +76,9 @@ const arrComponents = [
   Badge,
   Title,
   Flex,
-  YunPopover,
+  // YunPopover,
+  Checkbox,
+  CheckboxGroup,
 ];
 
 export default function (app) {
