@@ -48,7 +48,7 @@ export default {
     overflow-x: auto;
     width: 100%;
     min-width: 600px;
-    background-color: #fff;
+    background-color: var(--yun-bgcolor-0);
     font-size: 14px;
     line-height: 1.5em;
     border-radius: 10px;
@@ -64,8 +64,8 @@ export default {
     opacity: 0.8;
     border: 1px solid var(--yun-bgcolor-2);
     border-radius: 4px;
+    background-color: var(--yun-bgcolor-1);
     font-weight: 600;
-    background-color: #fafafa;
     color: var(--yun-text-color-3);
   }
   td {

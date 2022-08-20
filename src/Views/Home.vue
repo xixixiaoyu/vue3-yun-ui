@@ -72,7 +72,7 @@ $color: #039994;
   a {
     margin: 0 8px;
     background: $green;
-    color: white;
+    color: var(--yun-text-color-0-invert);
     display: inline-block;
     padding: 8px 24px;
     border-radius: $border-radius;
@@ -88,7 +88,7 @@ $color: #039994;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  color: #fff;
+  color: var(--yun-text-color-0-invert);
   > .actions {
     margin-top: 40px;
     padding: 8px 0;
@@ -144,6 +144,7 @@ $color: #039994;
         "icon text";
       grid-template-columns: 80px auto;
       grid-template-rows: 1fr 1fr;
+      color: var(--yun-text-color-1);
       > svg {
         grid-area: icon;
         width: 64px;

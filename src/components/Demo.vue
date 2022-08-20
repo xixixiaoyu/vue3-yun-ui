@@ -44,7 +44,7 @@ export default {
   }
   p {
     font-size: 14px;
-    color: #5e6d82;
+    color: var(--yun-text-color-6);
     line-height: 1.5em;
     margin: 14px 0;
   }

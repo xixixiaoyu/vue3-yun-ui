@@ -72,6 +72,9 @@
           <li>
             <router-link to="/doc/popover">Popover 组件</router-link>
           </li>
+          <li>
+            <router-link to="/doc/tooltip">Tooltip 组件</router-link>
+          </li>
 
           <li class="title">
             <span>导航</span>
@@ -203,7 +206,7 @@ $asideIndex: 99999999;
 aside {
   transform: translateX(-$offsetLeftWidth);
   overflow: auto;
-  background: #fff;
+  background: var(--yun-bgcolor-0);
   width: $offsetLeftWidth;
   padding: 16px 0;
   position: fixed;

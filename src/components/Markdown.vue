@@ -12,3 +12,9 @@ export default {
   },
 };
 </script>
+
+<style lang="scss">
+.markdown-body {
+  color: var(--yun-text-color-2) !important;
+}
+</style>

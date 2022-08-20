@@ -1,12 +1,24 @@
 <template>
   <div class="topnav">
     <router-link class="logo" to="/">
-      <Icon name="yun"></Icon>
+      <svg aria-hidden="true" class="yun-icon">
+        <use xlink:href="#icon-yun"></use>
+      </svg>
       <h1><span>Y</span>un-ui Vue</h1>
     </router-link>
     <ul class="menu">
       <li>
-        <router-link to="/doc/switch">文档</router-link>
+        <a target="_blank" href="https://github.com/xixixiaoyu/vue3-yun-ui">
+          <Icon size="36"> <LogoGithub /> </Icon
+        ></a>
+      </li>
+      <li>
+        <Icon size="24">
+          <span>
+            <MoonOutline @click="changeMode('dark')" class="icon-mode-moon" />
+            <SunnyOutline @click="changeMode('light')" class="icon-mode-sunny" />
+          </span>
+        </Icon>
       </li>
     </ul>
     <svg v-if="toggleMenuButtonVisible" class="toggleAside" @click="toggleMenu">
@@ -14,32 +26,43 @@
     </svg>
   </div>
 </template>
-<script>
-import { inject } from "vue";
-import Icon from "../lib/Icon/Icon.vue";
-export default {
-  props: {
-    toggleMenuButtonVisible: {
-      type: Boolean,
-      default: false,
-    },
+<script setup>
+import { inject, onMounted } from "vue";
+// import Icon from "../lib/Icon/Icon.vue";
+import { LogoGithub, MoonOutline, SunnyOutline } from "@vicons/ionicons5";
+import { Icon } from "@vicons/utils";
+
+defineProps({
+  toggleMenuButtonVisible: {
+    type: Boolean,
+    default: false,
   },
-  setup() {
-    const menuVisible = inject("menuVisible"); // get
-    const toggleMenu = () => {
-      menuVisible.value = !menuVisible.value;
-    };
-    return { toggleMenu };
-  },
-  components: { Icon },
+});
+
+const menuVisible = inject("menuVisible"); // get
+const toggleMenu = () => {
+  menuVisible.value = !menuVisible.value;
 };
+
+const changeMode = (mode) => {
+  if (mode == "dark") {
+    document.getElementsByTagName("html")[0].classList.add("yun-dark");
+    localStorage.setItem("mode", "dark");
+  } else {
+    document.getElementsByTagName("html")[0].classList.remove("yun-dark");
+    localStorage.setItem("mode", "light");
+  }
+};
+
+onMounted(() => {
+  changeMode(localStorage.getItem("mode") || "light");
+});
 </script>
 
 <style lang="scss" scoped>
 $color: #007974;
 
 .topnav {
-  color: $color;
   display: flex;
   padding: 2px;
   position: fixed;
@@ -49,8 +72,8 @@ $color: #007974;
   z-index: 20;
   justify-content: center;
   align-items: center;
-  background-color: #fff;
-  border-bottom: 1px solid rgb(226, 219, 219);
+  background-color: var(--yun-bgcolor-0);
+  border-bottom: 1px solid var(--yun-bgcolor-2);
   > .logo {
     font-size: 30px;
     display: flex;
@@ -59,6 +82,7 @@ $color: #007974;
     vertical-align: middle;
 
     > h1 {
+      color: $color;
       white-space: nowrap;
       > span {
         font-size: 32px;
@@ -82,10 +106,30 @@ $color: #007974;
 
   > .menu {
     display: flex;
+    align-items: center;
     white-space: nowrap;
     flex-wrap: nowrap;
-    > li {
-      margin: 0 1em;
+    a,
+    span {
+      display: inline-flex;
+      align-items: center;
+      padding: 5px;
+      opacity: 0.6;
+      margin-right: 10px;
+      transition: all 0.5s;
+      color: var(--yun-text-color-1);
+      cursor: pointer;
+      svg {
+        cursor: pointer;
+      }
+    }
+    a:hover,
+    span:hover,
+    .menu-item:hover {
+      opacity: 1;
+    }
+    > li + li {
+      margin-right: 60px;
     }
   }
   > .toggleAside {
@@ -122,6 +166,25 @@ $color: #007974;
   }
   100% {
     transform: translateX(3px);
+  }
+}
+.icon-mode-sunny {
+  display: none;
+}
+.icon-mode-moon {
+  display: block;
+}
+.yun-dark {
+  .logo {
+    .yun-icon {
+      filter: invert(50%);
+    }
+  }
+  .icon-mode-sunny {
+    display: block;
+  }
+  .icon-mode-moon {
+    display: none;
   }
 }
 </style>

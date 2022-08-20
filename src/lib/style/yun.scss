@@ -23,13 +23,23 @@ a {
 }
 
 body {
-  color: #130844;
   line-height: 1.5;
   font-size: 16px;
   min-width: 300px;
   overflow-x: hidden;
+  color: var(--yun-text-color-1);
+  background-color: var(--yun-bgcolor-0);
+  font-size: 14px;
 }
 
 h1 {
   font-size: 24px;
+  color: var(--yun-text-color-3);
+}
+
+.tippy-box[data-yun~="popover"] {
+  .tippy-content {
+    padding: 6px;
+    box-sizing: border-box !important;
+  }
 }

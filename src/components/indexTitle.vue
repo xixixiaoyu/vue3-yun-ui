@@ -26,6 +26,7 @@ h3 {
 h2 {
   font-size: 24px;
   margin-bottom: 20px;
+  color: var(--yun-text-color-3);
 }
 h3 {
   font-size: 16px;

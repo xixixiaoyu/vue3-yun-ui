@@ -14,7 +14,7 @@ export const useREM = () => {
     // 获取到的 fontSize 不允许超过我们定义的最大值
     fontSize = fontSize > MAX_FONT_SIZE ? MAX_FONT_SIZE : fontSize;
     // 定义根元素（html）fontSize 的大小 （rem）
-    html.style.fontSize = fontSize + "px";
+    (html as HTMLElement).style.fontSize = fontSize + "px";
   });
 };
 
@@ -27,7 +27,7 @@ export { default as Step } from "./Step/Step.vue";
 export { openDialog as openDialog } from "./Dialog/openDialog";
 export { default as Input } from "./Input/Input.vue";
 export { default as Card } from "./Card/Card.vue";
-export { Toast } from "./Toast/Toast.ts";
+export { Toast } from "./Toast/Toast";
 export { default as CarouselBase } from "./Carousel/Carousel.opacity.vue";
 export { default as CarouselScroll } from "./Carousel/Carousel.scroll.vue";
 export { default as BackTop } from "./BackTop/BackTop.vue";
@@ -52,6 +52,13 @@ import Mark from "./Mark/Mark.vue";
 import Badge from "./Badge/Badge.vue";
 import Title from "./Title/Title.vue";
 import Flex from "./Flex/Flex.vue";
+import YunPopover from "./Popover/YunPopover/Popover.vue";
+
+import * as directives from "./directives/index";
+
+const _directives = Object.keys(directives).map(
+  (key) => directives[key as keyof typeof directives]
+);
 
 const arrComponents = [
   Button,
@@ -67,10 +74,20 @@ const arrComponents = [
   Badge,
   Title,
   Flex,
+  YunPopover,
 ];
 
 export default function (app) {
   arrComponents.forEach((component) => {
     app.component(component.name, component);
+  });
+
+  _directives.forEach((directive: any) => {
+    if (directive.hasOwnProperty("install")) {
+      app.use(directive);
+    } else if (directive.hasOwnProperty("name")) {
+      window[directive.name] = directive;
+      app.config.globalProperties[directive.name] = directive;
+    }
   });
 }

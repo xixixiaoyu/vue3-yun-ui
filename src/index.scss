@@ -2,6 +2,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+// tippy 样式
+@import "tippy.js/dist/tippy.css"; // optional for styling
+@import "tippy.js/animations/shift-away-subtle.css";
+@import "tippy.js/themes/light.css";
 
 @import "./lib/Style/reset.scss";
 @import "./lib/Style/yun.scss";
