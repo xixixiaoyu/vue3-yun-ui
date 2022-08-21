@@ -59,6 +59,10 @@ const props = defineProps({
     },
   },
 });
+const emit = defineEmits(["change"]);
+
+let _checked = ref(props.checked || false);
+
 watch(
   () => props.checked,
   (v) => {
@@ -67,8 +71,7 @@ watch(
     }
   }
 );
-let _checked = ref(props.checked || false);
-const emit = defineEmits(["change"]);
+
 const setChecked = (e: Event) => {
   _checked.value = (e.target as HTMLInputElement).checked;
   emit("change", _checked.value);
