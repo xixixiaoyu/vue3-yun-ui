@@ -8,8 +8,6 @@
 </template>
 
 <script setup>
-import { Toast } from "../../lib/index";
-
 const onClick = () => {
   Toast({ text: "这是一条居中的消息提示~", center: true });
 };

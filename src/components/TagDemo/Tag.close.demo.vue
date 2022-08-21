@@ -10,8 +10,6 @@
 </template>
 
 <script setup lang="ts">
-import { Toast } from "../../lib/Toast/Toast";
-
 const handleClose = () => {
   Toast({ text: "您点击了关闭" });
 };

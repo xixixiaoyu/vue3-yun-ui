@@ -1,8 +1,10 @@
 <template>
-  <h1>Toast 示例</h1>
+  <h1>Toast</h1>
 
   <Demo :component="Toast1Demo" />
-  <Demo :component="Toast2Demo" />
+  <Demo :component="Toast2Demo">
+    包含的状态有<Mark>normal、info、success、warning、error</Mark>
+  </Demo>
   <Demo :component="Toast3Demo" />
   <Demo :component="Toast4Demo" />
 
@@ -30,7 +32,7 @@ const data = [
     params: "type",
     desc: "状态类型",
     type: "string",
-    select: "normal / secondary / success / warning / error",
+    select: "normal / info / success / warning / error",
     default: "normal",
   },
   {

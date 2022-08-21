@@ -16,7 +16,6 @@
 
 <script setup>
 import { ref } from "vue";
-import { Toast } from "../../lib/index";
 import Dropdown from "../../lib/Dropdown/Dropdown.vue";
 
 let options = ref([

@@ -15,7 +15,6 @@
 
 <script setup>
 import { ref } from "vue";
-import { Toast } from "../../lib/index";
 
 let options = ref([
   {

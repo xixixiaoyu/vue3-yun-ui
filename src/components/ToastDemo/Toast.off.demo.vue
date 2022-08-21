@@ -9,8 +9,6 @@
 </template>
 
 <script setup>
-import { Toast } from "../../lib/index";
-
 const onClick1 = () => {
   Toast({
     text: "一条可以关闭的消息提示，不操作五秒后我就会自动消失哦 ~",

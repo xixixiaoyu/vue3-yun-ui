@@ -25,7 +25,6 @@ export { default as Step } from "./Step/Step.vue";
 export { openDialog as openDialog } from "./Dialog/openDialog";
 export { default as Input } from "./Input/Input.vue";
 export { default as Card } from "./Card/Card.vue";
-export { Toast } from "./Toast/Toast";
 export { default as CarouselBase } from "./Carousel/Carousel.opacity.vue";
 export { default as CarouselScroll } from "./Carousel/Carousel.scroll.vue";
 export { default as BackTop } from "./BackTop/BackTop.vue";
@@ -86,10 +85,6 @@ const arrComponents = [
 ];
 
 export default function (app) {
-  arrComponents.forEach((component) => {
-    app.component(component.name, component);
-  });
-
   _directives.forEach((directive: any) => {
     if (directive.hasOwnProperty("install")) {
       app.use(directive);
@@ -97,5 +92,9 @@ export default function (app) {
       window[directive.name] = directive;
       app.config.globalProperties[directive.name] = directive;
     }
+  });
+
+  arrComponents.forEach((component) => {
+    app.component(component.name, component);
   });
 }
