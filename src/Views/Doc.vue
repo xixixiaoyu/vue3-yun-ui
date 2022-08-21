@@ -151,7 +151,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$offsetLeftWidth: 220px;
+$offsetLeftWidth: 250px;
 $asideIndex: 9999;
 .aside-overlay {
   position: fixed;
@@ -188,7 +188,7 @@ $asideIndex: 9999;
   > main {
     flex-grow: 1;
     padding: 36px;
-    padding-left: 120px;
+    padding-left: 140px;
     padding-right: 60px;
     margin-top: -8px;
     background: var(--yun-bgcolor-1);
@@ -237,7 +237,7 @@ aside {
     > li {
       white-space: nowrap;
       text-align: left;
-      text-indent: 8px;
+      text-indent: 12px;
       padding: 0 14px;
       > a {
         display: block;
