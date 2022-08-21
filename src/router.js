@@ -45,7 +45,7 @@ const history = createWebHashHistory();
 export const router = createRouter({
   history: history,
   routes: [
-    { path: "/", component: Home },
+    { path: "/", component: Home, name: "home" },
     {
       path: "/doc",
       component: Doc,

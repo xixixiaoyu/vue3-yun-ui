@@ -1,18 +1,27 @@
 <template>
   <div class="topnav">
-    <router-link class="logo" to="/">
+    <div class="logo" @click="goHome">
       <svg aria-hidden="true" class="yun-icon">
         <use xlink:href="#icon-yun"></use>
       </svg>
       <h1><span>Y</span>un-ui Vue</h1>
-    </router-link>
+    </div>
     <ul class="menu">
+      <li>
+        <router-link to="/">首页</router-link>
+      </li>
+      <li>
+        <router-link to="/doc/avatar">组件</router-link>
+      </li>
+      <li class="get-started">
+        <router-link to="/doc/get-started">指南</router-link>
+      </li>
       <li>
         <a target="_blank" href="https://github.com/xixixiaoyu/vue3-yun-ui">
           <Icon size="36"> <LogoGithub /> </Icon
         ></a>
       </li>
-      <li>
+      <li class="last">
         <Icon size="24">
           <span>
             <MoonOutline @click="changeMode('dark')" class="icon-mode-moon" />
@@ -28,9 +37,13 @@
 </template>
 <script setup>
 import { inject, onMounted } from "vue";
-// import Icon from "../lib/Icon/Icon.vue";
 import { LogoGithub, MoonOutline, SunnyOutline } from "@vicons/ionicons5";
 import { Icon } from "@vicons/utils";
+import { useRoute, useRouter } from "vue-router";
+import { Toast } from "../lib/directives";
+
+const router = useRouter();
+const route = useRoute();
 
 defineProps({
   toggleMenuButtonVisible: {
@@ -51,6 +64,14 @@ const changeMode = (mode) => {
   } else {
     document.getElementsByTagName("html")[0].classList.remove("yun-dark");
     localStorage.setItem("mode", "light");
+  }
+};
+
+const goHome = () => {
+  if (route.name === "home") {
+    Toast.info({ text: "您已经在首页了 ~" });
+  } else {
+    router.push("/");
   }
 };
 
@@ -80,6 +101,7 @@ $color: #007974;
     max-width: 9em;
     margin-right: auto;
     vertical-align: middle;
+    cursor: pointer;
 
     > h1 {
       color: $color;
@@ -115,7 +137,7 @@ $color: #007974;
       align-items: center;
       padding: 5px;
       opacity: 0.6;
-      margin-right: 10px;
+      margin-right: 15px;
       transition: all 0.5s;
       color: var(--yun-text-color-1);
       cursor: pointer;
@@ -128,8 +150,11 @@ $color: #007974;
     .menu-item:hover {
       opacity: 1;
     }
-    > li + li {
+    > li.last {
       margin-right: 60px;
+    }
+    > li.get-started {
+      margin-right: 12px;
     }
   }
   > .toggleAside {

@@ -6,18 +6,6 @@
     <Topnav class="nav" :toggleMenuButtonVisible="true" />
     <div class="content">
       <aside :class="{ open: menuVisible }">
-        <h2>引导</h2>
-        <ol class="intro">
-          <li>
-            <router-link to="/doc/get-started">介绍</router-link>
-          </li>
-          <li>
-            <router-link to="/doc/install">安装</router-link>
-          </li>
-          <li>
-            <router-link to="/doc/intro">开始使用</router-link>
-          </li>
-        </ol>
         <h2>组件</h2>
         <ol class="Cpn">
           <li class="title">
