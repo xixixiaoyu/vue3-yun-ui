@@ -25,8 +25,8 @@ const data = [
     params: "text",
     desc: "提示文本",
     type: "string",
-    select: "string",
-    default: "一",
+    select: "/",
+    default: "/",
   },
   {
     params: "type",
@@ -52,9 +52,16 @@ const data = [
   {
     params: "delay",
     desc: "手动不关闭延时多久自动关闭",
-    type: "number",
-    select: "number",
+    type: "number(s)",
+    select: "/",
     default: "3",
+  },
+  {
+    params: "destroyed",
+    desc: "关闭时执行函数",
+    type: "function",
+    select: "/",
+    default: "() => void",
   },
 ];
 </script>

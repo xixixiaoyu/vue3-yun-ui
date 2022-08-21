@@ -23,11 +23,11 @@ const onDestroy = (id: string, wrapper: HTMLDivElement) => {
     return item.component.props.id === id;
   });
   if (currentIndex === -1) return;
-  const h = toastQueue[currentIndex].el.offsetHeight;
+  // const h = toastQueue[currentIndex].el.offsetHeight;
   toastQueue.splice(currentIndex, 1);
   if (toastQueue.length < 1) return;
   for (let i = currentIndex; i < toastQueue.length; i++) {
-    toastQueue[i].component.props.top = parseInt(toastQueue[i].el.style.top) - h - 60;
+    toastQueue[i].component.props.top = parseInt(toastQueue[i].el.style.top) - 60;
   }
 };
 
