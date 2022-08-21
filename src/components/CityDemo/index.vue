@@ -1,5 +1,5 @@
 <template>
-  <h1>City 示例</h1>
+  <h1>City</h1>
 
   <Demo :component="CityDemo1" />
 

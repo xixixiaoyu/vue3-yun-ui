@@ -55,6 +55,7 @@ import CheckboxGroup from "./Checkbox/CheckboxGroup.vue";
 import Switch from "./Switch/Switch.vue";
 import Input from "./Input/Input.vue";
 import Dropdown from "./Dropdown/Dropdown.vue";
+import InputPro from "./InputPro/InputPro.vue";
 
 import * as directives from "./directives/index";
 
@@ -82,6 +83,7 @@ const arrComponents = [
   Switch,
   Input,
   Dropdown,
+  InputPro,
 ];
 
 export default function (app) {

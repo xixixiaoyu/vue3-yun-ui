@@ -57,6 +57,9 @@
           <li>
             <router-link to="/doc/checkbox">Checkbox 复选框</router-link>
           </li>
+          <li>
+            <router-link to="/doc/inputpro">InputPro 高级输入框</router-link>
+          </li>
 
           <li class="title">
             <span>反馈</span>
