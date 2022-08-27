@@ -13,6 +13,7 @@
   >
     <span v-if="labelLeft" class="label-left">{{ labelLeft }}</span>
     <textarea
+      ref="yunTextareaRef"
       v-if="_type == 'textarea'"
       v-model="v"
       class="btf-scrollbar"
@@ -29,6 +30,7 @@
     ></textarea>
 
     <input
+      ref="yunInputRef"
       v-else
       :class="{ label: labelLeft }"
       v-model="v"
@@ -141,6 +143,19 @@ const getTextLength = (val: string) => {
     return Math.trunc(len);
   }
 };
+
+const yunInputRef = ref();
+const yunTextareaRef = ref();
+
+const focusFn = () => {
+  if (props.type == "textarea") {
+    yunTextareaRef.value?.focus();
+  } else {
+    yunInputRef.value?.focus();
+  }
+};
+
+defineExpose({ focusFn });
 </script>
 
 <script lang="ts">

@@ -56,6 +56,7 @@ import Switch from "./Switch/Switch.vue";
 import Input from "./Input/Input.vue";
 import Dropdown from "./Dropdown/Dropdown.vue";
 import InputPro from "./InputPro/InputPro.vue";
+import InputTag from "./InputTag/InputTag.vue";
 
 import * as directives from "./directives/index";
 
@@ -84,6 +85,7 @@ const arrComponents = [
   Input,
   Dropdown,
   InputPro,
+  InputTag,
 ];
 
 export default function (app) {
