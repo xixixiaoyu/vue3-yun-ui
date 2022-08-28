@@ -1,6 +1,6 @@
 <template>
   <div class="yun-attr">
-    <h2>Props</h2>
+    <h2>{{ title }}</h2>
     <table class="attr-table">
       <thead>
         <tr>
@@ -28,6 +28,10 @@ export default {
     data: {
       type: Object,
     },
+    title: {
+      type: String,
+      default: "Props",
+    },
   },
 };
 </script>
@@ -37,7 +41,7 @@ export default {
   position: relative;
   width: 100%;
   overflow-x: auto;
-  margin-bottom: 80px;
+  margin-bottom: 60px;
 
   h2 {
     color: var(--yun-text-color-3);

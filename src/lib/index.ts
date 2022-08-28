@@ -58,6 +58,7 @@ import Dropdown from "./Dropdown/Dropdown.vue";
 import InputPro from "./InputPro/InputPro.vue";
 import InputTag from "./InputTag/InputTag.vue";
 import RadioGroup from "./Radio/RadioGroup.vue";
+import Select from "./Select/Select.vue";
 
 import * as directives from "./directives/index";
 
@@ -88,6 +89,7 @@ const arrComponents = [
   InputPro,
   InputTag,
   RadioGroup,
+  Select,
 ];
 
 export default function (app) {

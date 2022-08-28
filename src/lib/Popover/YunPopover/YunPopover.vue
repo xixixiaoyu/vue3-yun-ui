@@ -22,7 +22,7 @@ const props = defineProps({
   },
   placement: {
     type: String,
-    default: "top",
+    default: "bottom",
   },
   arrow: {
     type: Boolean,
