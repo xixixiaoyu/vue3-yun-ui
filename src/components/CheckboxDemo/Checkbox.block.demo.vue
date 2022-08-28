@@ -3,9 +3,9 @@ xxx
 </demo>
 
 <template>
-  <checkboxGroup v-model="value" direction="x" :options="options" block />
+  <CheckboxGroup v-model="value" direction="x" :options="options" block />
   <br />
-  <checkboxGroup v-model="value" direction="x" :options="options" block round />
+  <CheckboxGroup v-model="value" direction="x" :options="options" block round />
   <br />
   选中的值：{{ value }}
 </template>

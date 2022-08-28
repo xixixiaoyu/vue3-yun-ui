@@ -1,9 +1,9 @@
 <demo>
-xxx
+y 布局
 </demo>
 
 <template>
-  <CheckboxGroup v-model="value" direction="x" :options="options" round />
+  <RadioGroup v-model="value" direction="y" :options="options" />
   <br />
   选中的值：{{ value }}
 </template>
@@ -18,5 +18,5 @@ let options = ref([
   { label: "清朝", value: 4 },
 ]);
 
-let value = ref([]);
+let value = ref("");
 </script>

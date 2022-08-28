@@ -55,6 +55,9 @@
             <router-link to="/doc/input">Input 单行和多行输入框</router-link>
           </li>
           <li>
+            <router-link to="/doc/radio">Radio 单选框</router-link>
+          </li>
+          <li>
             <router-link to="/doc/checkbox">Checkbox 复选框</router-link>
           </li>
           <li>

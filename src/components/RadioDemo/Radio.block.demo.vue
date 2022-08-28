@@ -1,9 +1,13 @@
 <demo>
-xxx
+块
 </demo>
 
 <template>
-  <CheckboxGroup v-model="value" direction="x" :options="options" round />
+  <Title size="14">无图标</Title>
+  <RadioGroup v-model="value" block direction="x" :iconable="false" :options="options" />
+  <br />
+  <Title size="14">有图标</Title>
+  <RadioGroup v-model="value" block direction="x" :options="options" />
   <br />
   选中的值：{{ value }}
 </template>
@@ -18,5 +22,5 @@ let options = ref([
   { label: "清朝", value: 4 },
 ]);
 
-let value = ref([]);
+let value = ref("");
 </script>

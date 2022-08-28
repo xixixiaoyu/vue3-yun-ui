@@ -3,7 +3,7 @@ xxx
 </demo>
 
 <template>
-  <checkboxGroup v-model="value" direction="x" :options="options" />
+  <CheckboxGroup v-model="value" direction="x" :options="options" />
   <br />
   选中的值：{{ value }}
 </template>

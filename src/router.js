@@ -35,6 +35,7 @@ import CheckboxDemo from "./components/CheckboxDemo/index.vue";
 import DropdownDemo from "./components/DropdownDemo/index.vue";
 import InputProDemo from "./components/InputProDemo/index.vue";
 import InputTagDemo from "./components/InputTagDemo/index.vue";
+import RadioDemo from "./components/RadioDemo/index.vue";
 
 import { h } from "vue";
 import Markdown from "./components/Markdown.vue";
@@ -90,6 +91,7 @@ export const router = createRouter({
         { path: "dropdown", component: DropdownDemo },
         { path: "inputpro", component: InputProDemo },
         { path: "inputtag", component: InputTagDemo },
+        { path: "radio", component: RadioDemo },
       ],
     },
   ],
