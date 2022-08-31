@@ -37,6 +37,7 @@ import InputProDemo from "./components/InputProDemo/index.vue";
 import InputTagDemo from "./components/InputTagDemo/index.vue";
 import RadioDemo from "./components/RadioDemo/index.vue";
 import SelectDemo from "./components/SelectDemo/index.vue";
+import DatePickerDemo from "./components/DatePickerDemo/index.vue";
 
 import { h } from "vue";
 import Markdown from "./components/Markdown.vue";
@@ -94,6 +95,7 @@ export const router = createRouter({
         { path: "inputtag", component: InputTagDemo },
         { path: "radio", component: RadioDemo },
         { path: "select", component: SelectDemo },
+        { path: "datePicker", component: DatePickerDemo },
       ],
     },
   ],

@@ -69,6 +69,9 @@
           <li>
             <router-link to="/doc/select">Select 下拉选择框</router-link>
           </li>
+          <li>
+            <router-link to="/doc/datePicker">DatePicker 日期选择框</router-link>
+          </li>
 
           <li class="title">
             <span>反馈</span>
