@@ -1,10 +1,8 @@
-@import "../../style/common.scss";
-
-.coast-button-group {
+.yun-button-group {
   display: inline-flex;
   vertical-align: middle;
 
-  .coast-button {
+  .yun-button {
     border-radius: 0;
 
     &:not(:first-child) {
@@ -12,13 +10,13 @@
     }
 
     &:first-child {
-      border-top-left-radius: $radius;
-      border-bottom-left-radius: $radius;
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
     }
 
     &:last-child {
-      border-top-right-radius: $radius;
-      border-bottom-right-radius: $radius;
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
     }
 
     &:hover {

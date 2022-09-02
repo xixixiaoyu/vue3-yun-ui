@@ -110,14 +110,13 @@ export default {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
-  height: 26px;
   width: 50px;
-  box-sizing: border-box;
+  height: 26px;
+  border: var(--yun-form-border-width) var(--yun-bgcolor-5) dashed;
   border-radius: var(--yun-form-border-radius);
   background-color: var(--yun-bgcolor-0);
   color: var(--yun-text-color-5);
-  border: var(--yun-form-border-width) var(--yun-bgcolor-5) dashed;
+  cursor: pointer;
 }
 .yun-input-tag-button:hover {
   color: var(--yun-primary-color-dark);

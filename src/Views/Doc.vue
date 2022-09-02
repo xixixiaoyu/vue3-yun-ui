@@ -49,6 +49,9 @@
             <span>表单</span>
           </li>
           <li>
+            <router-link to="/doc/formItem">Form 表单</router-link>
+          </li>
+          <li>
             <router-link to="/doc/switch">Switch 开关</router-link>
           </li>
           <li>
@@ -61,10 +64,10 @@
             <router-link to="/doc/checkbox">Checkbox 复选框</router-link>
           </li>
           <li>
-            <router-link to="/doc/inputpro">InputPro 高级输入框</router-link>
+            <router-link to="/doc/inputPro">InputPro 高级输入框</router-link>
           </li>
           <li>
-            <router-link to="/doc/inputtag">InputTag 标签输入框</router-link>
+            <router-link to="/doc/inputTag">InputTag 标签输入框</router-link>
           </li>
           <li>
             <router-link to="/doc/select">Select 下拉选择框</router-link>

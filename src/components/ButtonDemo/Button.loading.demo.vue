@@ -1,25 +1,15 @@
 <demo>
-   loading 属性加载
+  加载
 </demo>
 
 <template>
-  <div>
-    <Button loading>加载中</Button>
-    <Button circle-loading>加载中</Button>
-    <Button swordLoading>加载中</Button>
-    <Button swordLoaded>加载完毕</Button>
-    <Button :loading="loading" @click="handleLoading">点击加载</Button>
-  </div>
+  <Button type="primary" loading>确定</Button>
+  <Button type="success" round loading>确定</Button>
+  <Button size="large" @click="loading = !loading" type="error" :loading="loading">点击触发</Button>
 </template>
 
 <script setup>
 import { ref } from "vue";
-const loading = ref(false);
 
-const handleLoading = () => {
-  loading.value = true;
-  setTimeout(() => {
-    loading.value = false;
-  }, 2000);
-};
+let loading = ref(false);
 </script>

@@ -1,14 +1,14 @@
 <demo>
-  <title>基本使用</title>
-  <desc>使用 theme 属性指定按钮类型</desc>
+  <title>基础用法</title>
 </demo>
 
 <template>
-  <div>
-    <Button>默认按钮</Button>
-    <Button theme="link">链接按钮</Button>
-    <Button theme="text">文本按钮</Button>
-  </div>
+  <Button type="primary">确定</Button>
+  <Button type="error">危险</Button>
+  <Button type="warning">警告</Button>
+  <Button type="normal">这是一个长按钮</Button>
+  <Button type="success">确定</Button>
+  <Button type="blank">空的</Button>
 </template>
 
 <script setup></script>

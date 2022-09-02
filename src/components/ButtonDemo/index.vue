@@ -10,6 +10,7 @@
   <Demo :component="Button4Demo" />
   <Demo :component="Button5Demo" />
   <Demo :component="Button6Demo" />
+  <Demo :component="Button7Demo" />
 
   <Attr :columns="columns" :data="data" />
 </template>
@@ -19,10 +20,11 @@ import Demo from "../Demo.vue";
 import Attr from "../Attr.vue";
 import Button1Demo from "./Button.default.demo.vue";
 import Button2Demo from "./Button.size.demo.vue";
-import Button3Demo from "./Button.level.demo.vue";
+import Button3Demo from "./Button.round.demo.vue";
 import Button4Demo from "./Button.disabled.demo.vue";
 import Button5Demo from "./Button.loading.demo.vue";
 import Button6Demo from "./Button.group.demo.vue";
+import Button7Demo from "./Button.icon.demo.vue";
 import { columns } from "../../lib/data";
 
 const data = [
@@ -30,22 +32,29 @@ const data = [
     params: "size",
     desc: "尺寸",
     type: "string",
-    select: "normal / big / small",
-    default: "normal",
+    select: "small / medium / large",
+    default: "medium",
   },
   {
-    params: "level",
-    desc: "按钮类型",
+    params: "type",
+    desc: "色彩类型",
     type: "string",
-    select: "normal / main / warning / danger ",
-    default: "normal",
+    select: "primary / normal / success / error / warning",
+    default: "primary",
   },
   {
-    params: "theme",
-    desc: "按钮类型",
-    type: "string",
-    select: "normal / link / text",
-    default: "normal",
+    params: "round",
+    desc: "是否为圆角",
+    type: "boolean",
+    select: "true / false",
+    default: "false",
+  },
+  {
+    params: "isText",
+    desc: "文字按钮",
+    type: "boolean",
+    select: "true / false",
+    default: "false",
   },
   {
     params: "disabled",
@@ -56,28 +65,14 @@ const data = [
   },
   {
     params: "loading",
-    desc: "加载中",
+    desc: "是否为加载状态",
     type: "boolean",
     select: "false / true",
     default: "false",
   },
   {
-    params: "sword-loading",
-    desc: "加载中",
-    type: "boolean",
-    select: "false / true",
-    default: "false",
-  },
-  {
-    params: "circle-loading",
-    desc: "加载中",
-    type: "boolean",
-    select: "false / true",
-    default: "false",
-  },
-  {
-    params: "sword-loaded",
-    desc: "加载中",
+    params: "isIcon",
+    desc: "图标按钮",
     type: "boolean",
     select: "false / true",
     default: "false",

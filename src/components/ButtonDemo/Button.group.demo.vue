@@ -1,12 +1,12 @@
 <demo>
- ButtonGroup 按钮组
+  按钮组
 </demo>
 
 <template>
   <ButtonGroup>
-    <Button>上一页</Button>
-    <Button>当前</Button>
-    <Button>下一页</Button>
+    <Button type="normal">上一页</Button>
+    <Button type="normal">当前</Button>
+    <Button type="normal">下一页</Button>
   </ButtonGroup>
 </template>
 

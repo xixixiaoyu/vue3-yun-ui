@@ -75,5 +75,8 @@ export default {
   td {
     color: var(--yun-text-color-5);
   }
+  tr:hover {
+    background-color: #fafafa;
+  }
 }
 </style>

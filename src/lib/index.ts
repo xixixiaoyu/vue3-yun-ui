@@ -60,6 +60,7 @@ import InputTag from "./InputTag/InputTag.vue";
 import RadioGroup from "./Radio/RadioGroup.vue";
 import Select from "./Select/Select.vue";
 import DatePicker from "./DatePicker/DatePicker.vue";
+import FormItem from "./FormItem/FormItem.vue";
 
 import * as directives from "./directives/index";
 
@@ -92,6 +93,7 @@ const arrComponents = [
   RadioGroup,
   Select,
   DatePicker,
+  FormItem,
 ];
 
 export default function (app) {

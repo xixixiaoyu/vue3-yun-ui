@@ -1,11 +1,14 @@
 <demo>
-  disabled 属性禁用
+  禁用和文字
 </demo>
 
 <template>
-  <Button disabled>禁用按钮</Button>
-  <Button theme="link" disabled>禁用链接按钮</Button>
-  <Button theme="text" disabled>禁用按钮</Button>
+  <Button type="success" isText disabled>禁用</Button>
+  <Button type="info" isText disabled>确定</Button>
+  <Button type="error" isText>确定</Button>
+  <Button type="warning" isText>确定</Button>
+  <Button type="success" isText>确定</Button>
+  <Button type="normal" isText>确定</Button>
 </template>
 
 <script setup></script>
