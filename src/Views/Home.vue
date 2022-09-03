@@ -137,7 +137,7 @@ $color: #039994;
     > li {
       margin: 16px 0;
       display: grid;
-      justify-content: start;
+      justify-content: flex-start;
       align-content: space-between;
       grid-template-areas:
         "icon title"

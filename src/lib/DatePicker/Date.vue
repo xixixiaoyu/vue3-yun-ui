@@ -3,7 +3,7 @@
     <Flex x="start" mode="between" class="yun-date-control">
       <div class="cur-date">{{ _year }} / {{ formatZero(_month) }}</div>
       <div class="yun-date-control-right">
-        <Button type="normal" size="small" @click="prveMonth">
+        <Button type="normal" size="small" @click="prevMonth">
           <ChevronBack />
         </Button>
         <Button type="normal" size="small" @click="nextMonth">
@@ -52,7 +52,7 @@ let _year = ref(parseInt(dateArr[0]) || today.getFullYear());
 // 月份
 let _month = ref(parseInt(dateArr[1]) || today.getMonth() + 1);
 let dateData = ref(getMonthDate());
-const prveMonth = () => {
+const prevMonth = () => {
   if (_month.value > 1) {
     _month.value -= 1;
   } else {

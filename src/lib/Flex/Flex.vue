@@ -56,7 +56,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .yun-flex {
   width: 100%;
   display: flex;

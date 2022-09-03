@@ -39,6 +39,8 @@ import RadioDemo from "./components/RadioDemo/index.vue";
 import SelectDemo from "./components/SelectDemo/index.vue";
 import DatePickerDemo from "./components/DatePickerDemo/index.vue";
 import FormItemDemo from "./components/FormItemDemo/index.vue";
+import TableDemo from "./components/TableDemo/index.vue";
+import AlertDemo from "./components/AlertDemo/index.vue";
 
 import { h } from "vue";
 import Markdown from "./components/Markdown.vue";
@@ -98,6 +100,8 @@ export const router = createRouter({
         { path: "select", component: SelectDemo },
         { path: "datePicker", component: DatePickerDemo },
         { path: "formItem", component: FormItemDemo },
+        { path: "table", component: TableDemo },
+        { path: "alert", component: AlertDemo },
       ],
     },
   ],

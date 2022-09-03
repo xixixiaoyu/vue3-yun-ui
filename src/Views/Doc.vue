@@ -80,10 +80,13 @@
             <span>反馈</span>
           </li>
           <li>
-            <router-link to="/doc/dialog">Dialog 组件</router-link>
+            <router-link to="/doc/alert">Alert 警告提醒</router-link>
           </li>
           <li>
-            <router-link to="/doc/toast">Toast 组件</router-link>
+            <router-link to="/doc/dialog">Dialog 对话框</router-link>
+          </li>
+          <li>
+            <router-link to="/doc/toast">Toast 全局提示</router-link>
           </li>
           <li>
             <router-link to="/doc/drawer">Drawer 抽屉</router-link>
@@ -119,6 +122,9 @@
 
           <li class="title">
             <span>数据展示</span>
+          </li>
+          <li>
+            <router-link to="/doc/table">Table 组件</router-link>
           </li>
           <li>
             <router-link to="/doc/card">Card 组件</router-link>

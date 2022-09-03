@@ -11,8 +11,8 @@ import { createSvgIconsPlugin } from "vite-plugin-svg-icons";
 type FindElementType = {
   tag: string;
 } & ElementNode;
-const coastDemoParse = {
-  name: "coast-demo-parse",
+const yunDemoParse = {
+  name: "yun-demo-parse",
   transform(code: string, id: string) {
     if (!/vue&type=demo/.test(id)) return;
     const title = searchTagContent(code, "title") || code;
@@ -37,7 +37,7 @@ export default defineConfig({
   plugins: [
     md(),
     vue(),
-    coastDemoParse,
+    yunDemoParse,
     vueJsx(),
     createSvgIconsPlugin({
       // 指定需要缓存的图标文件夹
@@ -48,7 +48,7 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      "coast-ui-vue3": path.resolve("lib"),
+      "yun-ui-vue3": path.resolve("lib"),
     },
   },
 });

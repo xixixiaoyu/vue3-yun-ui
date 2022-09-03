@@ -35,6 +35,7 @@ export default {
 .yun-badge {
   display: inline-flex;
   position: relative;
+  vertical-align: middle;
   .yun-badge-dot {
     position: absolute;
     left: 100%;
