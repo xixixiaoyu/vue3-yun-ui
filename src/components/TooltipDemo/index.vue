@@ -27,7 +27,7 @@ const data = [
     desc: "位置",
     type: "string",
     select:
-      "top-start / top / top-end/ bottom-start / bottom / bottom-end / left-start / left / left-end / right-start / right / right-end / ",
+      "top-start / top / top-end/ bottom-start / bottom / bottom-end / left-start / left / left-end / right-start / right / right-end",
     default: "top",
   },
   {

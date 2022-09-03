@@ -363,7 +363,7 @@ export default {
   justify-content: center;
   .yun-input-controls {
     width: 100%;
-    justify-content: end;
+    justify-content: flex-end;
     height: 25px;
     box-sizing: border-box;
     transform: translateY(100%);

@@ -41,6 +41,7 @@ import DatePickerDemo from "./components/DatePickerDemo/index.vue";
 import FormItemDemo from "./components/FormItemDemo/index.vue";
 import TableDemo from "./components/TableDemo/index.vue";
 import AlertDemo from "./components/AlertDemo/index.vue";
+import PopOkDemo from "./components/PopOkDemo/index.vue";
 
 import { h } from "vue";
 import Markdown from "./components/Markdown.vue";
@@ -102,6 +103,7 @@ export const router = createRouter({
         { path: "formItem", component: FormItemDemo },
         { path: "table", component: TableDemo },
         { path: "alert", component: AlertDemo },
+        { path: "popok", component: PopOkDemo },
       ],
     },
   ],

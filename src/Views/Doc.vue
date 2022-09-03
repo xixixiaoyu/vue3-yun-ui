@@ -100,6 +100,9 @@
           <li>
             <router-link to="/doc/tooltip">Tooltip 文字提示</router-link>
           </li>
+          <li>
+            <router-link to="/doc/popok">PopOk 确认气泡</router-link>
+          </li>
 
           <li class="title">
             <span>导航</span>
