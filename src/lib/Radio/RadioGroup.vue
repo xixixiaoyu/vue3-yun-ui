@@ -69,10 +69,10 @@ export default {
   flex-wrap: wrap;
   font-size: 0px;
 }
-.yun-radio-group.lew-radio-group-x {
+.yun-radio-group.yun-radio-group-x {
   flex-direction: row;
 }
-.yun-radio-group.lew-radio-group-y {
+.yun-radio-group.yun-radio-group-y {
   flex-direction: column;
   align-items: start;
   justify-content: flex-start;

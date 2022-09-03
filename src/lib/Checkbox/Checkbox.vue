@@ -117,7 +117,7 @@ export default {
     margin-left: 6px;
   }
 }
-.yun-checkbox-unicon.lew-checkbox-block {
+.yun-checkbox-unicon.yun-checkbox-block {
   padding: 4px 12px;
   .yun-checkbox-label {
     color: var(--yun-text-color-6);

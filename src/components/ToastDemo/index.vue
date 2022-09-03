@@ -54,7 +54,7 @@ const data = [
     desc: "手动不关闭延时多久自动关闭",
     type: "number(s)",
     select: "/",
-    default: "3",
+    default: "5",
   },
   {
     params: "destroyed",

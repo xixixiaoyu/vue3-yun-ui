@@ -82,6 +82,10 @@ let yunTableBodyRef = ref<HTMLElement | any>(null); // 表格的 body ref
 // 设置左右线
 let leftIndex = ref<number>(-1);
 let rightIndex = ref<number>(-1);
+// 设置展示线 过渡
+let isShowLeftLine = ref(false);
+let isShowRightLine = ref(false);
+
 const setSubLine = () => {
   props.columns.map((e, i) => {
     if (e.sticky == "left") {
@@ -94,15 +98,14 @@ const setSubLine = () => {
     }
   });
 };
-// 设置展示线 过渡
-let isShowLeftLine = ref(false);
-let isShowRightLine = ref(false);
+
 const setShowLine = (e: any) => {
   if (e.target.scrollWidth != e.target.offsetWidth) {
     isShowLeftLine.value = e.target.scrollLeft >= 5;
     isShowRightLine.value = e.target.scrollLeft <= e.target.scrollWidth - e.target.offsetWidth - 5;
   }
 };
+
 // 设置粘住左右
 const setSticky = (column: any) => {
   if (column.sticky == "left") {
@@ -111,6 +114,7 @@ const setSticky = (column: any) => {
     return `position: sticky;right:${column.offsetX || "0px"};z-index:1;`;
   }
 };
+
 // 设置单元格宽度
 let niceWidth = ref<string>("");
 const setWidth = () => {
@@ -127,6 +131,7 @@ const setWidth = () => {
     niceWidth.value = `${(w - wTotal) / autoLen - 4}px`;
   }
 };
+
 // 防抖
 let lock = false;
 const throttle = (e: any, delay: any) => {

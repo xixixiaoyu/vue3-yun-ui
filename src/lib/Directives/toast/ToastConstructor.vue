@@ -46,7 +46,7 @@ const props = defineProps({
   },
   delay: {
     type: Number,
-    default: 3,
+    default: 5,
   },
   center: {
     type: Boolean,

@@ -1,4 +1,4 @@
-<demo>x布局</demo>
+<demo>基础用法</demo>
 
 <template>
   <Table :data="data" :columns="columns">

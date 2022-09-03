@@ -49,7 +49,7 @@ onMounted(() => {
     maxWidth: "none",
     onShow(instance) {
       const node = document.getElementsByTagName("html")[0];
-      if (node.classList.contains("lew-dark")) {
+      if (node.classList.contains("yun-dark")) {
         instance.popper.children[0].setAttribute("data-theme", "dark");
       } else {
         instance.popper.children[0].setAttribute("data-theme", "light");
@@ -60,7 +60,7 @@ onMounted(() => {
       emit("onHide");
     },
   });
-  instance.popper.children[0].setAttribute("data-lew", "popover");
+  instance.popper.children[0].setAttribute("data-yun", "popover");
 });
 const emit = defineEmits(["onShow", "onHide"]);
 const show = () => {
