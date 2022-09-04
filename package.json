@@ -13,11 +13,13 @@
     "@vueuse/core": "^8.1.2",
     "async-validator": "^4.0.3",
     "axios": "^0.26.1",
+    "fast-glob": "^3.2.11",
     "github-markdown-css": "^4.0.0",
     "marked": "^1.1.1",
     "mitt": "^3.0.0",
     "prismjs": "^1.27.0",
     "tippy.js": "^6.3.7",
+    "vite-plugin-compression": "^0.5.1",
     "vue": "^3.2.31",
     "vue-router": "4.0.0-beta.3"
   },

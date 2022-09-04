@@ -7,6 +7,7 @@ import { searchTagContent } from "./src/utils";
 import vue from "@vitejs/plugin-vue";
 import vueJsx from "@vitejs/plugin-vue-jsx";
 import { createSvgIconsPlugin } from "vite-plugin-svg-icons";
+import compressPlugin from "vite-plugin-compression";
 
 type FindElementType = {
   tag: string;
@@ -45,10 +46,16 @@ export default defineConfig({
       // 指定symbolId格式
       symbolId: "icon-[name]",
     }),
+    // compressPlugin开启gzip压缩
+    compressPlugin({
+      ext: ".gz",
+      deleteOriginFile: false, // 是否删除原始文件
+    }),
   ],
   resolve: {
     alias: {
-      "yun-ui-vue3": path.resolve("lib"),
+      "yun-ui": path.resolve("lib"),
+      "@": path.resolve(__dirname, "src"),
     },
   },
 });
