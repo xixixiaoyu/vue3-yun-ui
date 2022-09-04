@@ -44,7 +44,7 @@
 
     <template #action="{ row, column }">
       <Button is-text @click.stop="get({ row, column })">管理</Button>
-      <Popok
+      <PopOk
         title="删除确认"
         content="删除之后无法恢复，请确认！"
         placement="left"
@@ -52,7 +52,7 @@
         @click.stop
       >
         <Button is-text type="error">删除</Button>
-      </Popok>
+      </PopOk>
     </template>
     <template #type="{ row }">
       <Tag type="success">{{ row.type == "movie" ? "电影" : "电视剧" }} </Tag>

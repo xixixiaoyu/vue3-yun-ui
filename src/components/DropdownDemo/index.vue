@@ -1,7 +1,7 @@
 <template>
-  <indexTitle title="Dropdown">
-    你可以使用 <Mark type="info">Popover</Mark> 进行高度自定义下拉菜单
-  </indexTitle>
+  <IndexTitle title="Dropdown">
+    你可以使用 <Mark type="info" to="popover">Popover</Mark> 进行高度自定义下拉菜单
+  </IndexTitle>
 
   <Demo :component="DropdownDemo1" />
   <Demo :component="DropdownDemo2" />
@@ -11,7 +11,7 @@
 </template>
 
 <script setup>
-import indexTitle from "../indexTitle.vue";
+import IndexTitle from "../indexTitle.vue";
 import Demo from "../Demo.vue";
 import Attr from "../Attr.vue";
 import { columns } from "../../lib/data";

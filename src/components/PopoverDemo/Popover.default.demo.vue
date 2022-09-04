@@ -1,67 +1,171 @@
-<demo>
-基本使用
-</demo>
+<demo>询问校验</demo>
 
 <template>
-  <div class="flex justify-evenly">
-    <Popover v-for="(position, index) in positionArr" :placement="position">
-      <template #reference>
-        <span class="align-middle block text-center">{{ position }}</span>
-        <img :src="imgUrl[index]" class="w-7 p-0.5 cursor-pointer rounded-md align-middle" />
+  <Flex gap="20px" x="start">
+    <YunPopover ref="yunPopoverRef1" trigger="click" placement="bottom-start">
+      <template #trigger>
+        <Button>进入保险箱</Button>
       </template>
-
-      <div class="w-[140px] overflow-hidden">
-        <div
-          class="flex items-center p-1 cursor-pointer rounded hover:bg-zinc-300"
-          v-for="innerItem in themeArr"
-        >
-          <Icon
-            :name="innerItem.icon"
-            class="w-1.5 h-1.5 mr-1"
-            extraClass="fill-zinc-900 dark:fill-zinc-300"
-          ></Icon>
-          <span class="text-zinc-800 text-sm"> {{ innerItem.name }}</span>
+      <template #popover-body>
+        <div class="popover-body" style="width: 300px">
+          <FormItem direction="y" title="请输入密码">
+            <Input v-model="v" />
+          </FormItem>
+          <Flex x="end">
+            <Button type="blank" size="small" @click="yunPopoverRef1.hide()">取消 </Button>
+            <Button size="small" @click="submit()" style="margin: 0">提交 </Button>
+          </Flex>
         </div>
-      </div>
-    </Popover>
-  </div>
+      </template>
+    </YunPopover>
+
+    <YunPopover ref="yunPopoverRef2" trigger="click" placement="bottom-start">
+      <template #trigger>
+        <Button>展示表格</Button>
+      </template>
+      <template #popover-body>
+        <div class="popover-body" style="width: 800px">
+          <Table :data="data" :columns="columns" height="auto">
+            <template #id="{ row }"> {{ row.id }} </template>
+            <template #name="{ row }"> {{ row.name }} </template>
+            <template #age="{ row }"> {{ row.age }} </template>
+            <template #sex="{ row }">
+              {{ formatSex(row.sex) }}
+            </template>
+            <template #hobby="{ row }">
+              <Flex gap="5px" x="start">
+                <Tag v-for="(item, index) in row.hobby" :key="index" size="small" type="info">{{
+                  item
+                }}</Tag></Flex
+              >
+            </template>
+            <template #intro="{ row }"> {{ row.intro }} </template>
+          </Table>
+          <br />
+          <Flex x="end">
+            <Button type="blank" size="small" @click="yunPopoverRef2.hide()">取消 </Button>
+            <Button size="small" @click="submit()" style="margin: 0">提交 </Button>
+          </Flex>
+        </div>
+      </template>
+    </YunPopover>
+  </Flex>
 </template>
 
 <script setup>
-// 渲染数据源
-const themeArr = [
+import { ref } from "vue";
+
+let v = ref("");
+let yunPopoverRef1 = ref();
+let yunPopoverRef2 = ref();
+
+const submit = () => {
+  Toast.warning({ text: v.value || "密码不可为空" });
+  yunPopoverRef1.value.hide();
+  yunPopoverRef2.value.hide();
+};
+
+const data = [
   {
-    id: "0",
-    icon: "theme-light",
-    name: "极简白",
+    id: 1,
+    name: "小明",
+    age: "14",
+    sex: 1,
+    intro: "从小独立呼吸，讲卫生懂礼貌，不会随便捡地上的东西吃。",
+    hobby: ["唱", "跳", "rap", "游泳", "爬山", "看电影", "越野"],
   },
   {
-    id: "1",
-    icon: "theme-dark",
-    name: "极夜黑",
+    id: 2,
+    name: "小卢",
+    age: "24",
+    sex: 1,
+    intro: "从小独立呼吸，讲卫生懂礼貌，不会随便捡地上的东西吃。",
+    hobby: ["唱", "跳", "rap", "游泳", "爬山", "看电影", "越野"],
   },
   {
-    id: "2",
-    icon: "theme-system",
-    name: "跟随系统",
+    id: 3,
+    name: "小娟",
+    age: "25",
+    sex: 0,
+    intro: "从小独立呼吸，讲卫生懂礼貌，不会随便捡地上的东西吃。",
+    hobby: ["唱", "跳", "rap", "游泳", "爬山", "看电影", "越野"],
+  },
+  {
+    id: 4,
+    name: "小贝",
+    age: "22",
+    sex: 0,
+    intro: "从小独立呼吸，讲卫生懂礼貌，不会随便捡地上的东西吃。",
+    hobby: ["唱", "跳", "rap", "游泳", "爬山", "看电影", "越野"],
+  },
+  {
+    id: 5,
+    name: "小飞",
+    age: "13",
+    sex: 3,
+    intro: "从小独立呼吸，讲卫生懂礼貌，不会随便捡地上的东西吃。",
+    hobby: ["唱", "跳", "rap", "游泳", "爬山", "看电影", "越野"],
   },
 ];
 
-// 指定图片列表
-const imgUrl = [
-  "//tva2.sinaimg.cn/mw690/007c1Ltfgy1h4a6gg3r12j30u00u0ta3.jpg",
-  "//tvax1.sinaimg.cn/mw690/007c1Ltfgy1h4aei7d8xrj305j05j3yj.jpg",
-  "//tvax3.sinaimg.cn/mw690/007c1Ltfgy1h4aej1ylr0j30hs0hsmxp.jpg",
-  "//tva4.sinaimg.cn/mw690/007c1Ltfgy1h4aeom7w1oj30u00u0q74.jpg",
+const columns = [
+  {
+    title: "id",
+    width: "50px",
+    field: "id",
+    x: "center",
+    sticky: "left",
+    offsetX: "0px",
+  },
+  {
+    title: "姓名",
+    width: "100px",
+    field: "name",
+    x: "center",
+    sticky: "left",
+    offsetX: "50px",
+  },
+  {
+    title: "年龄",
+    width: "400px",
+    field: "age",
+    x: "center",
+  },
+  {
+    title: "爱好",
+    width: "400px",
+    field: "hobby",
+  },
+  {
+    title: "介绍",
+    width: "400px",
+    field: "intro",
+  },
+  {
+    title: "性别",
+    width: "80px",
+    field: "sex",
+    x: "center",
+    sticky: "right",
+    offsetX: "0px",
+  },
 ];
 
-const PROP_TOP_LEFT = "top-left";
-const PROP_TOP_RIGHT = "top-right";
-const PROP_BOTTOM_LEFT = "bottom-left";
-const PROP_BOTTOM_RIGHT = "bottom-right";
-
-// 定义指定位置
-const positionArr = [PROP_TOP_LEFT, PROP_TOP_RIGHT, PROP_BOTTOM_LEFT, PROP_BOTTOM_RIGHT];
+const formatSex = (sex) => {
+  switch (sex) {
+    case 0:
+      return "女";
+    case 1:
+      return "男";
+    default:
+      return "未知";
+  }
+};
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.popover-body {
+  padding: 15px;
+  box-sizing: border-box;
+}
+</style>
