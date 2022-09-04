@@ -4,16 +4,16 @@
 </demo>
 
 <template>
-  <Button @click="onClick1">可关闭，delay: 5</Button>
+  <Button @click="onClick1">可关闭，delay: 7000</Button>
   <Button @click="onClick2">可关闭，delay: 0</Button>
 </template>
 
 <script setup>
 const onClick1 = () => {
   Toast({
-    text: "一条可以关闭的消息提示，不操作五秒后我就会自动消失哦 ~",
+    text: "一条可以关闭的消息提示，不操作七秒后我就会自动消失哦 ~",
     showClose: true,
-    delay: 5,
+    delay: 7000,
     destroyed() {
       console.log("我走了");
     },

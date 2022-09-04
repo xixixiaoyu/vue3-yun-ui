@@ -83,6 +83,9 @@
             <router-link to="/doc/alert">Alert 警告提醒</router-link>
           </li>
           <li>
+            <router-link to="/doc/notification">Notification 通知</router-link>
+          </li>
+          <li>
             <router-link to="/doc/dialog">Dialog 对话框</router-link>
           </li>
           <li>

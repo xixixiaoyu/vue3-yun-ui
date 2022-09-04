@@ -52,9 +52,9 @@ const data = [
   {
     params: "delay",
     desc: "手动不关闭延时多久自动关闭",
-    type: "number(s)",
+    type: "number(ms)",
     select: "/",
-    default: "5",
+    default: "5000",
   },
   {
     params: "destroyed",

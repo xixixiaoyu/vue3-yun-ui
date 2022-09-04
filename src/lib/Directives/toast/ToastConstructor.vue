@@ -45,8 +45,8 @@ const props = defineProps({
     validator: (val: string) => ["normal", "info", "success", "warning", "error"].includes(val),
   },
   delay: {
-    type: Number,
-    default: 5,
+    type: String,
+    default: 5000,
   },
   center: {
     type: Boolean,
@@ -90,7 +90,7 @@ const startTimer = () => {
   if (props.delay > 0) {
     timer.value = setTimeout(() => {
       handleClose();
-    }, props.delay * 1000);
+    }, props.delay);
   }
 };
 const clearTimer = () => {
