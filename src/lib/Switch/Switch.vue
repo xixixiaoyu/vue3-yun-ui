@@ -54,6 +54,7 @@ input {
   outline: none;
   box-sizing: border-box;
   appearance: none;
+  vertical-align: middle;
   -webkit-appearance: none;
   -moz-appearance: none;
   -ms-appearance: none;

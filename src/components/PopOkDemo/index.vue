@@ -1,5 +1,5 @@
 <template>
-  <IndexTitle title="PopOk"></IndexTitle>
+  <IndexTitle title="Popok"></IndexTitle>
 
   <Demo :component="PopOkDemo1">
     <template #customTitle> 简单的询问<Mark type="info">click</Mark> </template>

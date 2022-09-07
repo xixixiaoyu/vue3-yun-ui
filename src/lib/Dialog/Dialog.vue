@@ -89,7 +89,7 @@ export default defineComponent({
 });
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 $radius: 4px;
 $border-color: #d9d9d9;
 .gulu-dialog {

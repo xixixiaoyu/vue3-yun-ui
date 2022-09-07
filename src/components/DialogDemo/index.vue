@@ -1,19 +1,25 @@
 <template>
-  <h1>Dialog</h1>
-  <Demo :component="Dialog1Demo" />
+  <IndexTitle title="Dialog">
+    如果你需要更简单的询问框，请可以尝试一下<Mark type="info" to="popok">Popok</Mark>
+  </IndexTitle>
+  <!-- <Demo :component="Dialog1Demo" />
   <Demo :component="Dialog2Demo" />
   <Demo :component="Dialog3Demo" />
-  <Demo :component="Dialog4Demo" />
+  <Demo :component="Dialog4Demo" /> -->
+  <Demo :component="Dialog5Demo" />
   <attr :columns="columns" :data="data"></attr>
 </template>
 
 <script setup>
 import Demo from "../Demo.vue";
 import Attr from "../Attr.vue";
-import Dialog1Demo from "./Dialog.default.demo.vue";
-import Dialog2Demo from "./Dialog.overlay.demo.vue";
-import Dialog3Demo from "./Dialog.stop.demo.vue";
-import Dialog4Demo from "./Dialog.api.demo.vue";
+import IndexTitle from "../indexTitle.vue";
+// import Dialog1Demo from "./Dialog.default.demo.vue";
+// import Dialog2Demo from "./Dialog.overlay.demo.vue";
+// import Dialog3Demo from "./Dialog.stop.demo.vue";
+// import Dialog4Demo from "./Dialog.api.demo.vue";
+import Dialog5Demo from "./default.demo.vue";
+
 import { columns } from "../../lib/data";
 
 const data = [
