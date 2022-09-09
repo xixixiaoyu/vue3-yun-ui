@@ -1,18 +1,18 @@
 <demo>
-阻止确认框和监听遮罩关闭
+阻止确认框，监听遮罩关闭
 </demo>
 
 <template>
-  <div>
-    <Button @click="toggle">打开对话框</Button>
-    <Dialog
-      v-model:visible="visible"
-      :confirm="handleConfirm"
-      :cancel="handleCancel"
-      @closeOverlay="hanleOverlay"
-    >
-    </Dialog>
-  </div>
+  <Dialog v-model:visible="visible" :ok="handleConfirm" @closeOverlay="handleCloseOverlay">
+    <template #title>
+      <strong>标题</strong>
+    </template>
+    <template #content>
+      <strong>文本框第一行 </strong>
+      <div>文本框第二行</div>
+    </template>
+  </Dialog>
+  <Button @click="toggle">打开对话框</Button>
 </template>
 
 <script setup>
@@ -27,11 +27,8 @@ const handleConfirm = () => {
   console.log("onConfirm");
   return false;
 };
-const handleCancel = () => {
-  console.log("onCancel");
-};
 
-const hanleOverlay = () => {
-  console.log("遮罩关闭了");
+const handleCloseOverlay = () => {
+  console.log("handleCloseOverlay");
 };
 </script>

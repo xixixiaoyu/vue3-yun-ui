@@ -4,50 +4,58 @@
 
 <template>
   <div>
-    <Button @click="toggle">打开对话框</Button>
-    <Dialog v-model:visible="visible" :confirm="handleConfirm" :cancel="handleCancel">
-      <template v-slot:content>
+    <Dialog
+      v-model:visible="visible1"
+      :ok="handleConfirm"
+      :cancel="handleCancel"
+      layout="normal"
+      type="normal"
+    >
+      <template #title>
+        <strong>标题</strong>
+      </template>
+      <template #content>
         <strong>文本框第一行 </strong>
         <div>文本框第二行</div>
       </template>
-      <template v-slot:title>
+    </Dialog>
+    <Button @click="toggle1">打开对话框</Button>
+
+    <Dialog
+      v-model:visible="visible2"
+      :ok="handleConfirm"
+      :cancel="handleCancel"
+      type="success"
+      layout="easy"
+    >
+      <template #title>
         <strong>标题</strong>
       </template>
+      <template #content>
+        <strong>文本框第一行 </strong>
+        <div>文本框第二行</div>
+      </template>
     </Dialog>
-
-    <Button @click="handleIsShow">有动画的打开对话框</Button>
-    <MyDialog
-      title="标题"
-      v-model="isShow"
-      confirmText="确认"
-      cancelText="取消"
-      :cancelHandler="() => {}"
-    >
-      我是内容
-    </MyDialog>
+    <Button @click="toggle2">打开简单对话框</Button>
   </div>
-
-  <div></div>
 </template>
 
 <script setup>
 import { ref } from "vue";
 
-const visible = ref(false);
-const toggle = () => {
-  visible.value = !visible.value;
+const visible1 = ref(false);
+const visible2 = ref(false);
+const toggle1 = () => {
+  visible1.value = !visible1.value;
 };
 
+const toggle2 = () => {
+  visible2.value = !visible2.value;
+};
 const handleConfirm = () => {
   console.log("onConfirm");
 };
 const handleCancel = () => {
   console.log("onCancel");
-};
-
-const isShow = ref(false);
-
-const handleIsShow = () => {
-  isShow.value = !isShow.value;
 };
 </script>

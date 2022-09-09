@@ -3,7 +3,7 @@
     <div
       v-if="visible"
       class="yun-dialog"
-      :style="isShowDialog ? 'animation: yunDialogOpen 0.25s;' : 'animation: yunDialogClose 0.25s;'"
+      :style="`animation-name: ${showAnimation}`"
       @click="OnClickOverlay"
     >
       <div v-if="layout == 'normal'" class="yun-dialog-box yun-dialog-box-normal" @click.stop>
@@ -57,9 +57,9 @@
   </teleport>
 </template>
 
-<script lang="ts" setup name="dialog">
+<script lang="ts" setup>
 import Button from "../../Button/Button.vue";
-import { ref } from "vue";
+import { ref, computed } from "vue";
 import {
   Info24Regular,
   Warning24Regular,
@@ -79,42 +79,47 @@ const props = defineProps({
     type: Boolean,
     default: true,
   },
-  // eslint-disable-next-line vue/require-default-prop
   type: {
     type: String,
     default: "",
   },
-  // eslint-disable-next-line vue/require-default-prop
   ok: {
     type: Function,
+    default: () => () => {},
   },
-  // eslint-disable-next-line vue/require-default-prop
   cancel: {
     type: Function,
+    default: () => () => {},
   },
   layout: {
     type: String,
     default: "normal",
   },
 });
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const emit = defineEmits(["update:visible", "closeOverlay"]);
+
 const OnClickOverlay = () => {
   if (props.closeOnClickOverlay) {
     close();
+    emit("closeOverlay");
   }
 };
+
 let isShowDialog = ref(true);
 const close = () => {
   isShowDialog.value = false;
   setTimeout(() => {
     emit("update:visible", false);
-  }, 245);
+    isShowDialog.value = true;
+  }, 250);
 };
+
+const showAnimation = computed(() => (isShowDialog.value ? "yunDialogOpen" : "yunDialogClose"));
+
 const okFn = () => {
-  if (typeof props.ok === "function") {
-    props.ok();
+  if (typeof props.ok === "function" && props.ok() === true) {
+    close();
   }
-  close();
 };
 const cancelFn = () => {
   if (typeof props.cancel === "function") {
@@ -122,7 +127,13 @@ const cancelFn = () => {
   }
   close();
 };
-const emit = defineEmits(["update:visible"]);
+</script>
+
+<script lang="ts">
+export default {
+  name: "Dialog",
+  emits: ["update:visible", "closeOverlay"],
+};
 </script>
 
 <style lang="scss" scoped>
@@ -140,6 +151,7 @@ const emit = defineEmits(["update:visible"]);
   align-items: center;
   z-index: 99999;
   animation-fill-mode: forwards;
+  animation-duration: 250ms;
   .yun-dialog-box {
     position: relative;
     display: flex;
@@ -210,6 +222,7 @@ const emit = defineEmits(["update:visible"]);
   .yun-dialog-box-normal {
     .left {
       margin-right: 10px;
+      margin-top: 1px;
       width: 30px;
     }
     .right {

@@ -41,7 +41,7 @@ import Popover from "./Popover/Popover.vue";
 import ButtonGroup from "./Button/ButtonGroup";
 import Icon from "./Icon/Icon.vue";
 import MyDialog from "./Dialog/index.vue";
-import Dialog from "./Dialog/Dialog.vue";
+import Dialog from "./directives/dialog/dialog.vue";
 import Drawer from "./Drawer/Drawer.vue";
 import Avatar from "./Avatar/Avatar.vue";
 import Tag from "./Tag/Tag.vue";
