@@ -123,7 +123,7 @@
             <router-link to="/doc/backtop">BackTop 组件</router-link>
           </li>
           <li>
-            <router-link to="/doc/breadcrumb">Breadcrumb组件</router-link>
+            <router-link to="/doc/breadcrumb">Breadcrumb 面包屑</router-link>
           </li>
           <li>
             <router-link to="/doc/step">Steps 组件</router-link>

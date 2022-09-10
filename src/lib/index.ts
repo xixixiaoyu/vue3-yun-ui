@@ -29,8 +29,7 @@ export { default as CarouselBase } from "./Carousel/Carousel.opacity.vue";
 export { default as CarouselScroll } from "./Carousel/Carousel.scroll.vue";
 export { default as BackTop } from "./BackTop/BackTop.vue";
 export { default as Skeleton } from "./Skeleton/Skeleton.vue";
-export { default as Breadcrumb } from "./Breadcrumb/Breadcrumb.vue";
-export { default as BreadcrumbItem } from "./Breadcrumb/BreadcrumbItem.vue";
+
 export { default as Pagination } from "./Pagination/Pagination.vue";
 export { default as City } from "./City/City.vue";
 export { default as InfiniteLoading } from "./InfiniteLoading/InfiniteLoading.vue";
@@ -65,6 +64,7 @@ import Table from "./Table/Table.vue";
 import Alert from "./Alert/Alert.vue";
 import PopOk from "./PopOk/PopOk.vue";
 import Modal from "./Modal/Modal.vue";
+import Breadcrumb from "./Breadcrumb/Breadcrumb.vue";
 
 import * as directives from "./directives/index";
 
@@ -102,6 +102,7 @@ const arrComponents = [
   Alert,
   PopOk,
   Modal,
+  Breadcrumb,
 ];
 
 export default function (app) {

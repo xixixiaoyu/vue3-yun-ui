@@ -1,18 +1,26 @@
-<demo>
-  <title>基本使用</title>
-</demo>
+<demo>基础用法</demo>
 
 <template>
-  <Breadcrumb>
-    <BreadcrumbItem to="/doc/backtop">backtop</BreadcrumbItem>
-    <BreadcrumbItem to="/doc/grid">grid</BreadcrumbItem>
-    <BreadcrumbItem to="/doc/skeleton">skeleton</BreadcrumbItem>
-    <BreadcrumbItem to="/doc/toast">toast</BreadcrumbItem>
-  </Breadcrumb>
+  <BreadCrumb :options="options" />
 </template>
 
-<script setup>
-import { Breadcrumb, BreadcrumbItem } from "../../lib/index";
+<script lang="ts" setup>
+import { ref } from "vue";
+let options = ref([
+  {
+    label: "首页",
+    to: "/",
+  },
+  {
+    label: "Vue",
+    to: "https://vuejs.org",
+  },
+  {
+    label: "商品列表",
+  },
+  {
+    label: "商品详情",
+    active: true,
+  },
+]);
 </script>
-
-<style lang="scss"></style>

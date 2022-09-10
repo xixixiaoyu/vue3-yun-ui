@@ -1,22 +1,33 @@
-<demo>
-  <title>支持 separator</title>
-</demo>
+<demo>自定义激活项和图标类型</demo>
 
 <template>
-  <Breadcrumb separator=">">
-    <BreadcrumbItem to="/doc/backtop">backtop</BreadcrumbItem>
-    <BreadcrumbItem to="/doc/grid">grid</BreadcrumbItem>
-    <BreadcrumbItem to="/doc/skeleton">skeleton</BreadcrumbItem>
-    <BreadcrumbItem to="/doc/toast">toast</BreadcrumbItem>
-  </Breadcrumb>
+  <BreadCrumb :options="options" iconType="shoulder" />
 </template>
 
-<script setup>
-import { Breadcrumb, BreadcrumbItem } from "../../lib/index";
-</script>
+<script lang="ts" setup>
+import { ref } from "vue";
 
-<style lang="scss">
-.yun-bread-item a {
-  color: #8ca38c;
-}
-</style>
+const options = ref([
+  {
+    label: "Avatar",
+    to: "avatar",
+  },
+  {
+    label: "Breadcrumb",
+    to: "breadcrumb",
+    active: true,
+  },
+  {
+    label: "Input",
+    to: "input",
+  },
+  {
+    label: "Dialog",
+    to: "dialog",
+  },
+  {
+    label: "Flex",
+    to: "flex",
+  },
+]);
+</script>
