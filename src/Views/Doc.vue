@@ -89,6 +89,9 @@
             <router-link to="/doc/dialog">Dialog 对话框</router-link>
           </li>
           <li>
+            <router-link to="/doc/modal">Modal 对话框</router-link>
+          </li>
+          <li>
             <router-link to="/doc/toast">Toast 全局提示</router-link>
           </li>
           <li>

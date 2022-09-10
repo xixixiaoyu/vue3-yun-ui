@@ -149,7 +149,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 99999;
+  z-index: var(--yun-mask-zIndex);
   animation-fill-mode: forwards;
   animation-duration: 250ms;
   .yun-dialog-box {

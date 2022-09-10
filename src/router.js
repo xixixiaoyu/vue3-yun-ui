@@ -43,6 +43,7 @@ import TableDemo from "./components/TableDemo/index.vue";
 import AlertDemo from "./components/AlertDemo/index.vue";
 import PopOkDemo from "./components/PopOkDemo/index.vue";
 import NotificationDemo from "./components/NotificationDemo/index.vue";
+import ModalDemo from "./components/ModalDemo/index.vue";
 
 import { h } from "vue";
 import Markdown from "./components/Markdown.vue";
@@ -106,6 +107,7 @@ export const router = createRouter({
         { path: "alert", component: AlertDemo },
         { path: "popok", component: PopOkDemo },
         { path: "notification", component: NotificationDemo },
+        { path: "modal", component: ModalDemo },
       ],
     },
   ],

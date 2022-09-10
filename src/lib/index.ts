@@ -64,6 +64,7 @@ import FormItem from "./FormItem/FormItem.vue";
 import Table from "./Table/Table.vue";
 import Alert from "./Alert/Alert.vue";
 import PopOk from "./PopOk/PopOk.vue";
+import Modal from "./Modal/Modal.vue";
 
 import * as directives from "./directives/index";
 
@@ -100,6 +101,7 @@ const arrComponents = [
   Table,
   Alert,
   PopOk,
+  Modal,
 ];
 
 export default function (app) {
