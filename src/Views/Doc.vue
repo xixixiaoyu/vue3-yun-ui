@@ -89,7 +89,7 @@
             <router-link to="/doc/dialog">Dialog 对话框</router-link>
           </li>
           <li>
-            <router-link to="/doc/modal">Modal 对话框</router-link>
+            <router-link to="/doc/modal">Modal 模态框</router-link>
           </li>
           <li>
             <router-link to="/doc/toast">Toast 全局提示</router-link>
@@ -108,6 +108,9 @@
           </li>
           <li>
             <router-link to="/doc/popok">Popok 确认气泡</router-link>
+          </li>
+          <li>
+            <router-link to="/doc/loading">Loading 加载</router-link>
           </li>
 
           <li class="title">
