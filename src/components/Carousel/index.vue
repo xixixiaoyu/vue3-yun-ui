@@ -1,5 +1,5 @@
 <template>
-  <h1>Carousel 示例</h1>
+  <h1>Carousel</h1>
 
   <Demo :component="Carousel1Demo" />
   <Demo :component="Carousel2Demo" />

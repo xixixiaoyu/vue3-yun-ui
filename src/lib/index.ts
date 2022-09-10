@@ -20,17 +20,14 @@ export const useREM = () => {
 
 export { default as Tabs } from "./Tabs/Tabs.vue";
 export { default as Tab } from "./Tabs/Tab.vue";
-
 export { default as Step } from "./Step/Step.vue";
 export { openDialog as openDialog } from "./Dialog/openDialog";
-export { default as Input } from "./Input/Input.vue";
 export { default as Card } from "./Card/Card.vue";
 export { default as CarouselBase } from "./Carousel/Carousel.opacity.vue";
 export { default as CarouselScroll } from "./Carousel/Carousel.scroll.vue";
 export { default as BackTop } from "./BackTop/BackTop.vue";
 export { default as Skeleton } from "./Skeleton/Skeleton.vue";
 
-export { default as Pagination } from "./Pagination/Pagination.vue";
 export { default as City } from "./City/City.vue";
 export { default as InfiniteLoading } from "./InfiniteLoading/InfiniteLoading.vue";
 export { default as Sticky } from "./Sticky/Sticky.vue";
@@ -65,6 +62,8 @@ import Alert from "./Alert/Alert.vue";
 import PopOk from "./PopOk/PopOk.vue";
 import Modal from "./Modal/Modal.vue";
 import Breadcrumb from "./Breadcrumb/Breadcrumb.vue";
+import Comment from "./Comment/Comment.vue";
+import Pagination from "./Pagination/Pagination.vue";
 
 import * as directives from "./directives/index";
 
@@ -103,6 +102,8 @@ const arrComponents = [
   PopOk,
   Modal,
   Breadcrumb,
+  Comment,
+  Pagination,
 ];
 
 export default function (app) {

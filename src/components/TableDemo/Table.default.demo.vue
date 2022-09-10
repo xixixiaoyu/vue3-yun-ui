@@ -23,9 +23,9 @@
     <template #sex="{ row }"> {{ formatSex(row.sex) }} </template>
     <template #intro="{ row }"> {{ row.intro }} </template>
   </Table>
-  <!-- <div style="margin-top: 20px">
+  <div style="margin-top: 20px">
     <Pagination :page-num="1" :total="200" />
-  </div> -->
+  </div>
   <div style="margin-top: 20px">
     <Alert
       :list="[

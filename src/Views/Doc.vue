@@ -117,44 +117,47 @@
             <span>导航</span>
           </li>
           <li>
-            <router-link to="/doc/tabs">Tabs 组件</router-link>
+            <router-link to="/doc/tabs">Tabs 选项卡</router-link>
           </li>
           <li>
-            <router-link to="/doc/backtop">BackTop 组件</router-link>
+            <router-link to="/doc/backtop">BackTop 回到顶部</router-link>
           </li>
           <li>
             <router-link to="/doc/breadcrumb">Breadcrumb 面包屑</router-link>
           </li>
           <li>
-            <router-link to="/doc/step">Steps 组件</router-link>
+            <router-link to="/doc/step">Steps 步骤条</router-link>
           </li>
           <li>
-            <router-link to="/doc/sticky">Sticky 组件</router-link>
+            <router-link to="/doc/sticky">Sticky 粘性</router-link>
           </li>
 
           <li class="title">
             <span>数据展示</span>
           </li>
           <li>
-            <router-link to="/doc/table">Table 组件</router-link>
+            <router-link to="/doc/table">Table 表格</router-link>
           </li>
           <li>
-            <router-link to="/doc/card">Card 组件</router-link>
+            <router-link to="/doc/comment">Comment 评论</router-link>
           </li>
           <li>
-            <router-link to="/doc/carousel">Carousel 组件</router-link>
+            <router-link to="/doc/card">Card 卡片</router-link>
           </li>
           <li>
-            <router-link to="/doc/pagination">Pagination 组件</router-link>
+            <router-link to="/doc/carousel">Carousel 轮播图</router-link>
           </li>
           <li>
-            <router-link to="/doc/infinite">InfiniteLoaing组件</router-link>
+            <router-link to="/doc/pagination">Pagination 分页器</router-link>
           </li>
           <li>
-            <router-link to="/doc/skeleton">Skeleton 组件</router-link>
+            <router-link to="/doc/infinite">InfiniteLoaing 无限加载</router-link>
           </li>
           <li>
-            <router-link to="/doc/city">City 组件</router-link>
+            <router-link to="/doc/skeleton">Skeleton 骨架屏</router-link>
+          </li>
+          <li>
+            <router-link to="/doc/city">City 城市选择</router-link>
           </li>
 
           <li class="title">

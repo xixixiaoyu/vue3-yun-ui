@@ -1,11 +1,39 @@
-<demo>
-  <title>基本使用</title>
-</demo>
+<demo>基本使用</demo>
 
 <template>
-  <Pagination></Pagination>
+  <div>
+    <Pagination
+      v-model:page-num="pageNum"
+      v-model:page-size="pageSize"
+      :page-size-options="[
+        {
+          label: '10 / 页',
+          value: 10,
+        },
+        {
+          label: '20 / 页',
+          value: 20,
+        },
+        {
+          label: '30 / 页',
+          value: 30,
+        },
+      ]"
+      :page-num="pageNum"
+      :total="total"
+      :page-show-size="3"
+      @change="change"
+    />
+  </div>
 </template>
 
-<script setup>
-import { Pagination } from "../../lib/index";
+<script lang="ts" setup>
+import { ref } from "vue";
+
+let pageNum = ref(6);
+let pageSize = ref(20);
+const change = (e: any) => {
+  console.log(e);
+};
+let total = ref(2000);
 </script>
