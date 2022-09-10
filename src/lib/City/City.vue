@@ -1,5 +1,5 @@
 <template>
-  <div class="xtx-city" ref="target">
+  <div class="yun-city" ref="target">
     <div class="select" @click="toggle()" :class="{ active: visible }">
       <span v-if="!fullLocation" class="placeholder">{{ placeholder }}</span>
       <span v-else class="value">{{ fullLocation }}</span>
@@ -157,10 +157,9 @@ const getCityData = () => {
 };
 </script>
 <style lang="scss" scoped>
-.xtx-city {
+.yun-city {
   display: inline-block;
   position: relative;
-  z-index: 99999;
   .angle-down {
     opacity: 0.5;
     width: 25px;
@@ -204,6 +203,7 @@ const getCityData = () => {
     display: flex;
     flex-wrap: wrap;
     padding: 10px;
+    z-index: var(--yun-mask-zIndex);
     > span {
       width: 130px;
       text-align: center;
