@@ -1,8 +1,7 @@
 <template>
-  <div>
-    <div class="topNav-wrapper">
-      <Topnav />
-      <div class="banner">
+  <div class="home-container">
+    <!-- <div class="topNav-wrapper"> -->
+    <!-- <div class="banner">
         <h2 class="title"><span>Y</span>un-UI</h2>
         <h3>简约 轻巧 好用</h3>
         <p class="actions">
@@ -19,14 +18,18 @@
           <p>{{ item.description }}</p>
         </li>
       </ul>
-    </div>
+    </div> -->
+    <Topnav />
+    <Main />
   </div>
 </template>
+
 <script>
 import Topnav from "../components/Topnav.vue";
 import Icon from "../lib/Icon/Icon.vue";
+import Main from "./Main.vue";
 export default {
-  components: { Topnav, Icon },
+  components: { Topnav, Icon, Main },
   setup() {
     return {
       contentList: [

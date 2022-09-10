@@ -64,6 +64,7 @@ import Modal from "./Modal/Modal.vue";
 import Breadcrumb from "./Breadcrumb/Breadcrumb.vue";
 import Comment from "./Comment/Comment.vue";
 import Pagination from "./Pagination/Pagination.vue";
+import YunTabs from "./Tabs/src/YunTabs.vue";
 
 import * as directives from "./directives/index";
 
@@ -104,6 +105,7 @@ const arrComponents = [
   Breadcrumb,
   Comment,
   Pagination,
+  YunTabs,
 ];
 
 export default function (app) {

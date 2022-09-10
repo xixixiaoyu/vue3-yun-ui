@@ -45,7 +45,7 @@ const props = defineProps({
     validator: (val: string) => ["normal", "info", "success", "warning", "error"].includes(val),
   },
   delay: {
-    type: String,
+    type: Number,
     default: 5000,
   },
   center: {
