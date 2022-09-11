@@ -105,7 +105,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .yun-toast {
   display: flex;
   align-items: center;
@@ -143,6 +143,7 @@ export default {
   }
 
   &-center {
+    justify-content: center;
     text-align: center;
   }
 

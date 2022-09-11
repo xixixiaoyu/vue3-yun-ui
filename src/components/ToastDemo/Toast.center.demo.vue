@@ -1,6 +1,6 @@
 <demo>
   <title>文字居中</title>
-  <desc>使用 center 属性让文字水平居中</desc>
+  <desc>使用 center 属性让文字图标水平居中</desc>
 </demo>
 
 <template>

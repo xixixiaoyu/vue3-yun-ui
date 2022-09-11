@@ -71,7 +71,6 @@ let timer: ReturnType<typeof setTimeout> | undefined;
 const debounce = () => {
   clearTimeout(timer);
   timer = setTimeout(() => {
-    console.log(1);
     init();
   }, 250);
 };
