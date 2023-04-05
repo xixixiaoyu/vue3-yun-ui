@@ -1,6 +1,6 @@
 <template>
 	<YunPopover
-		ref="yunPopverRef1"
+		ref="yunPopoverRef1"
 		class="yun-select-view"
 		:class="{ 'yun-select-focus': isShowOptions }"
 		:trigger="trigger"
@@ -38,7 +38,7 @@
 					>
 					<YunPopover
 						v-show="multipleLabelStr.length > 1"
-						ref="yunPopverRef2"
+						ref="yunPopoverRef2"
 						trigger="hover"
 						placement="top"
 					>
@@ -181,23 +181,23 @@ const changeFn = (item: Options) => {
 	}
 }
 let isShowOptions = ref(false)
-let yunPopverRef1 = ref()
-let yunPopverRef2 = ref()
+let yunPopoverRef1 = ref()
+let yunPopoverRef2 = ref()
 const delTag = (i: number) => {
 	multipleV.value.splice(i, 1)
 	multipleLabelStr.value.splice(i, 1)
 	emit('update:modelValue', multipleV.value)
 	emit('change', { value: multipleV.value, show, hide })
 	if (i == 0 && multipleV.value.length == 0) {
-		yunPopverRef2.value.hide()
+		yunPopoverRef2.value.hide()
 	}
 }
 const lewSelectWidth = computed(() => yunSelectRef.value?.offsetWidth - 12 + 'px')
 const show = () => {
-	yunPopverRef1.value.show()
+	yunPopoverRef1.value.show()
 }
 const hide = () => {
-	yunPopverRef1.value.hide()
+	yunPopoverRef1.value.hide()
 }
 defineExpose({ show, hide })
 </script>
