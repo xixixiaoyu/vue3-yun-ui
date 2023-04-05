@@ -71,7 +71,7 @@
 			<div
 				class="yun-select-body"
 				:class="{ 'yun-select-multiple-body': multiple }"
-				:style="`width:${lewSelectWidth}`"
+				:style="`width:${yunSelectWidth}`"
 			>
 				<div class="options-box">
 					<div
@@ -86,7 +86,6 @@
 						<Checkbox
 							v-if="multiple"
 							class="yun-select-checkbox"
-							label=""
 							:checked="multipleV.includes(item.value)"
 						/>
 						<div class="yun-select-label">{{ item.label }}</div>
@@ -98,39 +97,41 @@
 </template>
 
 <script setup lang="ts">
+import type { Options } from './types'
 import { ref, onMounted, computed, watch } from 'vue'
 import { ChevronDown } from '@vicons/ionicons5'
 import { Icon } from '@vicons/utils'
 import { selectProps } from './props'
 
 const props = defineProps(selectProps)
+const emit = defineEmits(['update:modelValue', 'change'])
+
 const v = ref<string>('')
-const multipleV = ref<Array<string>>([])
+const multipleV = ref<string[]>([])
 const labelStr = ref<string>('')
-const multipleLabelStr = ref<Array<string>>([])
+const multipleLabelStr = ref<string[]>([])
+let yunSelectRef = ref()
+let isShowOptions = ref(false)
+let yunPopoverRef1 = ref()
+let yunPopoverRef2 = ref()
+
+const yunSelectWidth = computed(() => yunSelectRef.value?.offsetWidth - 12 + 'px')
+
 watch(
 	() => props.modelValue,
 	() => {
 		// 如果是多选
 		if (props.multiple) {
-			// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-			// @ts-ignore
-			multipleV.value = props.modelValue
+			multipleV.value = props.modelValue as any
 			multipleLabelStr.value = filterSelect(props.modelValue, props.options)
 		} else {
-			// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-			// @ts-ignore
-			v.value = props.modelValue
+			v.value = props.modelValue as any
 			labelStr.value = filterSelect([props.modelValue], props.options)[0] || ''
 		}
 	},
 	{ deep: true }
 )
-type Options = {
-	label: string
-	value: string
-}
-let yunSelectRef = ref()
+
 onMounted(() => {
 	// 如果是多选
 	if (props.multiple) {
@@ -139,26 +140,29 @@ onMounted(() => {
 		labelStr.value = filterSelect([props.modelValue], props.options)[0] || ''
 	}
 })
-const filterSelect = (v: any, options: Options[]) => {
-	let _v: Array<string> = []
-	if (v && options) {
-		v.map((e: string) => {
-			options.map(o => {
-				if (e == o.value) {
-					_v.push(o.label)
+
+const filterSelect = (propsModelValue: any, options: Options[]) => {
+	let newArr: Array<string> = []
+	if (propsModelValue && options) {
+		propsModelValue.forEach((item: string) => {
+			options.forEach(option => {
+				if (item == option.value) {
+					newArr.push(option.label)
 				}
 			})
 		})
 	}
-	return _v
+	return newArr
 }
-const emit = defineEmits(['update:modelValue', 'change'])
+
+// 选中 checkbox
 const changeFn = (item: Options) => {
+	// 如果多选
 	if (props.multiple) {
-		let index = multipleV.value.indexOf(item.value)
-		if (index >= 0) {
-			multipleLabelStr.value.splice(index, 1)
-			multipleV.value.splice(index, 1)
+		let selectedIndex = multipleV.value.indexOf(item.value)
+		if (selectedIndex >= 0) {
+			multipleLabelStr.value.splice(selectedIndex, 1)
+			multipleV.value.splice(selectedIndex, 1)
 		} else {
 			multipleLabelStr.value.push(item.label)
 			multipleV.value.push(item.value)
@@ -180,19 +184,17 @@ const changeFn = (item: Options) => {
 		emit('change', v.value)
 	}
 }
-let isShowOptions = ref(false)
-let yunPopoverRef1 = ref()
-let yunPopoverRef2 = ref()
+
 const delTag = (i: number) => {
 	multipleV.value.splice(i, 1)
 	multipleLabelStr.value.splice(i, 1)
 	emit('update:modelValue', multipleV.value)
 	emit('change', { value: multipleV.value, show, hide })
-	if (i == 0 && multipleV.value.length == 0) {
+	if (multipleV.value.length == 1) {
 		yunPopoverRef2.value.hide()
 	}
 }
-const lewSelectWidth = computed(() => yunSelectRef.value?.offsetWidth - 12 + 'px')
+
 const show = () => {
 	yunPopoverRef1.value.show()
 }
